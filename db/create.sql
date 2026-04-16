@@ -4,14 +4,13 @@ USE cross_media_project;
 
 CREATE TABLE user (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    userName VARCHAR(50) NOT NULL,
+    userName VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(50) NOT NULL,
     logedIn TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE result (
-    userName VARCHAR(50),
+    userName VARCHAR(50) PRIMARY KEY,
     time_left INT,
-    PRIMARY KEY(userName,time_left),
     FOREIGN KEY (userName) REFERENCES user(userName)
 );
