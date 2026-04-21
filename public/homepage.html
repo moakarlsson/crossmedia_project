@@ -13,10 +13,27 @@
         <div id="topBar"></div>
         <h1>Giftmorden</h1>
 
-        <div>
-            <div id="timerDisplay"></div>
-            <button id="stopTimer">Stop timer</button>
+        <form id="logInDiv">
+            <div class="labelAndInput">
+                <label for="username">Användarnamn: </label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="labelAndInput">
+                <label for="password">Lösenord: </label>
+                <input type="password" id="password" name="password">
+            </div>
+            <button id="loginButton" type="button">Logga in</button>
+        </form>
+
+        <div id="timerDIV">
+            <div id="timerDisplay">2:30:00</div>
+            <div>
+                <button id="startTimer">Start timer</button>
+                <button id="stopTimer">Stop timer</button>
+            </div>
         </div>
+
+
     </main>
 
     <script src="client.js"></script>
