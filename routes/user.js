@@ -19,7 +19,7 @@ router.post("/createUser", async (req, res) => {
             insertId: result.insertId
         });
     } catch (error) {
-        res.status(500).json({ error: "Internal server error" });
+        res.status(500).json({ error: error.message });
     }
 });
 //Eventuellt lägga till true/false för inloggning/utloggning
