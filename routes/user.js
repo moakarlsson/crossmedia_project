@@ -1,4 +1,5 @@
 import express from "express";
+import session from "express-session"
 const router = express.Router();
 import db from "../db/connection.js";
 import bcrypt from "bcrypt";
@@ -40,7 +41,8 @@ router.post("/userLogIn", async (req, res) => {
             return res.status(401).json({ error: "Fel användarnamn eller lösenord" })
 
         }
-        res.status(200).json({ message: "Inloggad!" })
+        req.session.user = { id: user.id, userName: user.userName };
+        res.status(200).json({ message: "Inloggad!", userName: user.userName });
 
     } catch (error) {
         console.error("LOGIN ERROR:", error);
