@@ -4,8 +4,6 @@ import db from "../db/connection.js";
 import bcrypt from "bcrypt";
 const costFactor = 12;
 
-
-
 router.get("/test", async (req, res) => {
     console.log("TEST ROUTE HIT");
     res.send("OK");
