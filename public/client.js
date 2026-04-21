@@ -1,14 +1,5 @@
 let timerDisplay = document.getElementById("timerDisplay");
-
-
-async function testing() {
-    let response = await fetch("http://localhost:3000/test");
-    let product = await response.text();
-
-    console.log(product);
-};
-
-
+let stopButton = document.getElementById("stopTimer");
 
 //timer
 let startTime = 2 * 60 * 60 + 30 * 60; // 2h 30min = 9000 sek
@@ -35,9 +26,7 @@ function startTimer() {
 
 startTimer();
 
-// 2 timmar = 120min
-// 30 min + 120min =150min 
+stopButton.addEventListener("click", function () {
 
+});
 
-
-testing();

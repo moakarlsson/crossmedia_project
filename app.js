@@ -2,7 +2,7 @@
 // import tasksRouter from "./routes/tasks.js"
 //app.use('/tasks', tasksRouter)
 import express from "express";
-import testRouter from "./routes/test.js";
+import testRouter from "./routes/user.js";
 import path from "path";
 const app = express();
 app.use(express.json());
