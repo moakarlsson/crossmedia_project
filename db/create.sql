@@ -14,3 +14,6 @@ CREATE TABLE result (
     time_left INT,
     FOREIGN KEY (userName) REFERENCES user(userName)
 );
+
+ALTER TABLE user MODIFY COLUMN password VARCHAR(72) NOT NULL;
+ 
