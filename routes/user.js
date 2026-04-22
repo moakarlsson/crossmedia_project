@@ -1,5 +1,4 @@
 import express from "express";
-import session from "express-session"
 const router = express.Router();
 import db from "../db/connection.js";
 import bcrypt from "bcrypt";
