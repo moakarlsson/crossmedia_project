@@ -46,7 +46,7 @@ window.addEventListener("load", function () {
         timerInterval = setInterval(updateTimer, 1000);
     }
 });
-//Här börjar inlogg
+//Skapa användare
 createButton.addEventListener("click", async function() {
     const userName = document.getElementById("username").value;
     const password = document.getElementById("password").value;
@@ -65,6 +65,24 @@ createButton.addEventListener("click", async function() {
         console.log("Fel:", error);
     }
 });
+//Logga in 
+loginButton.addEventListener("click", async function() {
+    const userName = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    try {
+        const response = await fetch("/userLogIn", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ userName, password })
+        });
+        console.log(response.status);
+        const data = await response.json();
+        console.log(data);
+
+    } catch (error) {
+        console.log("Fel:", error);
+    }
+})
 
 stopButton.addEventListener("click", function () {
     clearInterval(timerInterval);
