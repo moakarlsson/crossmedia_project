@@ -53,6 +53,7 @@ loginButton.addEventListener("click", async function () {
         console.log(response.status);
         const data = await response.json();
         console.log(data);
+        localStorage.removeItem("endTime");
 
     } catch (error) {
         console.log("Fel:", error);
