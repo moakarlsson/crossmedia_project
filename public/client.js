@@ -1,8 +1,12 @@
 let timerDisplay = document.getElementById("timerDisplay");
 let stopButton = document.getElementById("stopTimer");
 let logInDiv = document.getElementById("logInDiv");
+let userName = document.getElementById("username").value;
+let password = document.getElementById("password").value;
 let timerDIV = document.getElementById("timerDIV");
 let loginButton = document.getElementById("loginButton");
+let createButton = document.getElementById("createButton");
+
 
 //ska tas bort sen, endast till för utvecklingen
 let startButton = document.getElementById("startTimer");
@@ -61,7 +65,20 @@ window.addEventListener("load", function () {
         timerInterval = setInterval(updateTimer, 1000);
     }
 });
+//Här börjar inlogg
+createButton.addEventListener("click", async function() {
+    const response = await fetch("/createUser", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ userName, password })
+    });
+    
+    const data = await response.json();
+    console.log(data);
 
+});
 
 stopButton.addEventListener("click", function () {
     clearInterval(timerInterval);
