@@ -9,13 +9,29 @@ let startButton = document.getElementById("startTimer");
 
 //timer
 let endTime;
+let timerInterval;
 
+
+// STARTA TIMER (ENDAST OM DEN INTE REDAN FINNS)
 function startTimer() {
-    endTime = Date.now() + (2 * 60 * 60 + 30 * 60) * 1000;
-    localStorage.setItem("endTime", endTime);
+
+    let existing = localStorage.getItem("endTime");
+
+    if (!existing) {
+        endTime = Date.now() + (2 * 60 * 60 + 30 * 60) * 1000; // 2h 30min
+        localStorage.setItem("endTime", endTime);
+    } else {
+        endTime = Number(existing);
+    }
+
+    // säkerställ att vi inte får flera intervaller
+    clearInterval(timerInterval);
+
     timerInterval = setInterval(updateTimer, 1000);
 }
 
+
+// UPPDATERA TIMER
 function updateTimer() {
     let now = Date.now();
     let timeLeft = Math.floor((endTime - now) / 1000);
@@ -23,6 +39,7 @@ function updateTimer() {
     if (timeLeft <= 0) {
         clearInterval(timerInterval);
         timerDisplay.textContent = "0:00:00";
+        localStorage.removeItem("endTime");
         return;
     }
 
@@ -48,18 +65,20 @@ window.addEventListener("load", function () {
 
 stopButton.addEventListener("click", function () {
     clearInterval(timerInterval);
+    localStorage.removeItem("endTime");
 });
+
 
 startButton.addEventListener("click", function () {
     startTimer();
 });
 
+
 loginButton.addEventListener("click", function () {
     spelRegler();
 });
 
-
 function spelRegler() {
     logInDiv.style.display = "none";
-    timerDIV.style.display = "flex"
-};
+    timerDIV.style.display = "flex";
+}
