@@ -48,7 +48,7 @@ window.addEventListener("load", function () {
 });
 //Här börjar inlogg
 document.getElementById("createButton").addEventListener("click", async function() {
-    let userName = document.getElementById("userName").value;
+    let userName = document.getElementById("username").value;
     let password = document.getElementById("password").value;
     const response = await fetch("/createUser", {
         method: "POST",
