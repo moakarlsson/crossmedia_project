@@ -4,6 +4,7 @@ let logInDiv = document.getElementById("logInDiv");
 let timerDIV = document.getElementById("timerDIV");
 let loginButton = document.getElementById("loginButton");
 let createButton = document.getElementById("createButton");
+let logoutButton = document.getElementById("logout");
 
 
 //ska tas bort sen, endast till för utvecklingen
@@ -48,12 +49,17 @@ loginButton.addEventListener("click", async function () {
         const response = await fetch("/userLogIn", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
+            credentials: "include",
             body: JSON.stringify({ userName, password })
         });
         console.log(response.status);
         const data = await response.json();
         console.log(data);
+
         localStorage.removeItem("endTime");
+        clearInterval(timerInterval);
+        logoutButton.style.display = "flex";
+        spelRegler();
 
     } catch (error) {
         console.log("Fel:", error);
@@ -88,8 +94,9 @@ stopButton.addEventListener("click", async function () {
     console.log("Tid kvar:", timeLeft);
 });
 
-loginButton.addEventListener("click", function () {
-    spelRegler();
+
+logoutButton.addEventListener("click", function () {
+    logout();
 });
 
 
@@ -140,12 +147,26 @@ function updateTimer() {
 };
 
 async function getUser() {
-    let response = await fetch("/me");
+    let response = await fetch("/me", {
+        credentials: "include" // 🔥
+    });
+
     if (!response.ok) return null;
     let user = await response.json();
     return user;
 };
 
+async function logout() {
+    await fetch("/logout", {
+        method: "POST",
+        credentials: "include"
+    });
+
+    localStorage.removeItem("endTime");
+    clearInterval(timerInterval);
+
+    location.reload();
+};
 
 
 

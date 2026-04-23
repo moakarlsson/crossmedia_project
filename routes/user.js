@@ -63,6 +63,12 @@ router.post("/userLogIn", async (req, res) => {
     }
 });
 
+router.post("/logout", (req, res) => {
+    req.session.destroy(() => {
+        res.json({ message: "Utloggad" });
+    });
+});
+
 router.post("/saveResult", async (req, res) => {
     if (!req.session.user) {
         return res.status(401).json({ error: "Inte inloggad" });
