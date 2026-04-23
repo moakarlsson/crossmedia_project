@@ -1,8 +1,6 @@
 let timerDisplay = document.getElementById("timerDisplay");
 let stopButton = document.getElementById("stopTimer");
 let logInDiv = document.getElementById("logInDiv");
-let userName = document.getElementById("username").value;
-let password = document.getElementById("password").value;
 let timerDIV = document.getElementById("timerDIV");
 let loginButton = document.getElementById("loginButton");
 let createButton = document.getElementById("createButton");
@@ -67,17 +65,22 @@ window.addEventListener("load", function () {
 });
 //Här börjar inlogg
 createButton.addEventListener("click", async function () {
-    const response = await fetch("/createUser", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ userName, password })
-    });
+    const userName = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
-    const data = await response.json();
-    console.log(data);
+    try {
+        const response = await fetch("/createUser", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ userName, password })
+        });
 
+        console.log(response.status);
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.log("Fel:", error);
+    }
 });
 
 stopButton.addEventListener("click", function () {
