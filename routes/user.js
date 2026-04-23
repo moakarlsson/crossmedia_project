@@ -79,7 +79,7 @@ router.post("/saveResult", async (req, res) => {
 
     try {
         await db.query(
-            "INSERT INTO result (user_id, time_left) VALUES (?, ?)",
+            "INSERT INTO result (id, time_left) VALUES (?, ?)",
             [userId, timeLeft]
         );
 
