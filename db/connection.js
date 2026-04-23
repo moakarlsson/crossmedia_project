@@ -4,7 +4,6 @@ dotenv.config();
 
 const pool = mysql.createPool({
     uri: process.env.MYSQL_PUBLIC_URL,
-    timezone: "+02:00" 
 });
    
 
