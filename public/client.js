@@ -81,7 +81,7 @@ stopButton.addEventListener("click", async function () {
 
     let user = await getUser();
 
-    fetch("/saveResult", {
+    await fetch("/saveResult", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
