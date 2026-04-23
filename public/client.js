@@ -47,20 +47,23 @@ window.addEventListener("load", function () {
     }
 });
 //Här börjar inlogg
-document.getElementById("createButton").addEventListener("click", async function() {
-    let userName = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
-    const response = await fetch("/createUser", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ userName, password })
-    }).then(r => console.log(r.status)).catch(e => console.log(e));
-    
-    const data = await response.json();
-    console.log(data);
+createButton.addEventListener("click", async function() {
+    const userName = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
+    try {
+        const response = await fetch("/createUser", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ userName, password })
+        });
+
+        console.log(response.status);
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.log("Fel:", error);
+    }
 });
 
 stopButton.addEventListener("click", function () {
