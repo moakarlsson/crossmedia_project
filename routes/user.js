@@ -6,12 +6,6 @@ const costFactor = 12;
 
 
 //GET
-
-router.get("/test", async (req, res) => {
-    console.log("TEST ROUTE HIT");
-    res.send("OK");
-});
-
 router.get("/me", (req, res) => {
     if (!req.session.user) {
         return res.status(401).json({ error: "Inte inloggad" });
@@ -20,23 +14,21 @@ router.get("/me", (req, res) => {
     res.json(req.session.user);
 });
 
-
 //POST
-
 router.post("/createUser", async (req, res) => {
     const { userName, password } = req.body;
     try {
         const hashedPassword = await bcrypt.hash(password, costFactor);
         const [result] = await db.query("INSERT INTO user (userName, password) VALUES (?,?)", [userName, hashedPassword]);
         res.status(201).json({
-            message: "User added!",
+            message: "Användare tillagd!",
             insertId: result.insertId
         });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
-//Eventuellt lägga till true/false för inloggning/utloggning
+
 router.post("/userLogIn", async (req, res) => {
     const { userName, password } = req.body;
     try {
