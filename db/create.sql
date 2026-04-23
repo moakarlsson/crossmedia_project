@@ -22,3 +22,12 @@ ADD COLUMN end_time DATETIME;
 ALTER TABLE user 
 MODIFY COLUMN start_time BIGINT,
 MODIFY COLUMN end_time BIGINT;
+
+DROP TABLE result;
+
+CREATE TABLE result (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    time_left INT,
+    FOREIGN KEY (user_id) REFERENCES user(id)
+);
