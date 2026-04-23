@@ -56,7 +56,7 @@ document.getElementById("createButton").addEventListener("click", async function
             "Content-Type": "application/json"
         },
         body: JSON.stringify({ userName, password })
-    });
+    }).then(r => console.log(r.status)).catch(e => console.log(e));
     
     const data = await response.json();
     console.log(data);
