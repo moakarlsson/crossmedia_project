@@ -66,7 +66,7 @@ window.addEventListener("load", function () {
     }
 });
 //Här börjar inlogg
-createButton.addEventListener("click", async function() {
+createButton.addEventListener("click", async function () {
     const response = await fetch("/createUser", {
         method: "POST",
         headers: {
@@ -74,7 +74,7 @@ createButton.addEventListener("click", async function() {
         },
         body: JSON.stringify({ userName, password })
     });
-    
+
     const data = await response.json();
     console.log(data);
 
@@ -82,6 +82,10 @@ createButton.addEventListener("click", async function() {
 
 stopButton.addEventListener("click", function () {
     clearInterval(timerInterval);
+    let now = Date.now();
+    let timeLeft = Math.floor((endTime - now) / 1000);
+    if (timeLeft < 0) timeLeft = 0;
+    console.log("Tid kvar i sekunder:", timeLeft);
     localStorage.removeItem("endTime");
 });
 
