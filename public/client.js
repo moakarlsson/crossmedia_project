@@ -49,7 +49,7 @@ window.addEventListener("load", function () {
     }
 });
 //Här börjar inlogg
-document.getElementById("createButton").addEventListener("click", async function() {
+createButton.addEventListener("click", async function() {
     const response = await fetch("/createUser", {
         method: "POST",
         headers: {
