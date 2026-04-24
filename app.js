@@ -1,14 +1,13 @@
-// I denna filen läggs routes in, exempel:
-// import tasksRouter from "./routes/tasks.js"
-//app.use('/tasks', tasksRouter)
+
 import express from "express";
-import testRouter from "./routes/user.js";
 import path from "path";
 import session from "express-session";
+import resultRouter from "./routes/result.js";
+import userRouter from "./routes/user.js";
+
 const app = express();
 app.use(express.json());
 app.use(express.static("public"));
-
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -21,6 +20,7 @@ app.get("/", (req, res) => {
     res.sendFile(path.resolve("public/homepage.html"));
 });
 
-app.use('/', testRouter);
+app.use("/result", resultRouter);
+app.use("/users", userRouter);
 
 export default app;
