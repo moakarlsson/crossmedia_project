@@ -2,7 +2,6 @@
 import express from "express";
 import path from "path";
 import session from "express-session";
-import resultRouter from "./routes/result.js";
 import userRouter from "./routes/user.js";
 
 const app = express();
@@ -20,7 +19,6 @@ app.get("/", (req, res) => {
     res.sendFile(path.resolve("public/homepage.html"));
 });
 
-app.use("/result", resultRouter);
 app.use("/users", userRouter);
 
 export default app;
