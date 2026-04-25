@@ -57,7 +57,7 @@ router.post("/userLogIn", async (req, res) => {
 
 router.post("/logout", (req, res) => {
     req.session.destroy(() => {
-        res.json({ message: "Utloggad" });
+        res.status(200).json({ message: "Utloggad" });
     });
 });
 
