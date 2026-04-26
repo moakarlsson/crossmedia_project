@@ -15,3 +15,12 @@ CREATE TABLE result (
     time_left INT,
     FOREIGN KEY (user_id) REFERENCES user(id)
 );
+
+ALTER TABLE user MODIFY COLUMN password VARCHAR(72) NOT NULL;
+ALTER TABLE user 
+ADD COLUMN start_time DATETIME,
+ADD COLUMN end_time DATETIME;
+ALTER TABLE user 
+MODIFY COLUMN start_time BIGINT,
+MODIFY COLUMN end_time BIGINT;
+
