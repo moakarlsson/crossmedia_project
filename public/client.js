@@ -129,6 +129,7 @@ function startTimer() {
 function updateTimer() {
     let now = Date.now();
     let timeLeft = Math.floor((endTime - now) / 1000);
+    timerDisplay.textContent = "2:30:00";
 
     if (timeLeft <= 0) {
         clearInterval(timerInterval);
@@ -149,7 +150,7 @@ function updateTimer() {
 
 async function getUser() {
     let response = await fetch("/me", {
-        credentials: "include" // 🔥
+        credentials: "include"
     });
 
     if (!response.ok) return null;
