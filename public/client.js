@@ -82,7 +82,7 @@ stopButton.addEventListener("click", async function () {
 
     let user = await getUser();
 
-    await fetch("/saveResult", {
+    await fetch("/users/saveResult", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -149,7 +149,7 @@ function updateTimer() {
 };
 
 async function getUser() {
-    let response = await fetch("/me", {
+    let response = await fetch("/users/me", {
         credentials: "include"
     });
 
@@ -159,7 +159,7 @@ async function getUser() {
 };
 
 async function logout() {
-    await fetch("/logout", {
+    await fetch("/users/logout", {
         method: "POST",
         credentials: "include"
     });
