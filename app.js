@@ -3,10 +3,13 @@ import express from "express";
 import path from "path";
 import session from "express-session";
 import userRouter from "./routes/user.js";
+import helmet from "helmet";
 
 const app = express();
 app.use(express.json());
 app.use(express.static("public"));
+app.use(helmet()); //Skyddar mot XSS attacker = "Cross-script attacks"
+
 
 app.use(session({
     secret: process.env.SESSION_SECRET,

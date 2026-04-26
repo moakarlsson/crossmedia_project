@@ -65,7 +65,6 @@ router.post("/saveResult", async (req, res) => {
     if (!req.session.user) {
         return res.status(401).json({ error: "Inte inloggad" });
     }
-
     const { timeLeft } = req.body;
     const userId = req.session.user.id;
 
