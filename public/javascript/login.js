@@ -29,5 +29,5 @@ loginButton.addEventListener("click", async function () {
 });
 
 createButton.addEventListener("click", function () {
-    window.location.href = "/resisterUser.html"
+    window.location.href = "/html/registerUser.html"
 });
