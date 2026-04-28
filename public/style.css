@@ -1,3 +1,10 @@
+button {
+    background-color: #8D0004;
+    color: white;
+    border-radius: 20px;
+}
+
+
 #loginButton {
     width: 100px;
     margin-top: 15px;

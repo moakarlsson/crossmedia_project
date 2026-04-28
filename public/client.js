@@ -5,6 +5,7 @@ let timerDIV = document.getElementById("timerDIV");
 let loginButton = document.getElementById("loginButton");
 let createButton = document.getElementById("createButton");
 let logoutButton = document.getElementById("logout");
+let beginGameButton = document.getElementById("beginGame");
 
 
 //ska tas bort sen, endast till för utvecklingen
@@ -12,6 +13,10 @@ let startButton = document.getElementById("startTimer");
 
 
 // AddEventListeners
+
+beginGameButton.addEventListener("click", function () {
+    window.location.href = "/login.html";
+});
 
 window.addEventListener("load", function () {
     let savedEndTime = localStorage.getItem("endTime");
