@@ -4,7 +4,12 @@
 }
 
 #create_button {
-    width: 150px;
+    width: 180px;
+}
+
+#createButtonDiv {
+    text-align: right;
+    margin-top: 25px;
 }
 
 #imageUpload {
@@ -15,6 +20,7 @@ input[type="text"],
 input[type="password"] {
     border-radius: 5px;
     border: 1px solid black;
+    height: 20px;
 }
 
 label {
@@ -32,7 +38,7 @@ label {
 }
 
 #members {
-    height: 60px;
+    height: 80px;
 }
 
 #registerDIV {
@@ -63,11 +69,10 @@ label {
     border-color: #333;
 }
 
-
-
 .user_credentials {
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
 .user_credentialsPassword {
