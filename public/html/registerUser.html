@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spel</title>
+    <link rel="stylesheet" href="../css/registerUser.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <main>
+        <div id="topBar"></div>
+        <h2>Skapa användare</h2>
+        <div id="registerDIV">
+            <div class="user_credentials">
+                <label for="username">Användarnamn:</label>
+                <input id="username" type="text" name="username">
+            </div>
+
+            <div class="user_credentialsPassword ">
+                <div class="user_credentials">
+                    <label for="password">Lösenord:</label>
+                    <input id="password" type="password" name="password">
+                </div>
+
+                <div class="user_credentials">
+                    <label for="passwordAgain">Bekräfta lösenordet:</label>
+                    <input id="password_confirm" type="password" name="passwordAgain">
+                </div>
+            </div>
+
+
+            <div id="addPic">
+                <div id="thePic">
+                    <div>
+                        <p>⬆️</p>
+                        <p>Välj en fil att ladda upp</p>
+                    </div>
+                </div>
+                <input type="file" id="imageUpload" accept="image/*">
+            </div>
+
+            <button id="create_button">Create account</button>
+    </main>
+    <script src="../javascript/registerUser.js"></script>
+</body>
+
+</html>

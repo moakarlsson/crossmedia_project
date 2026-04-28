@@ -10,10 +10,17 @@ CREATE TABLE user (
 );
 
 CREATE TABLE result (
-    userName VARCHAR(50) PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
     time_left INT,
-    FOREIGN KEY (userName) REFERENCES user(userName)
+    FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
 ALTER TABLE user MODIFY COLUMN password VARCHAR(72) NOT NULL;
- 
+ALTER TABLE user 
+ADD COLUMN start_time DATETIME,
+ADD COLUMN end_time DATETIME;
+ALTER TABLE user 
+MODIFY COLUMN start_time BIGINT,
+MODIFY COLUMN end_time BIGINT;
+

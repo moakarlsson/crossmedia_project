@@ -1,0 +1,56 @@
+#beginGame {
+    padding: 10px;
+    font-size: 20px;
+}
+
+#imageUpload {
+    display: none;
+}
+
+label {
+    text-align: left;
+}
+
+#registerDIV {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#thePic {
+    width: 250px;
+    height: 150px;
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: #555;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#thePic:hover {
+    border-color: #333;
+}
+
+
+
+.user_credentials {
+    display: flex;
+    flex-direction: column;
+}
+
+.user_credentialsPassword {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}

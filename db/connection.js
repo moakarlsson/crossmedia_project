@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const pool = mysql.createPool({
-    uri: process.env.MYSQL_PUBLIC_URL
+    uri: process.env.MYSQL_PUBLIC_URL,
 });
    
 
