@@ -1,5 +1,6 @@
 body {
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
@@ -8,6 +9,7 @@ main {
     height: 844px;
     border-radius: 30px;
     border: 1px solid black;
+    overflow: scroll;
 }
 
 #bigContainer {
@@ -40,7 +42,7 @@ input {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
 }
 
 #mailInfoDiv {
@@ -67,17 +69,17 @@ h3 {
 }
 
 h4 {
-    font-size: 12px;
+    font-size: 14px;
     margin: 0;
 }
 
 p {
-    font-size: 12px;
+    font-size: 14px;
     margin: 0;
 }
 
 #timestampP {
-    font-size: 10px;
+    font-size: 12px;
     margin: 0;
 }
 
@@ -85,6 +87,7 @@ p {
 
 #mailView1 {
     margin: 60px 20px 0;
+    
 }
 
 #mailView2 {
@@ -106,7 +109,7 @@ p {
 }
 
 h2 {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 #mailTextP {
