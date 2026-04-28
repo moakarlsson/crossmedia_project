@@ -6,3 +6,8 @@ main {
     border: 1px solid black;
     text-align: center;
 }
+
+#beginGame {
+    padding: 10px;
+    font-size: 20px;
+}
