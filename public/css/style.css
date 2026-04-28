@@ -1,7 +1,15 @@
+@font-face {
+    font-family: SpecialElite;
+    src: url("../assets/fonts/Special_Elite/SpecialElite-Regular.ttf");
+}
+
+
 button {
     background-color: #8D0004;
     color: white;
     border-radius: 20px;
+    font-family: SpecialElite;
+    padding: 10px;
 }
 
 
