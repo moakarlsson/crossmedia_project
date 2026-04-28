@@ -1,6 +1,6 @@
 let logInDiv = document.getElementById("logInDiv");
-
 let loginButton = document.getElementById("loginButton");
+let createButton = document.getElementById("createButton");
 
 
 //Logga in 
@@ -26,4 +26,8 @@ loginButton.addEventListener("click", async function () {
     } catch (error) {
         console.log("Fel:", error);
     }
+});
+
+createButton.addEventListener("click", function () {
+    window.location.href = "/resisterUser.html"
 });
