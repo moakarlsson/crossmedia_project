@@ -23,7 +23,7 @@ app.use(session({
 }));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve("public/startsida.html"));
+    res.sendFile(path.resolve("public/html/startsida.html"));
 });
 
 app.use("/users", userRouter);
