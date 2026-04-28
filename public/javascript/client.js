@@ -24,9 +24,3 @@ async function logout() {
     location.reload();
 };
 
-
-//Denna ska byta namn 
-function spelRegler() {
-    logInDiv.style.display = "none";
-    timerDIV.style.display = "flex";
-};

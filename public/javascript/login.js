@@ -19,9 +19,8 @@ loginButton.addEventListener("click", async function () {
         console.log(data);
 
         localStorage.removeItem("endTime");
-        clearInterval(timerInterval);
-        logoutButton.style.display = "block";
-        spelRegler();
+        clearInterval(window.timerInterval);
+        //logoutButton.style.display = "block";
 
     } catch (error) {
         console.log("Fel:", error);

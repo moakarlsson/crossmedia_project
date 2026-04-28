@@ -48,7 +48,7 @@ stopButton.addEventListener("click", async function () {
 //Timer
 
 let endTime;
-let timerInterval;
+window.timerInterval = undefined;  
 
 // STARTA TIMER (ENDAST OM DEN INTE REDAN FINNS)
 function startTimer() {
@@ -62,7 +62,7 @@ function startTimer() {
     }
 
     clearInterval(timerInterval);
-    timerInterval = setInterval(updateTimer, 1000);
+    window.timerInterval = setInterval(updateTimer, 1000);
     ;
 }
 
