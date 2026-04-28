@@ -1,3 +1,7 @@
+body {
+    margin: 0px;
+}
+
 main {
     margin: 0px;
     width: 390px;
@@ -27,7 +31,7 @@ input {
 }
 
 #mailLoggaIMG {
-    
+
     width: 100px;
     height: 28px;
 }
@@ -95,7 +99,8 @@ p {
     margin-bottom: 30px;
 }
 
-#arrowIMG1, #arrowIMG2 {
+#arrowIMG1,
+#arrowIMG2 {
     height: 20px;
     width: 10px;
 }
