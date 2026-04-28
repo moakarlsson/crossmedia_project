@@ -16,14 +16,14 @@
                 <p id="inkorgP">Inkorg</p>
             </div>
 
-            <div id="mailContainer">
+            <div id="mail1" class="mailContainer">
 
                 <div id="leftDiv">
                     <img id="mailProfileIMG" src="assets/icons/mailProfile.png" alt="">
                     <div id="mailInfoDiv">
-                        <h3>Rolf Pettersson</h3>
-                        <h4>Rubrik</h4>
-                        <p>Första meningen i mailet syns...</p>
+                        <h3>Anders Holm</h3>
+                        <h4>Personalöversikt - begäran</h4>
+                        <p>Hej, jag har fått din förfrågan gällande personal ...</p>
                     </div>
                 </div>
 
@@ -31,14 +31,14 @@
 
             </div>
 
-            <div id="mailContainer">
+            <div id="mail2" class="mailContainer">
 
                 <div id="leftDiv">
                     <img id="mailProfileIMG" src="assets/icons/mailProfile.png" alt="">
                     <div id="mailInfoDiv">
-                        <h3>Therese Mendez</h3>
-                        <h4>Rubrik</h4>
-                        <p>Första meningen i mailet syns...</p>
+                        <h3>Elin Odell</h3>
+                        <h4>Angående min bror, jag behöver svar</h4>
+                        <p>Hej Johannes,</p>
                     </div>
                 </div>
 
@@ -46,6 +46,65 @@
 
             </div>
         </div>
+
+        <div id="mailView1" style="display: none;">
+            <img id="arrowIMG1" src="assets/icons/arrow.png" alt="">
+            <h2>Angående min bror, jag behöver svar</h2>
+            <div id="profileInfoContainer">
+                <img id="mailProfileIMG" src="assets/icons/mailProfile.png" alt="">
+                <div>
+                    <h4>Anders Holm</h4>
+                    <p>till: johannesKarlsson@mau.se</p>
+                </div>
+            </div>
+
+                <p id="mailTextP">Hej Johannes, <br><br>
+                    Jag vet inte om du har sett mina tidigare mejl, så jag försöker igen. <br><br>
+                    Jag skickade också allt med posten, ifall det är något som inte går fram digitalt.
+                    Det känns som att jag inte riktigt kan lita på att saker når fram längre. <br><br>
+                    Min bror skrev till mig innan han dog.
+                    Det var inget långt, men det var konstigt. Som att han försökte säga något utan att säga det rakt ut. <br><br>
+                    Han skrev något om “Räkna inte prickarna. Följ istället det som delar världen i två. Varken svart eller vit, men alltid båda.”
+                    Jag förstod inte vad han menade då, men jag kan inte släppa det. <br><br>
+                    Det sista brevet jag fick från honom var poststämplat härifrån:
+                    55°36'37.3"N 13°02'56.2"E <br><br>
+                    Jag har varit där en gång nu.
+                    Det är en märklig plats, full av färger och figurer, men det känns fel på något sätt. <br><br>
+                    Jag vet inte vad jag letar efter längre, men jag är säker på att han försökte visa mig något. <br><br>
+                    Om du har tid, snälla titta på materialet jag skickade.
+                    Och om du förstår vad han menade, hör av dig.</p>
+        </div>
+        
+        <div id="mailView2" style="display: none;">
+            <img id="arrowIMG2" src="assets/icons/arrow.png" alt="">
+            <h2>Personalöversikt - begäran</h2>
+            <div id="profileInfoContainer">
+                <img id="mailProfileIMG" src="assets/icons/mailProfile.png" alt="">
+                <div>
+                    <h4>Elin Odell</h4>
+                    <p>till: johannesKarlsson@mau.se</p>
+                </div>
+            </div>
+
+                <p id="mailTextP">Hej, <br><br>
+
+                    Jag har fått din förfrågan gällande personal vid anstalten i Tygelsjö. <br><br>
+                    
+                    Bifogat finner du en sammanställning över anställda under aktuell period, inklusive tjänstgöringsdatum och befattning. <br><br>
+                    
+                    Vi vill samtidigt understryka att samtliga dödsfall som inträffat har utretts enligt gällande rutiner och inget tyder på oegentligheter. <br><br>
+                    
+                    Vid ytterligare frågor hänvisar vi till Kriminalvårdens centrala kommunikation. <br><br>
+                    
+                    Med vänlig hälsning, <br>
+                    Anders Holm <br>
+                    Platschef <br>
+                    Tygelsjöanstalten </p>
+                    
+        </div>
+
     </main>
+
+    <script src="../routes/mail.js"></script>
 </body>
 </html>
