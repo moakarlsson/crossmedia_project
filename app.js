@@ -6,6 +6,7 @@ import userRouter from "./routes/user.js";
 import helmet from "helmet";
 
 const app = express();
+app.set("trust proxy", 1);
 app.use(express.json());
 app.use(express.static("public"));
 app.use(helmet()); //Skyddar mot XSS attacker = "Cross-script attacks"
@@ -17,7 +18,7 @@ app.use(session({
     saveUninitialized: false,
     cookie: {
         secure: process.env.NODE_ENV === 'production',
-        // sameSite: process.env.NODE_ENV === "production" ? "none" : "lax"
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax"
     }
 }));
 
