@@ -24,16 +24,16 @@ main {
 }
 
 input {
-    height: 20px;
+    height: 40px;
+    color: black;
+    font-size: 14px;
 }
 
 #inkorgP {
-    font-size: 14px;
     font-weight: 500;
 }
 
 #mailLoggaIMG {
-
     width: 100px;
     height: 28px;
 }
@@ -69,16 +69,13 @@ h3 {
 }
 
 h4 {
-    font-size: 14px;
+    font-size: 16px;
     margin: 0;
 }
 
 p {
     font-size: 16px;
     margin: 0;
-}
-#lol {
-    font-size: 14px;
 }
 
 #timestampP {
