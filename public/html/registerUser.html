@@ -11,18 +11,25 @@
 
 <body>
     <main>
-        <h2>Create account</h2>
-        <div>
+        <h2>Skapa användare</h2>
+        <div id="registerDIV">
             <div class="user_credentials">
-                <p>Username</p>
-                <input id="username" type="text">
+                <label for="username">Användarnamn:</label>
+                <input id="username" type="text" name="username">
             </div>
-            <div class="user_credentials">
-                <p>Password</p>
-                <input id="password" type="password">
-                <p>Confirm password</p>
-                <input id="password_confirm" type="password">
+
+            <div class="user_credentialsPassword ">
+                <div class="user_credentials">
+                    <label for="password">Lösenord:</label>
+                    <input id="password" type="password" name="password">
+                </div>
+
+                <div class="user_credentials">
+                    <label for="passwordAgain">Bekräfta lösenordet:</label>
+                    <input id="password_confirm" type="password" name="passwordAgain">
+                </div>
             </div>
+
             <button id="create_button">Create account</button>
     </main>
     <script src="../javascript/registerUser.js"></script>
