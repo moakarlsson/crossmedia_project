@@ -3,12 +3,36 @@
     font-size: 20px;
 }
 
+#create_button {
+    width: 150px;
+}
+
 #imageUpload {
     display: none;
 }
 
+input[type="text"],
+input[type="password"] {
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
 label {
     text-align: left;
+}
+
+#labels {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#nr2Lable {
+    font-size: 12px;
+}
+
+#members {
+    height: 60px;
 }
 
 #registerDIV {
@@ -22,19 +46,17 @@ label {
 
 
 #thePic {
-    width: 250px;
-    height: 150px;
+    width: 300px;
+    height: 250px;
     border: 2px dashed #aaa;
     border-radius: 10px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    text-align: center;
     color: #555;
     font-size: 14px;
-    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #thePic:hover {
