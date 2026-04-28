@@ -23,7 +23,7 @@ app.use(session({
 }));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve("public/html/startsida.html"));
+    res.sendFile(path.join(process.cwd(), "public", "html", "startsida.html"));
 });
 
 app.use("/users", userRouter);
