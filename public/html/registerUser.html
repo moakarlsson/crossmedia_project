@@ -11,6 +11,7 @@
 
 <body>
     <main>
+        <div id="topBar"></div>
         <h2>Skapa användare</h2>
         <div id="registerDIV">
             <div class="user_credentials">
@@ -28,6 +29,17 @@
                     <label for="passwordAgain">Bekräfta lösenordet:</label>
                     <input id="password_confirm" type="password" name="passwordAgain">
                 </div>
+            </div>
+
+
+            <div id="addPic">
+                <div id="thePic">
+                    <div>
+                        <p>⬆️</p>
+                        <p>Välj en fil att ladda upp</p>
+                    </div>
+                </div>
+                <input type="file" id="imageUpload" accept="image/*">
             </div>
 
             <button id="create_button">Create account</button>
