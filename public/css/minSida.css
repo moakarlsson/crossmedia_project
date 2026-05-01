@@ -1,0 +1,12 @@
+#content {
+    flex: 1;
+}
+
+
+
+#content {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(241, 241, 240, 0.8);
+}

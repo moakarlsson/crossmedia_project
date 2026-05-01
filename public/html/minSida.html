@@ -6,27 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spelet</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/spelplan.css">
-
+    <link rel="stylesheet" href="../css/minSida.css">
 </head>
 
 <body>
     <main>
         <header>
             <div id="timerDIV">
-                <div id="timerDisplay">2:30:00</div>
+                <div id="timerDisplay"></div>
             </div>
         </header>
-        <div id="spelInnehåll"></div>
+        <div id="content"></div>
+        <div>
+            <button id="logout">Logga ut</button>
+        </div>
 
         <div id="bottomMeny">
-            <button id="minSida">Min sida</button>
+            <button id="speletSida">Spelet</button>
             <button>Spelplan</button>
             <button>Leaderboard</button>
         </div>
     </main>
 
-    <script src="../javascript/spelplan.js"></script>
+
+    <script src="../javascript/logout.js"></script>
     <script src="../javascript/timer.js"></script>
 </body>
 
