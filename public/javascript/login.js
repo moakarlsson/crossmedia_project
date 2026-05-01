@@ -22,7 +22,7 @@ loginButton.addEventListener("click", async function () {
         localStorage.removeItem("endTime");
         clearInterval(window.timerInterval);
 
-        window.location.href = "../spelplan.html";
+        window.location.href = "../html/spelplan.html";
 
     } catch (error) {
         console.log("Fel:", error);

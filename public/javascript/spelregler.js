@@ -6,7 +6,7 @@ let message = document.getElementById("checkboxMessage")
 acceptButton.addEventListener("click", function () {
     if (checkbox.checked) {
         message.textContent = "";
-        window.location.href = "../login.html";
+        window.location.href = "../html/login.html";
     } else {
         message.textContent = "Du måste godkänna reglerna först";
     }
