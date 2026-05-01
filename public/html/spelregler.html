@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spelet</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/spelregler.css">
 </head>
+
 <body>
     <main>
-        <button>hej</button>
+        <div id="topBar"></div>
+        <div id="spelRegler">
+            <h2>Spelregler</h2>
 
+            <h4>Viktigt</h4>
+            <ul>
+                <li>
+                    <p>Flytta inte ledtrådar, rekvesita eller dylikt</p>
+                </li>
+                <li>
+                    <p>Det är tillåtet att använda digitala kartfunktioner</p>
+                </li>
+                <li>
+                    <p>Googla inte svar</p>
+                </li>
+            </ul>
+
+            <h4>Spelupplägg</h4>
+            <ul>
+                <li>
+                    <p>Spelet spelas helst i grupp (rekommenderat 2–6 personer)</p>
+                </li>
+                <li>
+                    <p>Endast en användarprofil per grupp behövs</p>
+                </li>
+                <li>
+                    <p>Alla deltagare samarbetar för att lösa uppgifter</p>
+                </li>
+            </ul>
+
+            <div id="checkboxDiv">
+                <input type="checkbox" id="checkbox">
+                <p>Jag/vi har läst reglerna</p>
+                <p id="checkboxMessage"></p>
+            </div>
+            <button id="accept">Fortsätt -></button>
+
+        </div>
     </main>
 </body>
+
 </html>

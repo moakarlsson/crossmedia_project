@@ -7,7 +7,7 @@ let popup = document.getElementById("popup");
 let startaSpelet = document.getElementById("startaSpelet");
 
 startaSpelet.addEventListener("click", function () {
-    window.location.href = "../html/spelregler.html";
+    window.location.href = "../html/spelplan.html";
 });
 
 
@@ -57,7 +57,7 @@ createButton.addEventListener("click", async function () {
         console.log(response.status);
         const data = await response.json();
 
-        if (response.status === 200) {
+        if (response.status === 201) {
             popup.classList.remove("hidden");
         }
 

@@ -1,11 +1,11 @@
 
 let beginGameButton = document.getElementById("beginGame");
+let mailButton = document.getElementById("mail");
+
 
 beginGameButton.addEventListener("click", function () {
-    window.location.href = "/html/login.html"
+    window.location.href = "/html/spelregler.html"
 });
-
-let mailButton = document.getElementById("mail");
 
 mailButton.addEventListener("click", function () {
     window.location.href = "html/mailpage.html";

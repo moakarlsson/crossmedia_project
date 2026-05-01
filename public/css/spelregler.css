@@ -1,0 +1,22 @@
+#checkboxDiv {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#spelRegler {
+    width: 300px;
+    height: 600px;
+    margin: 50px auto;
+    background-color: rgb(241, 241, 240);
+    border: 1px solid black;
+    border-radius: 10px;
+
+    overflow: scroll;
+}
+
+
+ul {
+    text-align: left;
+}

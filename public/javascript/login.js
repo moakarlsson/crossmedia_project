@@ -7,6 +7,7 @@ let createButton = document.getElementById("createButton");
 loginButton.addEventListener("click", async function () {
     const userName = document.getElementById("username").value;
     const password = document.getElementById("password").value;
+
     try {
         const response = await fetch("/users/userLogIn", {
             method: "POST",
@@ -20,7 +21,8 @@ loginButton.addEventListener("click", async function () {
 
         localStorage.removeItem("endTime");
         clearInterval(window.timerInterval);
-        //logoutButton.style.display = "block";
+
+        window.location.href = "../spelplan.html";
 
     } catch (error) {
         console.log("Fel:", error);
