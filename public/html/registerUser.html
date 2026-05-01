@@ -12,7 +12,7 @@
 <body>
     <main>
         <div id="topBar"></div>
-        <container>
+        <div id="container">
             <h2>Skapa ditt lag</h2>
             <div id="registerDIV">
                 <div class="user_credentials">
@@ -30,6 +30,7 @@
                         <label for="passwordAgain">Bekräfta lösenordet:</label>
                         <input id="password_confirm" type="password" name="passwordAgain">
                     </div>
+                    <p id="passwordMessage"></p>
                 </div>
 
                 <div class="user_credentials">
@@ -54,9 +55,17 @@
                 <div id="createButtonDiv">
                     <button id="create_button">Create account</button>
                 </div>
-        </container>
+            </div>
 
     </main>
+
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <h3>Du är nu registrerad!</h3>
+            <p>Du är nu inloggad.</p>
+            <button id="startaSpelet">Starta spelet →</button>
+        </div>
+    </div>
     <script src="../javascript/registerUser.js"></script>
 </body>
 
