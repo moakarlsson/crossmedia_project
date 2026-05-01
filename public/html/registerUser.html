@@ -12,47 +12,49 @@
 <body>
     <main>
         <div id="topBar"></div>
-        <h2>Skapa ditt lag</h2>
-        <div id="registerDIV">
-            <div class="user_credentials">
-                <label for="username">Användarnamn:</label>
-                <input id="username" type="text" name="username">
-            </div>
-
-            <div class="user_credentialsPassword ">
+        <container>
+            <h2>Skapa ditt lag</h2>
+            <div id="registerDIV">
                 <div class="user_credentials">
-                    <label for="password">Lösenord:</label>
-                    <input id="password" type="password" name="password">
+                    <label for="username">Användarnamn:</label>
+                    <input id="username" type="text" name="username">
                 </div>
 
-                <div class="user_credentials">
-                    <label for="passwordAgain">Bekräfta lösenordet:</label>
-                    <input id="password_confirm" type="password" name="passwordAgain">
-                </div>
-            </div>
+                <div class="user_credentialsPassword ">
+                    <div class="user_credentials">
+                        <label for="password">Lösenord:</label>
+                        <input id="password" type="password" name="password">
+                    </div>
 
-            <div class="user_credentials">
-                <div id="labels">
-                    <label for="members">Gruppmedlemmar:</label>
-                    <label id="nr2Lable" for="members">För- och efternamn</label>
-                </div>
-                <input type="text" id="members" name="members">
-            </div>
-
-
-            <div id="addPic">
-                <div id="thePic">
-                    <div>
-                        <p>⬆️</p>
-                        <p>Välj en fil att ladda upp</p>
+                    <div class="user_credentials">
+                        <label for="passwordAgain">Bekräfta lösenordet:</label>
+                        <input id="password_confirm" type="password" name="passwordAgain">
                     </div>
                 </div>
-                <input type="file" id="imageUpload" accept="image/*">
-            </div>
 
-            <div id="createButtonDiv">
-                <button id="create_button">Create account</button>
-            </div>
+                <div class="user_credentials">
+                    <div id="labels">
+                        <label for="members">Gruppmedlemmar:</label>
+                        <label id="nr2Lable" for="members">För- och efternamn</label>
+                    </div>
+                    <input type="text" id="members" name="members">
+                </div>
+
+
+                <div id="addPic">
+                    <div id="thePic">
+                        <div>
+                            <p>⬆️</p>
+                            <p>Välj en fil att ladda upp</p>
+                        </div>
+                    </div>
+                    <input type="file" id="imageUpload" accept="image/*">
+                </div>
+
+                <div id="createButtonDiv">
+                    <button id="create_button">Create account</button>
+                </div>
+        </container>
 
     </main>
     <script src="../javascript/registerUser.js"></script>
