@@ -1,6 +1,7 @@
 let checkboxDiv = document.getElementById("checkboxDiv");
 let checkbox = document.getElementById("checkbox");
 let acceptButton = document.getElementById("accept");
+let message = document.getElementById("checkboxMessage")
 
 acceptButton.addEventListener("click", function () {
     if (checkbox.checked) {
