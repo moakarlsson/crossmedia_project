@@ -17,13 +17,12 @@ audio {
 
 #next_page {
     margin-top: 50px;
-}
-
-#next_page {
     opacity: 0;
     transition: opacity 1s ease;
+    text-align: center;
 }
 
 #next_page.synlig {
     opacity: 1;
+
 }
