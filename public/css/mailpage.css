@@ -19,7 +19,10 @@ main {
 
 input {
     font-family: "Gsans";
+    color: darkgray;
     padding-left: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 
@@ -44,6 +47,7 @@ h1 {
 button {
     border-radius: 50px;
     background-color: #B6E1FF;
+    color: black;
     border: 1px solid black;
     font-family: "Gsans";
     height: 34px;
