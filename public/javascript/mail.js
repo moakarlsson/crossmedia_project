@@ -15,15 +15,15 @@ const arrowIMG2 = document.querySelector("#arrowIMG2");
 
 
 mailContainerDOM.style.display = "none";
-felmeddelandeDOM.style.display ="none";
+felmeddelandeDOM.style.display = "none";
 
 logInButtonDOM.addEventListener("click", () => {
 
     if (inputDOM.value === "lol") {
         logInMailCOntainerDOM.style.display = "none";
         mailContainerDOM.style.display = "block";
-    } 
-    
+    }
+
     else {
         felmeddelandeDOM.style.display = "block";
         felmeddelandeDOM.textContent = "fel lösenord";
@@ -50,4 +50,4 @@ arrowIMG1.addEventListener("click", () => {
 arrowIMG2.addEventListener("click", () => {
     mailView2.style.display = "none";
     mailContainerDOM.style.display = "block";
-})
+});
