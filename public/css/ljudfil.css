@@ -1,0 +1,29 @@
+
+audio {
+    margin: auto auto;
+}
+#spelinnehåll h2 {
+    animation: fadeIn 5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#spelinnehåll {
+    margin-top: 50%
+}
+
+#next_page {
+    margin-top: 50px;
+}
+
+#next_page {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#next_page.synlig {
+    opacity: 1;
+}
