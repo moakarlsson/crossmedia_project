@@ -121,8 +121,7 @@ main {
 .popupText {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    border: 1px solid black;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
