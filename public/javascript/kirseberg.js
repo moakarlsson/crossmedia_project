@@ -1,5 +1,5 @@
 
-let spelKirsebergDIV = document.getElementById("spelKirseberg");
+let spelKirsebergDIV = document.getElementById("spelinnehåll");
 
 function clueOne() {
     //På lekpats - ska till scenen
