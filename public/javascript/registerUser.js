@@ -7,7 +7,7 @@ let popup = document.getElementById("popup");
 let startaSpelet = document.getElementById("startaSpelet");
 
 startaSpelet.addEventListener("click", function () {
-    window.location.href = "../html/spelplan.html";
+    window.location.href = "../html/ljudfil.html";
 });
 
 
