@@ -1,9 +1,9 @@
 const ljudfil = document.getElementById("ljudfil");
-const next_page_button = document.getElementById("next_page_button");
+const next_page_button = document.getElementById("next_page");
 
 ljudfil.addEventListener("ended", function() {
-    next_page_button.style.display = "block";
     setTimeout(() => {
-        knapp.classList.add("synlig");
+        next_page_button.style.visibility = "none";
+        next_page_button.classList.add("synlig");
     }, 10);
 })
