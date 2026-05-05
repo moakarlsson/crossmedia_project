@@ -28,3 +28,5 @@ arrowIMG2.addEventListener("click", () => {
     mailView2.style.display = "none";
     bigContainerDOM.style.display = "block";
 })
+
+console.log("test!!!");
