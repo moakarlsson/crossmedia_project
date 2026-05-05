@@ -7,3 +7,7 @@ ljudfil.addEventListener("ended", function() {
         next_page_button.classList.add("synlig");
     }, 10);
 })
+
+next_page_button.addEventListener("click", function() {
+    window.location.href = "../html/mailpage.html";
+})
