@@ -113,19 +113,19 @@ let minSidaMenu = document.querySelector("#minSidaMenu");
 
 let hintUNfill = document.querySelector("#hintUNfill");
 
-hintMenu.addEventListener("click", function () {
-    //hintUNfill.display = "none";
-    
-    //let hintFILL = document.createElement("img");
+// hintMenu.addEventListener("click", function () {
+//     //hintUNfill.display = "none";
 
-    //hintFILL.src = "../assets/icons/hintFILL.png";
-    //hintFILL.id = "hintFILL";
-    hintMenu.style.borderBottom = "1px solid black";
-    spelplanMenu.style.borderBottom = "none";
-    minSidaMenu.style.borderBottom = "none";
+//     //let hintFILL = document.createElement("img");
 
-    //hintMenu.appendChild(hintFILL);
-})
+//     //hintFILL.src = "../assets/icons/hintFILL.png";
+//     //hintFILL.id = "hintFILL";
+//     hintMenu.style.borderBottom = "1px solid black";
+//     spelplanMenu.style.borderBottom = "none";
+//     minSidaMenu.style.borderBottom = "none";
+
+//     //hintMenu.appendChild(hintFILL);
+// })
 
 
 spelplanMenu.addEventListener("click", function () {
