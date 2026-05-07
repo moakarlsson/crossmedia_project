@@ -16,9 +16,80 @@
                 <div id="timerDisplay"></div>
             </div>
         </header>
-        <div id="content"></div>
-        <div>
-            <button id="logout">Logga ut</button>
+        <div id="contentMinSida">
+            <h2>Min Sida</h2>
+
+            <div id="knappar">
+                <button id="showRulesBtn">Visa spelregler</button>
+                <button id="logout">Logga ut</button>
+            </div>
+
+            <div id="spelregler">
+                <div class="spelreglerDivP">
+                    <p>Målet med spelet är att förhindra ett mord inom tre timmar genom att:</p>
+                </div>
+
+                <ul>
+                    <li>
+                        Samla information
+                    </li>
+                    <li>
+                        Tolka ledtrådar
+                    </li>
+                    <li>
+                        Lösa pussel
+                    </li>
+                    <li>
+                        Identifiera vad som händer
+                    </li>
+                </ul>
+
+                <div class="spelreglerDivP">
+                    <p>Spelaren tar rollen som en utredare och måste stegvis närma sig sanningen. Tänk på att vissa
+                        ledtrådar kan
+                        vara något abstrakta. Ni behöver därför tänka på utanför boxen för att ta er vidare.</p>
+                </div>
+
+                <h4>Viktigt</h4>
+                <ul>
+                    <li>
+                        <p>Flytta inte ledtrådar, rekvesita eller dylikt</p>
+                    </li>
+                    <li>
+                        <p>Det är tillåtet att använda digitala kartfunktioner</p>
+                    </li>
+                    <li>
+                        <p>Det är tillåtet att googla plaatser eller information.</p>
+                    </li>
+                </ul>
+
+                <h4>Spelupplägg</h4>
+                <ul>
+                    <li>
+                        <p>Spelet spelas helst i grupp (rekommenderat 2–6 personer)</p>
+                    </li>
+                    <li>
+                        <p>Endast en användarprofil per grupp behövs</p>
+                    </li>
+                    <li>
+                        <p>Alla deltagare samarbetar för att lösa uppgifter</p>
+                    </li>
+                </ul>
+
+                <h4>Timer</h4>
+                <ul>
+                    <li>
+                        <p>Spelet startar med en nedräkning på 2,5 timmar</p>
+                    </li>
+                    <li>
+                        <p>Tiden fortsätter att ticka medan du/ni försöker lösa mysteriet innan tiden rinner ut</p>
+                    </li>
+                    <li>
+                        <p>Om tiden tar slut avslutas spelet automatiskt, oavsett om du löst mysteriet eller inte</p>
+                    </li>
+                </ul>
+                <button id="closeRulesBtn">Stäng</button>
+            </div>
         </div>
 
         <div id="bottomMeny">
@@ -29,8 +100,8 @@
     </main>
 
     <script src="../javascript/meny.js"></script>
-    <script src="../javascript/logout.js"></script>
     <script src="../javascript/timer.js"></script>
+    <script src="../javascript/logout.js"></script>
 </body>
 
 </html>

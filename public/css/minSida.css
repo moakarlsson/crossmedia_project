@@ -1,12 +1,41 @@
-#content {
-    flex: 1;
-}
-
-
-
-#content {
+#contentMinSida {
+    margin-top: 40px;
+    margin-bottom: 40px;
     width: 300px;
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(241, 241, 240, 0.8);
+    flex: 1;
+}
+
+h2 {
+    margin-bottom: 80px;
+}
+
+#spelregler {
+    display: none;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    border: 1px solid black;
+}
+
+#showRulesBtn,
+#closeRulesBtn,
+#logout {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    width: 170px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#knappar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
 }

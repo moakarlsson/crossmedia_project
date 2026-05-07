@@ -7,6 +7,13 @@ let popupDiv = document.createElement("div");
 let overlay = document.createElement("div");
 
 
+
+if (minSida) {
+    minSida.addEventListener("click", function () {
+        window.location.href = "../html/minSida.html";
+    });
+};
+
 let hintsData = {};
 
 async function loadHints() {
@@ -14,12 +21,6 @@ async function loadHints() {
     hintsData = await response.json();
 }
 loadHints();
-
-
-
-minSida.addEventListener("click", function () {
-    window.location.href = "../html/minSida.html";
-});
 
 
 function popUpHints() {
@@ -70,14 +71,37 @@ function popUpHints() {
     main.append(overlay, popupDiv);
 };
 
-
-hintButton.addEventListener("click", function () {
-    popUpHints();
-    popupDiv.style.display = "block";
-    overlay.style.display = "block";
-});
+if (hintButton) {
+    hintButton.addEventListener("click", function () {
+        popUpHints();
+        popupDiv.style.display = "block";
+        overlay.style.display = "block";
+    });
+}
 
 closeButton.addEventListener("click", function () {
     popupDiv.style.display = "none";
     overlay.style.display = "none";
 });
+
+let rulesBtn = document.getElementById("showRulesBtn");
+let rulesDiv = document.getElementById("spelregler");
+let closeRulesBtn = document.getElementById("closeRulesBtn");
+
+if (rulesBtn) {
+    rulesBtn.addEventListener("click", function () {
+
+        if (rulesDiv.style.display === "block") {
+            rulesDiv.style.display = "none";
+        } else {
+            rulesDiv.style.display = "block";
+        }
+
+    });
+}
+
+if (closeRulesBtn) {
+    closeRulesBtn.addEventListener("click", function () {
+        rulesDiv.style.display = "none";
+    });
+}

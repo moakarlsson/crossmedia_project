@@ -1,0 +1,21 @@
+.buttonPlacement {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+#spelinnehåll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+
+    position: relative;
+}
+
+.pic {
+    height: 200px;
+    width: 200px;
+}
