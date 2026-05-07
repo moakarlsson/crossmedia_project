@@ -58,11 +58,12 @@ createButton.addEventListener("click", async function () {
         const data = await response.json();
 
         if (response.status === 201) {
-            popup.classList.remove("hidden");
+            popupDONE.style.display = "flex";
         }
 
         console.log(data);
         passwordMessage.style.display = "none";
+
     } catch (error) {
         console.log("Fel:", error);
     }
