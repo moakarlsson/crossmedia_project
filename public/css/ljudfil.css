@@ -16,7 +16,8 @@ audio {
 }
 
 #next_page {
-    margin-top: 50px;
+    display: none;
+    margin-top: 50px; margin-left: auto; margin-right: auto;
     opacity: 0;
     transition: opacity 1s ease;
     text-align: center;
