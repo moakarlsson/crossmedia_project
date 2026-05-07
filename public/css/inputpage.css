@@ -20,8 +20,10 @@ input {
     visibility: hidden;
 }
 
-#input_button_1 {
+#input_button_1, 
+#input_button_2 {
     opacity: 1;
     transition: opacity 1s ease;
 }
+
 

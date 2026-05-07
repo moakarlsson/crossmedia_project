@@ -21,7 +21,7 @@ input_button_1.addEventListener("click", function() {
                 input_2.style.opacity = "1";
                 input_button_1.style.opacity = "0";
                 setTimeout(function() {
-                    input_button_1.style.display = "none"; // dölj efter fade är klar
+                    input_button_1.style.display = "none"; 
                 }, 1000);
              }, 1000)
     } else {
@@ -39,6 +39,10 @@ input_button_2.addEventListener("click", function() {
     } else if (answer_2 === "500") {
              alert_message2.textContent = "Rätt svar✔️";
              alert_message2.style.color = "green";
+             input_button_2.style.opacity = "0";
+             setTimeout(function() {
+                input_button_2.style.display = "none"; 
+            }, 1000);
     } else {
         alert_message2.textContent = "Fel, försök igen!";
         alert_message2.style.color = "#650003";
