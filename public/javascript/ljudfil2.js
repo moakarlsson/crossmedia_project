@@ -1,0 +1,1 @@
+window.currentStep = "steg4";

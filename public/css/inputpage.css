@@ -1,8 +1,9 @@
 input {
-    background-color:rgb(235, 238, 240);
+    background-color: rgb(235, 238, 240);
     border-radius: 10px;
     border: 1px solid #650003;
-    height: 25px; width: 200px;
+    height: 25px;
+    width: 200px;
 }
 
 #spelinnehåll {
@@ -13,16 +14,31 @@ input {
 
 }
 
+#bildNyponstaty {
+    opacity: 0;
+    transition: opacity 2s ease;
+    visibility: hidden;
+}
+
+#bildStaty {
+    width: 200px;
+    height: 200px;
+}
+
 #input_2 {
     opacity: 0;
     transition: opacity 2s ease;
     visibility: hidden;
 }
 
-#input_button_1, 
-#input_button_2{
+#input_button_1,
+#input_button_2 {
     opacity: 1;
     transition: opacity 1s ease;
+}
+
+#nextButton {
+    visibility: hidden;
 }
 
 #popup_hint {
@@ -32,6 +48,3 @@ input {
     transition: opacity 1s ease;
     text-align: center
 }
-
-
-
