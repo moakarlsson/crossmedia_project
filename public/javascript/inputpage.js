@@ -16,7 +16,6 @@ input_button_1.addEventListener("click", function() {
     } else if (answer_1 === "300") {
              alert_message.textContent = "Rätt svar✔️";
              alert_message.style.color = "green";
-
              setTimeout(function(){
                 input_2.style.visibility = "visible";
                 input_2.style.opacity = "1";
@@ -56,12 +55,4 @@ input_button_2.addEventListener("click", function() {
         alert_message2.textContent = "Fel, försök igen!";
         alert_message2.style.color = "#650003";
     }
-})
-
-
-
-
-
-
-
-
+});
