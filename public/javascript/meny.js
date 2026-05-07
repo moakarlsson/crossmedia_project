@@ -7,36 +7,69 @@ let popupDiv = document.createElement("div");
 let overlay = document.createElement("div");
 
 
+let hintsData = {};
+
+async function loadHints() {
+    let response = await fetch("../hints.json");
+    hintsData = await response.json();
+}
+loadHints();
+
+
+
 minSida.addEventListener("click", function () {
     window.location.href = "../html/minSida.html";
 });
 
 
-//popup
 function popUpHints() {
-    popupDiv.classList.add("popup")
+    popupDiv.classList.add("popup");
     overlay.classList.add("overlay");
 
-    // innehåll 
     let textDiv = document.createElement("div");
     textDiv.classList.add("popupText");
 
-    let hintOne = document.createElement("div");
-    let hintOneText = document.createElement("p");
-    hintOneText.textContent = "Här kommer dina hints...";
+    let currentHints = hintsData[window.currentStep];
 
-    let hintTwo = document.createElement("div");
-    let hintTwoText = document.createElement("p");
-    hintTwoText.textContent = "Här kommer dina hints...";
+    popupDiv.innerHTML = "";
+
+    let hintOneDiv = document.createElement("div");
+    let pKlickOne = document.createElement("p");
+    pKlickOne.textContent = "Se hint 1";
+    pKlickOne.style.fontSize = "24px";
+    pKlickOne.style.fontWeight = "bold";
+    let pOne = document.createElement("p");
+    hintOneDiv.append(pKlickOne, pOne);
+    pOne.textContent = currentHints.hint1;
+    pOne.style.visibility = "hidden";
+
+
+    pKlickOne.addEventListener("click", function () {
+        pOne.style.visibility = "visible";
+    });
+
+    let hintTwoDiv = document.createElement("div");
+    let pKlickTwo = document.createElement("p");
+    pKlickTwo.textContent = "Se hint 2";
+    pKlickTwo.style.fontSize = "24px";
+    pKlickTwo.style.fontWeight = "bold";
+    let pTwo = document.createElement("p");
+    hintTwoDiv.append(pKlickTwo, pTwo);
+    pTwo.textContent = currentHints.hint2;
+    pTwo.style.visibility = "hidden";
+
+    pKlickTwo.addEventListener("click", function () {
+        pTwo.style.visibility = "visible";
+    })
+
+    textDiv.append(hintOneDiv, hintTwoDiv);
+
 
     closeButton.textContent = "Stäng";
-
-    hintOne.append(hintOneText);
-    hintTwo.append(hintTwoText);
-    textDiv.append(hintOne, hintTwo);
     popupDiv.append(textDiv, closeButton);
     main.append(overlay, popupDiv);
 };
+
 
 hintButton.addEventListener("click", function () {
     popUpHints();

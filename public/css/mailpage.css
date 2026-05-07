@@ -3,6 +3,11 @@
     src: url(../assets/fonts/GoogleSans-VariableFont_GRAD\,opsz\,wght.ttf);
 }
 
+@font-face {
+    font-family: SpecialElite;
+    src: url("../assets/fonts/Special_Elite/SpecialElite-Regular.ttf");
+}
+
 body {
     margin: 0px;
     font-family: "Gsans";
@@ -19,6 +24,10 @@ main {
 
 input {
     font-family: "Gsans";
+    color: darkgray;
+    padding-left: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 
@@ -43,11 +52,11 @@ h1 {
 button {
     border-radius: 50px;
     background-color: #B6E1FF;
+    color: black;
     border: 1px solid black;
     font-family: "Gsans";
     height: 34px;
     width: 100px;
-    
 }
 
 
@@ -121,6 +130,20 @@ p {
 #timestampP {
     font-size: 12px;
     margin: 0;
+}
+
+#leaveButton {
+    background-color: #8D0004;
+    color: white;
+    border-radius: 10px;
+    font-family: SpecialElite;
+    font-size: 18px;
+    width: 200px;
+    height: 40px;
+    padding-top: 4px;
+    display: block;
+    margin-left: auto;
+    margin-top: 350px;
 }
 
 

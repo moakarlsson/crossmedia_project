@@ -49,7 +49,8 @@ function startTimer() {
     let existing = localStorage.getItem("endTime");
 
     if (!existing) {
-        endTime = Date.now() + (2 * 60 * 60 + 30 * 60) * 1000; // 2h 30min
+        endTime = Date.now() + (3 * 60 * 60) * 1000; //3 timmar
+        // endTime = Date.now() + (2 * 60 * 60 + 30 * 60) * 1000; // 2h 30min
         localStorage.setItem("endTime", endTime);
     } else {
         endTime = Number(existing);
