@@ -66,7 +66,7 @@ function clueThree() {
     //Vid lokstallarna - ska till Cirkushotellet
 
     spelKirsebergDIV.innerHTML = "";
-    window.currentStep = "steg9";
+    window.currentStep = "steg10";
     let contentDiv = document.createElement("div");
 
     let h3 = document.createElement("h3");
@@ -95,11 +95,11 @@ function clueThree() {
 function clueFour() {
     //Vid cirkushotellet- ska till fängelset 
     spelKirsebergDIV.innerHTML = "";
-    window.currentStep = "steg9";
+    window.currentStep = "steg11";
     let contentDiv = document.createElement("div");
 
     let h3 = document.createElement("h3");
-    h3.textContent = "Ni är någon på spåren…";
+    h3.textContent = "Nu tätnar mysteriet...";
 
     let img = document.createElement("img");
     img.src = "../assets/images/nypon.png";
@@ -124,4 +124,15 @@ function clueFour() {
 
 function clueFive() {
     //Vid fängelset, sista stället - ska sedan avsluta
+    spelKirsebergDIV.innerHTML = "";
+
+    let contentDiv = document.createElement("div");
+
+    let inputFält = document.createElement("input");
+    inputFält.
+
+
+        contentDiv.append(inputFält);
+    spelKirsebergDIV.append(contentDiv);
+
 }
