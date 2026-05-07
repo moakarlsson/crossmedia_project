@@ -52,7 +52,6 @@ input_button_2.addEventListener("click", function() {
                     }, 500);
                 }, 1000);    
             }, 1000);
-
     } else {
         alert_message2.textContent = "Fel, försök igen!";
         alert_message2.style.color = "#650003";
