@@ -42,5 +42,9 @@
     "steg12": {
         "hint1": "Giftormen gömmer sig i gräset.",
         "hint2": "Hitta giftflaskan och fyll i den kemiska beteckningen."
+    },
+    "steg13": {
+        "hint1": "Brottsplatsen blir till.",
+        "hint2": " Fyll i årtalet som finns på fängelsets fasad."
     }
 }
