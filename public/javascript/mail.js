@@ -19,7 +19,7 @@ felmeddelandeDOM.style.display = "none";
 
 logInButtonDOM.addEventListener("click", () => {
 
-    if (inputDOM.value === "lol") {
+    if (inputDOM.value === "figmakingen123") {
         logInMailCOntainerDOM.style.display = "none";
         mailContainerDOM.style.display = "block";
     }
@@ -34,12 +34,12 @@ logInButtonDOM.addEventListener("click", () => {
 
 mail1.addEventListener("click", () => {
     mailContainerDOM.style.display = "none";
-    mailView1.style.display = "block";
+    mailView2.style.display = "block";
 })
 
 mail2.addEventListener("click", () => {
     mailContainerDOM.style.display = "none";
-    mailView2.style.display = "block";
+    mailView1.style.display = "block";
 })
 
 arrowIMG1.addEventListener("click", () => {
