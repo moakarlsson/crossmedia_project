@@ -23,6 +23,6 @@ back_button?.addEventListener("click", function() {
 go_forth?.addEventListener("click", function() {
     const svar = confirm("OBS! Har du läst alla artiklar?");
     if (svar) {
-        window.location.href = "../html/newspage2.html"; //
+        window.location.href = "../html/inputpage.html"; //
     }
 });
