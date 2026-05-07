@@ -1,138 +1,164 @@
 
 let spelKirsebergDIV = document.getElementById("spelinnehåll");
 
-function clueOne() {
-    //På lekpats - ska till scenen
-    spelKirsebergDIV.innerHTML = "";
-    window.currentStep = "steg8";
+// function clueOne() {
+//     //På lekpats - ska till scenen
+//     spelKirsebergDIV.innerHTML = "";
+//     window.currentStep = "steg8";
 
-    let contentDiv = document.createElement("div");
+//     let contentDiv = document.createElement("div");
 
-    let h3 = document.createElement("h3");
-    h3.textContent = "Pusselbitarna börjar falla på plats...";
+//     let h3 = document.createElement("h3");
+//     h3.textContent = "Pusselbitarna börjar falla på plats...";
 
-    let img = document.createElement("img");
-    img.src = "../assets/images/nypon.png";
-    img.classList.add("pic");
+//     let img = document.createElement("img");
+//     img.src = "../assets/images/nypon.png";
+//     img.classList.add("pic");
 
-    let text = document.createElement("p");
-    text.textContent = "När ni löst den aktuella uppgfiten kan ni klicka på knappen 'Gå vidare' för att gå vidare till nästa steg."
+//     let text = document.createElement("p");
+//     text.textContent = "När ni löst den aktuella uppgfiten kan ni klicka på knappen 'Gå vidare' för att gå vidare till nästa steg."
 
-    let nextButton = document.createElement("button");
-    nextButton.textContent = "Gå vidare";
-    nextButton.classList.add("buttonPlacement");
+//     let nextButton = document.createElement("button");
+//     nextButton.textContent = "Gå vidare";
+//     nextButton.classList.add("buttonPlacement");
 
-    nextButton.addEventListener("click", function () {
-        clueTwo();
-    });
+//     nextButton.addEventListener("click", function () {
+//         clueTwo();
+//     });
 
-    contentDiv.append(h3, img, text, nextButton);
-    spelKirsebergDIV.append(contentDiv);
+//     contentDiv.append(h3, img, text, nextButton);
+//     spelKirsebergDIV.append(contentDiv);
 
-};
-clueOne();
-
-
-function clueTwo() {
-    //På scenen - ska till lokstallarna    
-
-    spelKirsebergDIV.innerHTML = "";
-    window.currentStep = "steg9";
-    let contentDiv = document.createElement("div");
-
-    let h3 = document.createElement("h3");
-    h3.textContent = "Nästa ledtråd väntar!";
-
-    let img = document.createElement("img");
-    img.src = "../assets/images/nypon.png";
-    img.classList.add("pic");
-
-    let text = document.createElement("p");
-    text.textContent = "När ni löst den aktuella uppgfiten kan ni klicka på knappen 'Gå vidare' för att gå vidare till nästa steg."
-
-    let nextButton = document.createElement("button");
-    nextButton.textContent = "Gå vidare";
-    nextButton.classList.add("buttonPlacement");
-
-    nextButton.addEventListener("click", function () {
-        clueThree();
-    });
-
-    contentDiv.append(h3, img, text, nextButton);
-    spelKirsebergDIV.append(contentDiv);
-};
-
-function clueThree() {
-    //Vid lokstallarna - ska till Cirkushotellet
-
-    spelKirsebergDIV.innerHTML = "";
-    window.currentStep = "steg10";
-    let contentDiv = document.createElement("div");
-
-    let h3 = document.createElement("h3");
-    h3.textContent = "Ni är någon på spåren…";
-
-    let img = document.createElement("img");
-    img.src = "../assets/images/nypon.png";
-    img.classList.add("pic");
-
-    let text = document.createElement("p");
-    text.textContent = "När ni löst den aktuella uppgfiten kan ni klicka på knappen 'Gå vidare' för att gå vidare till nästa steg."
-
-    let nextButton = document.createElement("button");
-    nextButton.textContent = "Gå vidare";
-    nextButton.classList.add("buttonPlacement");
-
-    nextButton.addEventListener("click", function () {
-        clueFour();
-    });
-
-    contentDiv.append(h3, img, text, nextButton);
-    spelKirsebergDIV.append(contentDiv);
-}
+// };
+// clueOne();
 
 
-function clueFour() {
-    //Vid cirkushotellet- ska till fängelset 
-    spelKirsebergDIV.innerHTML = "";
-    window.currentStep = "steg11";
-    let contentDiv = document.createElement("div");
+// function clueTwo() {
+//     //På scenen - ska till lokstallarna    
 
-    let h3 = document.createElement("h3");
-    h3.textContent = "Nu tätnar mysteriet...";
+//     spelKirsebergDIV.innerHTML = "";
+//     window.currentStep = "steg9";
+//     let contentDiv = document.createElement("div");
 
-    let img = document.createElement("img");
-    img.src = "../assets/images/nypon.png";
-    img.classList.add("pic");
+//     let h3 = document.createElement("h3");
+//     h3.textContent = "Nästa ledtråd väntar!";
 
-    let text = document.createElement("p");
-    text.textContent = "När ni löst den aktuella uppgfiten kan ni klicka på knappen 'Gå vidare' för att gå vidare till nästa steg."
+//     let img = document.createElement("img");
+//     img.src = "../assets/images/nypon.png";
+//     img.classList.add("pic");
 
-    let nextButton = document.createElement("button");
-    nextButton.textContent = "Gå vidare";
-    nextButton.classList.add("buttonPlacement");
+//     let text = document.createElement("p");
+//     text.textContent = "När ni löst den aktuella uppgfiten kan ni klicka på knappen 'Gå vidare' för att gå vidare till nästa steg."
 
-    nextButton.addEventListener("click", function () {
-        clueFive();
-    });
+//     let nextButton = document.createElement("button");
+//     nextButton.textContent = "Gå vidare";
+//     nextButton.classList.add("buttonPlacement");
 
-    contentDiv.append(h3, img, text, nextButton);
-    spelKirsebergDIV.append(contentDiv);
+//     nextButton.addEventListener("click", function () {
+//         clueThree();
+//     });
 
-}
+//     contentDiv.append(h3, img, text, nextButton);
+//     spelKirsebergDIV.append(contentDiv);
+// };
+
+// function clueThree() {
+//     //Vid lokstallarna - ska till Cirkushotellet
+
+//     spelKirsebergDIV.innerHTML = "";
+//     window.currentStep = "steg10";
+//     let contentDiv = document.createElement("div");
+
+//     let h3 = document.createElement("h3");
+//     h3.textContent = "Ni är någon på spåren…";
+
+//     let img = document.createElement("img");
+//     img.src = "../assets/images/nypon.png";
+//     img.classList.add("pic");
+
+//     let text = document.createElement("p");
+//     text.textContent = "När ni löst den aktuella uppgfiten kan ni klicka på knappen 'Gå vidare' för att gå vidare till nästa steg."
+
+//     let nextButton = document.createElement("button");
+//     nextButton.textContent = "Gå vidare";
+//     nextButton.classList.add("buttonPlacement");
+
+//     nextButton.addEventListener("click", function () {
+//         clueFour();
+//     });
+
+//     contentDiv.append(h3, img, text, nextButton);
+//     spelKirsebergDIV.append(contentDiv);
+// }
+
+
+// function clueFour() {
+//     //Vid cirkushotellet- ska till fängelset 
+//     spelKirsebergDIV.innerHTML = "";
+//     window.currentStep = "steg11";
+//     let contentDiv = document.createElement("div");
+
+//     let h3 = document.createElement("h3");
+//     h3.textContent = "Nu tätnar mysteriet...";
+
+//     let img = document.createElement("img");
+//     img.src = "../assets/images/nypon.png";
+//     img.classList.add("pic");
+
+//     let text = document.createElement("p");
+//     text.textContent = "När ni löst den aktuella uppgfiten kan ni klicka på knappen 'Gå vidare' för att gå vidare till nästa steg."
+
+//     let nextButton = document.createElement("button");
+//     nextButton.textContent = "Gå vidare";
+//     nextButton.classList.add("buttonPlacement");
+
+//     nextButton.addEventListener("click", function () {
+//         clueFive();
+//     });
+
+//     contentDiv.append(h3, img, text, nextButton);
+//     spelKirsebergDIV.append(contentDiv);
+
+// }
 
 
 function clueFive() {
     //Vid fängelset, sista stället - ska sedan avsluta
     spelKirsebergDIV.innerHTML = "";
+    window.currentStep = "steg12";
 
     let contentDiv = document.createElement("div");
+    let divInputFält = document.createElement("div");
+    let inputMessage = document.createElement("p");
+    inputMessage.style.visibility = "hidden";
+    let hiddenText = document.createElement("p");
+
+    let label = document.createElement("label");
+    label.textContent = "Mordvapnet: ";
+    label.htmlFor = "textinput";
 
     let inputFält = document.createElement("input");
-    inputFält.
+    inputFält.type = "text";
+    inputFält.id = "textinput";
 
+    let button = document.createElement("button");
+    button.textContent = "OK";
 
-        contentDiv.append(inputFält);
+    divInputFält.append(label, inputFält);
+    contentDiv.append(divInputFält);
+    contentDiv.append(inputMessage);
     spelKirsebergDIV.append(contentDiv);
 
+
+    button.addEventListener("click", function () {
+        let answer = inputFält.value.toLowerCase();
+        if (answer === "hcn") {
+            inputMessage.style.visibility = "visible";
+            inputMessage.textContent = "Rätt input!";
+        } else {
+            inputMessage.style.visibility = "visible";
+            inputMessage.textContent = "Fel input, försök igen!";
+        }
+    });
 }
+clueFive()
