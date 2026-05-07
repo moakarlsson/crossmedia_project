@@ -1,7 +1,7 @@
 let timerDisplay = document.getElementById("timerDisplay");
 let timerDIV = document.getElementById("timerDIV");
 
-
+let finalTime = null;
 
 window.addEventListener("load", function () {
     let savedEndTime = localStorage.getItem("endTime");
@@ -15,28 +15,25 @@ window.addEventListener("load", function () {
 //starta timer
 startTimer();
 
+function stopTimer() {
 
-// stopButton.addEventListener("click", async function () {
-//     clearInterval(timerInterval);
+    clearInterval(window.timerInterval);
 
-//     let now = Date.now();
-//     let timeLeft = Math.floor((endTime - now) / 1000);
-//     if (timeLeft < 0) timeLeft = 0;
+    let now = Date.now();
 
-//     let user = await getUser();
+    let timeLeft = Math.floor((endTime - now) / 1000);
 
-//     await fetch("/users/saveResult", {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json"
-//         },
-//         credentials: "include",
-//         body: JSON.stringify({ timeLeft })
-//     });
+    if (timeLeft < 0) {
+        timeLeft = 0;
+    }
 
-//     console.log("User:", user);
-//     console.log("Tid kvar:", timeLeft);
-// });
+    // spara tiden
+    finalTime = timeLeft;
+    localStorage.setItem("finalTime", finalTime);
+    console.log("Sluttid:", finalTime);
+
+    return finalTime;
+}
 
 //Timer
 

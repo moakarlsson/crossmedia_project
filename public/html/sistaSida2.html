@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelet</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/sistaSidan.css">
+</head>
+
+<body>
+    <main>
+        <p id="yourTime"></p>
+        <h2>Epilog</h2>
+        <div id="story">
+            <p>Ni valde att låta mördaren (Daniel Petrov) gå fri och inte ange honom till polisen. Spelet har nått sitt
+                slut, men en historia behöver inte ta slut enbart för att spelet gör det.</p>
+
+            <h3>Vad hände sen?</h3>
+            <p>Minuterna går. Tony vet att det inte tjänar något till att streta emot, men han kan bara inte dricka
+                soppan, även om han vet att det nog skulle resultera i en mindre plågsam död än den som väntar honom när
+                Daniel återvänder till cellen. </p>
+        </div>
+
+        <footer>
+            <div id="footerDIV">
+                <div id="hintMenu"><img class="hintUNfill" src="../assets/icons/hintUNfill.png" alt=""></div>
+                <div id="spelplanMenu"><img id="spelplanUNfill" src="../assets/icons/spelplanUNfill.png" alt=""></div>
+                <div id="minSidaMenu"><img id="minSidaUNfill" src="../assets/icons/minSidaUNfill.png" alt=""></div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="../javascript/meny.js"></script>
+    <script>
+
+        let finalTime = Number(localStorage.getItem("finalTime"));
+
+        let hours = Math.floor(finalTime / 3600);
+
+        let minutes = Math.floor((finalTime % 3600) / 60);
+
+        let seconds = finalTime % 60;
+
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+
+        let formattedTime =
+            hours + ":" + minutes + ":" + seconds;
+        let timeText = document.getElementById("yourTime");
+
+        timeText.textContent =
+            "Er sluttid: " + formattedTime;
+
+    </script>
+</body>
+
+</html>
