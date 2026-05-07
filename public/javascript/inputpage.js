@@ -2,9 +2,10 @@ const input_button_1 = document.getElementById("input_button_1");
 const input_button_2 = document.getElementById("input_button_2");
 const alert_message = document.getElementById("alert_message");
 const alert_message2 = document.getElementById("alert_message2");
+const input_div1 = document.getElementById("input_1");
+const input_div2 = document.getElementById("input_2");
+const popup_hint = document.getElementById("popup_hint");
 input_2.style.visibility = "hidden";
-
-
 
 input_button_1.addEventListener("click", function() {
     const input_1 = document.getElementById("answer_1");
@@ -42,7 +43,16 @@ input_button_2.addEventListener("click", function() {
              input_button_2.style.opacity = "0";
              setTimeout(function() {
                 input_button_2.style.display = "none"; 
+                input_div1.style.display = "none";
+                input_div2.style.display = "none";
+                setTimeout(function() {
+                    popup_hint.style.opacity = "1";   
+                    setTimeout(function() {
+                        popup_hint.style.opacity = "0";  
+                    }, 500);
+                }, 1000);    
             }, 1000);
+
     } else {
         alert_message2.textContent = "Fel, försök igen!";
         alert_message2.style.color = "#650003";
