@@ -9,5 +9,5 @@ ljudfil.addEventListener("ended", function() {
 })
 
 next_page_button.addEventListener("click", function() {
-    window.location.href = "../html/mailpage.html";
+    window.location.href = "../html/newspage.html";
 })
