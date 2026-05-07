@@ -105,3 +105,37 @@ if (closeRulesBtn) {
         rulesDiv.style.display = "none";
     });
 }
+
+
+let hintMenu = document.querySelector("#hintMenu");
+let spelplanMenu = document.querySelector("#spelplanMenu");
+let minSidaMenu = document.querySelector("#minSidaMenu");
+
+let hintUNfill = document.querySelector("#hintUNfill");
+
+hintMenu.addEventListener("click", function () {
+    //hintUNfill.display = "none";
+    
+    //let hintFILL = document.createElement("img");
+
+    //hintFILL.src = "../assets/icons/hintFILL.png";
+    //hintFILL.id = "hintFILL";
+    hintMenu.style.borderBottom = "1px solid black";
+    spelplanMenu.style.borderBottom = "none";
+    minSidaMenu.style.borderBottom = "none";
+
+    //hintMenu.appendChild(hintFILL);
+})
+
+
+spelplanMenu.addEventListener("click", function () {
+    spelplanMenu.style.borderBottom = "1px solid black";
+    minSidaMenu.style.borderBottom = "none";
+    hintMenu.style.borderBottom = "none";
+})
+
+minSidaMenu.addEventListener("click", function () {
+    minSidaMenu.style.borderBottom = "1px solid black";
+    spelplanMenu.style.borderBottom = "none";
+    hintMenu.style.borderBottom = "none";
+})
