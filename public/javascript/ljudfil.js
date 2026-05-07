@@ -10,7 +10,6 @@ ljudfil.addEventListener("ended", function () {
     }, 10);
 })
 
-next_page_button.addEventListener("click", function () {
-    window.location.href = "../html/mailpage.html";
+next_page_button.addEventListener("click", function() {
+    window.location.href = "../html/newspage.html";
 })
-
