@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelet</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/sistaSidan.css">
+</head>
+
+<body>
+    <main>
+        <p id="yourTime"></p>
+        <h2>Epilog</h2>
+        <div id="story">
+            <p>Ni valde att ange mördaren (Daniel Petrov) till polisen och rädda Tonys liv. Spelet har nått sitt
+                slut, men en historia behöver inte ta slut enbart för att spelet gör det.</p>
+
+            <h3>Vad hände sen?</h3>
+            <p>Du lämnar över allt material till polisen, som snabbt griper Daniel medan han är i lekparken med Hugo.
+                Det är andra gången i Hugos liv som han ser sin vårdnadshavare föras bort av polis. </p>
+
+            <p>Rättegången blir kort då Daniel erkänner allt och till och med lämnar över ytterligare bevis mot sig
+                själv. Han står för sina handlingar och menar att rättssystemet misslyckats med att skipa rättvisa för
+                människor som Veronika. </p>
+
+            <p>Fallet skapar en stor debatt i media och politiken. Vissa ser Daniel som en farlig brottsling som
+                missbrukat sin roll inom Kriminalvården, medan andra menar att hans handlingar är ett resultat av för
+                svaga straff för våldsbrott. På sociala medier jämförs han till och med med Batman – en person som tagit
+                lagen i egna händer när rättssystemet inte räckt till.</p>
+
+            <p>När Tony släpps från fängelset försöker han bygga upp sitt liv igen men får inga jobb och hamnar till
+                slut i ekonomisk desperation. Sju månader efter frigivningen försöker han råna ett närlivs. Rånet går
+                fel och den 17-årige kassaarbetaren skjuts till döds. Ett år senare döms Tony till livstids fängelse för
+                väpnat rån och dråp.</p>
+
+            <p>Hugo, som nu är åtta år gammal, bor hos en fosterfamilj i en annan stad. Han trivs för det mesta och har
+                fått nya vänner, men nätterna präglas fortfarande av återkommande mardrömmar om att bli lämnad ensam
+                kvar.</p>
+        </div>
+
+        <footer>
+            <div id="footerDIV">
+                <div id="hintMenu"><img class="hintUNfill" src="../assets/icons/hintUNfill.png" alt=""></div>
+                <div id="spelplanMenu"><img id="spelplanUNfill" src="../assets/icons/spelplanUNfill.png" alt=""></div>
+                <div id="minSidaMenu"><img id="minSidaUNfill" src="../assets/icons/minSidaUNfill.png" alt=""></div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="../javascript/meny.js"></script>
+    <script>
+
+        let finalTime = Number(localStorage.getItem("finalTime"));
+
+        let hours = Math.floor(finalTime / 3600);
+
+        let minutes = Math.floor((finalTime % 3600) / 60);
+
+        let seconds = finalTime % 60;
+
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+
+        let formattedTime =
+            hours + ":" + minutes + ":" + seconds;
+        let timeText = document.getElementById("yourTime");
+
+        timeText.textContent =
+            "Er sluttid: " + formattedTime;
+
+    </script>
+</body>
+
+</html>
