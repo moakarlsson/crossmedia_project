@@ -25,6 +25,12 @@ input {
     height: 200px;
 }
 
+#firsth3 {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+}
+
 #input_2 {
     opacity: 0;
     transition: opacity 2s ease;

@@ -118,7 +118,6 @@ function clueFour() {
 
     contentDiv.append(h3, img, text, nextButton);
     spelKirsebergDIV.append(contentDiv);
-
 }
 
 

@@ -4,64 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spel</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/inputpage.css">
 </head>
 
+
 <body>
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="../css/style.css">
-    </head>
-
-    <body>
-        <main>
-            <header>
-                <div id="timerDIV">
-                    <div id="timerDisplay"></div>
-                </div>
-            </header>
-            <div id="spelinnehåll">
-                <div id="input_1">
-                    <h3>Fyll i mig...</h3>
-                    <input id="answer_1" type="text">
-                    <p id="alert_message"></p>
-                    <button id="input_button_1">Rätta svaret</button>
-                </div>
-                <div id="input_2">
-                    <h3>Ett steg närmare sanningen...</h3>
-
-                    <div id="bildNyponstaty">
-                        <img id="bildStaty" src="../assets/images/Nyponstaty.png" alt="staty">
-                    </div>
-
-                    <input id="answer_2" type="text">
-                    <p id="alert_message2"></p>
-                    <button id="input_button_2">Rätta svaret</button>
-                </div>
-                <p id="popup_hint">1913</p>
-
-                <button id="nextButton">Gå vidare</button>
+    <main>
+        <header>
+            <div id="timerDIV">
+                <div id="timerDisplay"></div>
             </div>
-            <div id="bottomMeny">
-                <button id="minSida">Min sida</button>
-                <button>Spelplan</button>
-                <button id="hint">Hints</button>
+        </header>
+        <div id="spelinnehåll">
+            <div id="input_1">
+                <h3 id="firsth3">Fyll i mig...</h3>
+                <input id="answer_1" type="text">
+                <p id="alert_message"></p>
+                <button id="input_button_1">Rätta svaret</button>
             </div>
-        </main>
+            <div id="input_2">
+                <h3>Ett steg närmare sanningen...</h3>
 
-        <script src="../javascript/meny.js"></script>
-        <script src="../javascript/inputpage.js"></script>
-        <script src="../javascript/timer.js"></script>
-    </body>
+                <div id="bildNyponstaty">
+                    <img id="bildStaty" src="../assets/images/Nyponstaty.png" alt="staty">
+                </div>
 
-    </html>
+                <input id="answer_2" type="text">
+                <p id="alert_message2"></p>
+                <button id="input_button_2">Rätta svaret</button>
+            </div>
+            <p id="popup_hint">1913</p>
+
+            <button id="nextButton">Gå vidare</button>
+        </div>
+        <footer id="footer"></footer>
+    </main>
+
+    <script src="../javascript/meny.js"></script>
+    <script src="../javascript/inputpage.js"></script>
+    <script src="../javascript/timer.js"></script>
+</body>
+
+</html>
 </body>
 
 </html>

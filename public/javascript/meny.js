@@ -1,19 +1,16 @@
 
-let minSida = document.getElementById("minSida");
-let hintButton = document.getElementById("hint");
 let main = document.querySelector("main");
-let closeButton = document.createElement("button");
+let closeHintButton = document.createElement("button");
 let popupDiv = document.createElement("div");
 let overlay = document.createElement("div");
 let footer = document.getElementById("footer");
 
 
-
-if (minSida) {
-    minSida.addEventListener("click", function () {
-        window.location.href = "../html/minSida.html";
-    });
-};
+// if (minSida) {
+//     minSida.addEventListener("click", function () {
+//         window.location.href = "../html/minSida.html";
+//     });
+// };
 
 let hintsData = {};
 
@@ -66,27 +63,10 @@ function popUpHints() {
 
     textDiv.append(hintOneDiv, hintTwoDiv);
 
-
-    closeButton.textContent = "Stäng";
-    popupDiv.append(textDiv, closeButton);
+    closeHintButton.textContent = "Stäng";
+    popupDiv.append(textDiv, closeHintButton);
     main.append(overlay, popupDiv);
 };
-
-if (hintButton) {
-    hintButton.addEventListener("click", function () {
-        popUpHints();
-        popupDiv.style.display = "block";
-        overlay.style.display = "block";
-    });
-}
-
-closeButton.addEventListener("click", function () {
-    popupDiv.style.display = "none";
-    overlay.style.display = "none";
-});
-
-
-
 
 
 //MENY (FOOTER)
@@ -112,25 +92,25 @@ if (footer) {
     `;
 }
 
-let rulesBtn = document.getElementById("showRulesBtn");
-let rulesDiv = document.getElementById("spelregler");
-let closeRulesBtn = document.getElementById("closeRulesBtn");
+// let rulesBtn = document.getElementById("showRulesBtn");
+// let rulesDiv = document.getElementById("spelregler");
+// let closeRulesBtn = document.getElementById("closeRulesBtn");
 
-if (rulesBtn) {
-    rulesBtn.addEventListener("click", function () {
-        if (rulesDiv.style.display === "block") {
-            rulesDiv.style.display = "none";
-        } else {
-            rulesDiv.style.display = "block";
-        }
-    });
-}
+// if (rulesBtn) {
+//     rulesBtn.addEventListener("click", function () {
+//         if (rulesDiv.style.display === "block") {
+//             rulesDiv.style.display = "none";
+//         } else {
+//             rulesDiv.style.display = "block";
+//         }
+//     });
+// }
 
-if (closeRulesBtn) {
-    closeRulesBtn.addEventListener("click", function () {
-        rulesDiv.style.display = "none";
-    });
-}
+// if (closeRulesBtn) {
+//     closeRulesBtn.addEventListener("click", function () {
+//         rulesDiv.style.display = "none";
+//     });
+// }
 
 
 let hintMenu = document.querySelector("#hintMenu");
@@ -151,6 +131,17 @@ hintMenu.addEventListener("click", function () {
 
     minSidaMenu.style.borderBottom = "none";
     minSidaIcon.src = "../assets/icons/minSidaUNfill.png";
+
+    popUpHints();
+    popupDiv.style.display = "block";
+    overlay.style.display = "block";
+});
+
+closeHintButton.addEventListener("click", function () {
+    popupDiv.style.display = "none";
+    overlay.style.display = "none";
+    hintIcon.src = "../assets/icons/hintUNfill.png";
+    hintMenu.style.borderBottom = "none";
 });
 
 

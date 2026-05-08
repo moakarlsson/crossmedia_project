@@ -1,3 +1,8 @@
+window.currentStep = "steg7";
+
+let timerDiv = document.getElementById("timerDIV");
+let leaveButton = document.getElementById("leaveButton");
+
 const mail1 = document.querySelector("#mail1");
 const mail2 = document.querySelector("#mail2");
 
@@ -22,6 +27,7 @@ logInButtonDOM.addEventListener("click", () => {
     if (inputDOM.value === "figmakingen123") {
         logInMailCOntainerDOM.style.display = "none";
         mailContainerDOM.style.display = "block";
+        timerDiv.style.visibility = "visible";
     }
 
     else {
@@ -50,4 +56,11 @@ arrowIMG1.addEventListener("click", () => {
 arrowIMG2.addEventListener("click", () => {
     mailView2.style.display = "none";
     mailContainerDOM.style.display = "block";
+});
+
+leaveButton.addEventListener("click", function () {
+    const svar = confirm("OBS! Har du läst båda mailen och vet vart ni ska bege er nu?");
+    if (svar) {
+        window.location.href = "../html/kirseberg.html"; //
+    }
 });
