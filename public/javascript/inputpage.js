@@ -1,5 +1,3 @@
-
-
 const input_button_1 = document.getElementById("input_button_1");
 const input_button_2 = document.getElementById("input_button_2");
 const alert_message = document.getElementById("alert_message");
@@ -58,7 +56,10 @@ input_button_2.addEventListener("click", function () {
                 popup_hint.style.opacity = "1";
                 setTimeout(function () {
                     popup_hint.style.opacity = "0";
-                    nextButton.style.visibility = "visible";
+                    setTimeout (function () {
+                        nextButton.style.visibility = "visible";
+                        nextButton.style.opacity = "1";
+                    }, 2000)
                 }, 500);
             }, 1000);
         }, 1000);

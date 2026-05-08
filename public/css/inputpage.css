@@ -7,6 +7,7 @@ input {
 }
 
 #spelinnehåll {
+    margin-top: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +26,8 @@ input {
     height: 200px;
 }
 
-#input_2 {
+#input_2, 
+#nextButton {
     opacity: 0;
     transition: opacity 2s ease;
     visibility: hidden;
@@ -35,10 +37,6 @@ input {
 #input_button_2 {
     opacity: 1;
     transition: opacity 1s ease;
-}
-
-#nextButton {
-    visibility: hidden;
 }
 
 #popup_hint {

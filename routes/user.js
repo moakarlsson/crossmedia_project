@@ -65,13 +65,13 @@ router.post("/saveResult", async (req, res) => {
     if (!req.session.user) {
         return res.status(401).json({ error: "Inte inloggad" });
     }
-    const { timeLeft } = req.body;
+    const { timeLeft, startTime, endTime } = req.body;
     const userId = req.session.user.id;
 
     try {
         await db.query(
-            "INSERT INTO result (user_id, time_left) VALUES (?, ?)",
-            [userId, timeLeft]
+            "INSERT INTO result (user_id, time_left, start_time, end_time) VALUES (?, ?, ?,?)",
+            [userId, timeLeft, startTime, endTime]
         );
 
         res.json({ message: "Result sparat!" });
