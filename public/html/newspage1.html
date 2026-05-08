@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/ljudfil.css">
+    <title>Spel</title>
     <link rel="stylesheet" href="../css/newspaper.css">
 </head>
 
@@ -16,35 +15,44 @@
                 <div id="timerDisplay"></div>
             </div>
         </header>
-        <div id="img_box">
-            <img id="sr_img" src="../assets/icons/SR.png">
-        </div>
-        <p class="small_p">MALMÖ</p>
-        <h2>24-årig pyroman döms till fängelse</h2>
-        <p class="small_p">Publicerad 3 december 2011 - kl 11:27</p>
-        <div id="article_text">
-            <p>Den 24-årige universitetsstudent som tidigare misstänks ha anlagt tre bränder i Malmö i oktober dömdes
-                idag till fängelse för grov allmänfarlig ödeläggelse och mordbrand. Han frias dock för anklagelserna om
-                förberedelse till allmänfarlig ödeläggelse. Han häktades i november, på sannolika skäl som är den
-                starkare misstankegraden.<br><br><b>Rätten slår fast</b> att den dömde är gärningsmannen bakom de tre
-                bränderna som anlagts tidigt i oktober, varav en av dessa i ett flerfamiljshus. Den nu dömde 24-åringen
-                har den senaste tiden varit bosatt alldeles i närheten av brottsplatserna. Vid gripandet kunde polisen
-                säkra teknisk bevisning som man ansåg pekade mot att gärningsmannen planerat fler dåd, men detta kunde
-                inte fastslås av tingsrätten.<br><br>
-                En rättspsykiatrisk utredning slog nyligen fast att mannen inte anses lida av en allvarlig psykisk
-                störning. Den dömde mannen nekar till brott.
-            </p>
-            <div>
-                <img id="foto" src="../assets/images/artikelBild.jpg" alt="En bild från biblioteket på Orkanen">
-                <div id="bildtext">
-                    <p>Biblioteket i Malmö universitetssbyggnad Orkanen</p>
+        <div id="nyhetContent">
+            <div id="img_box">
+                <img id="sr_img" src="../assets/icons/SR.png">
+            </div>
+            <p class="small_p">MALMÖ</p>
+            <h2>24-årig pyroman döms till fängelse</h2>
+            <p class="small_p">Publicerad 3 december 2011 - kl 11:27</p>
+            <div id="article_text">
+                <p>Den 24-årige universitetsstudent som tidigare misstänks ha anlagt tre bränder i Malmö i oktober
+                    dömdes
+                    idag till fängelse för grov allmänfarlig ödeläggelse och mordbrand. Han frias dock för anklagelserna
+                    om
+                    förberedelse till allmänfarlig ödeläggelse. Han häktades i november, på sannolika skäl som är den
+                    starkare misstankegraden.<br><br><b>Rätten slår fast</b> att den dömde är gärningsmannen bakom de
+                    tre
+                    bränderna som anlagts tidigt i oktober, varav en av dessa i ett flerfamiljshus. Den nu dömde
+                    24-åringen
+                    har den senaste tiden varit bosatt alldeles i närheten av brottsplatserna. Vid gripandet kunde
+                    polisen
+                    säkra teknisk bevisning som man ansåg pekade mot att gärningsmannen planerat fler dåd, men detta
+                    kunde
+                    inte fastslås av tingsrätten.<br><br>
+                    En rättspsykiatrisk utredning slog nyligen fast att mannen inte anses lida av en allvarlig psykisk
+                    störning. Den dömde mannen nekar till brott.
+                </p>
+                <div id="fotoAndtext">
+                    <img id="foto" src="../assets/images/artikelBild.jpg" alt="En bild från biblioteket på Orkanen">
+                    <div id="bildtext">
+                        <p>Biblioteket i Malmö universitetssbyggnad Orkanen</p>
+                    </div>
                 </div>
             </div>
+            <p class="small_p">P4 Malmö</p>
+            <p class="small_p">Ansvarig utgivare: Liselotte </p>
         </div>
-        <p class="small_p">P4 Malmö</p>
-        <p class="small_p">Ansvarig utgivare: Liselotte </p>
+
         <button id="goBack_button"> Tillbaka</button>
-        <div id="footer">
+        <div id="footerNyhter">
             <div>
                 <p>Kontakt</p>
                 <h3>Kontakta oss</h3>
@@ -63,9 +71,11 @@
                 <h3>Frekvenser</h3>
             </div>
         </div>
+        <footer id="footer"></footer>
     </main>
     <script src="../javascript/timer.js"></script>
     <script src="../javascript/newspage.js"></script>
+    <script src="../javascript/meny.js"></script>
 </body>
 
 </html>

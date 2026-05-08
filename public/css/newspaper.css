@@ -8,7 +8,7 @@ button {
     border-radius: 10px;
     padding: 15px;
     font-size: 14px;
-    height: 100px;
+    height: 50px;
     width: 100px;
     margin-left: auto;
     margin-right: auto;
@@ -29,9 +29,17 @@ button {
     flex: 1;
 }
 
+#fotoAndtext {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
 #bildtext {
     border: 1px solid black;
     padding: 5px;
+    width: 320px;
 }
 
 #bildtext p {
@@ -46,12 +54,13 @@ main {
     position: relative;
     margin: 0px;
     width: 390px;
-    height: 500px;
+    height: 844px;
     display: flex;
     flex-direction: column;
     position: sticky;
     bottom: 0;
     z-index: 5;
+    overflow: scroll;
 }
 
 #timerDIV {
@@ -81,6 +90,10 @@ main {
     text-align: left;
 }
 
+#nyhetContent {
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
 
 /* popup ruta till hints */
 .popup {
@@ -94,6 +107,7 @@ main {
     transform: translate(-50%, -50%);
     z-index: 10;
     display: none;
+    text-align: center;
 
     background-image: url(../assets/images/bgPaper.jpg);
     background-size: cover;
@@ -118,6 +132,10 @@ main {
     margin-bottom: 30px;
 }
 
+.popup button {
+    margin-top: 15px;
+}
+
 #img_box {
     border-bottom: 0.5px solid #650003;
     border-top: 0.5px solid #650003;
@@ -133,12 +151,6 @@ main {
     margin-left: 10px;
 }
 
-.small_p,
-h2,
-#article_text {
-    margin-left: 10px;
-}
-
 p,
 h2,
 h3 {
@@ -147,7 +159,6 @@ h3 {
 
 h3 {
     font-size: 10px;
-    margin-left: 10px;
 }
 
 .small_p {
@@ -179,20 +190,60 @@ h2 {
     height: 100px;
     width: 100%;
     border-bottom: 0.5px solid #650003;
+    padding: 0px 10px;
+    box-sizing: border-box;
 }
 
 .in_box {
-    height: 100%;
-    margin-left: 10px;
     font-size: 10px;
 }
 
-#footer {
-    border-top: 0.5 solid black;
-    height: 500px;
+#footerNyhter {
+    border-top: 0.5px solid black;
     width: 100%;
     display: flex;
     gap: 10px;
     margin-left: 10px;
-    margin-top: 50px;
+    margin-top: 10px;
+}
+
+
+/* Speletes meny */
+
+footer {
+    height: 76px;
+    width: 390px;
+    border-top: 1px solid black;
+    position: fixed;
+    bottom: 0px;
+    background-color: #C1AC8F;
+    padding-bottom: 16px;
+}
+
+#footerDIV {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    height: 100%;
+
+}
+
+.hintUNfill {
+    height: 59px;
+    width: 36px;
+}
+
+#hintIconUNfill {
+    height: 63px;
+    width: 50px;
+}
+
+#spelplanUNfill {
+    height: 63px;
+    width: 53px;
+}
+
+#minSidaUNfill {
+    height: 51px;
+    width: 53px;
 }

@@ -1,18 +1,16 @@
 
-let minSida = document.getElementById("minSida");
-let hintButton = document.getElementById("hint");
 let main = document.querySelector("main");
-let closeButton = document.createElement("button");
+let closeHintButton = document.createElement("button");
 let popupDiv = document.createElement("div");
 let overlay = document.createElement("div");
+let footer = document.getElementById("footer");
 
 
-
-if (minSida) {
-    minSida.addEventListener("click", function () {
-        window.location.href = "../html/minSida.html";
-    });
-};
+// if (minSida) {
+//     minSida.addEventListener("click", function () {
+//         window.location.href = "../html/minSida.html";
+//     });
+// };
 
 let hintsData = {};
 
@@ -65,77 +63,106 @@ function popUpHints() {
 
     textDiv.append(hintOneDiv, hintTwoDiv);
 
-
-    closeButton.textContent = "Stäng";
-    popupDiv.append(textDiv, closeButton);
+    closeHintButton.textContent = "Stäng";
+    popupDiv.append(textDiv, closeHintButton);
     main.append(overlay, popupDiv);
 };
 
-if (hintButton) {
-    hintButton.addEventListener("click", function () {
-        popUpHints();
-        popupDiv.style.display = "block";
-        overlay.style.display = "block";
-    });
+
+//MENY (FOOTER)
+
+if (footer) {
+    footer.innerHTML = `
+        <div id="footerDIV">
+            <div id="hintMenu">
+                <img id="hintIconUNfill"
+                src="../assets/icons/hintUNfill.png">
+            </div>
+
+            <div id="spelplanMenu">
+                <img id="spelplanUNfill"
+                src="../assets/icons/spelplanUNfill.png">
+            </div>
+
+            <div id="minSidaMenu">
+                <img id="minSidaUNfill"
+                src="../assets/icons/minSidaUNfill.png">
+            </div>
+        </div>
+    `;
 }
 
-closeButton.addEventListener("click", function () {
-    popupDiv.style.display = "none";
-    overlay.style.display = "none";
-});
+// let rulesBtn = document.getElementById("showRulesBtn");
+// let rulesDiv = document.getElementById("spelregler");
+// let closeRulesBtn = document.getElementById("closeRulesBtn");
 
-let rulesBtn = document.getElementById("showRulesBtn");
-let rulesDiv = document.getElementById("spelregler");
-let closeRulesBtn = document.getElementById("closeRulesBtn");
+// if (rulesBtn) {
+//     rulesBtn.addEventListener("click", function () {
+//         if (rulesDiv.style.display === "block") {
+//             rulesDiv.style.display = "none";
+//         } else {
+//             rulesDiv.style.display = "block";
+//         }
+//     });
+// }
 
-if (rulesBtn) {
-    rulesBtn.addEventListener("click", function () {
-
-        if (rulesDiv.style.display === "block") {
-            rulesDiv.style.display = "none";
-        } else {
-            rulesDiv.style.display = "block";
-        }
-
-    });
-}
-
-if (closeRulesBtn) {
-    closeRulesBtn.addEventListener("click", function () {
-        rulesDiv.style.display = "none";
-    });
-}
+// if (closeRulesBtn) {
+//     closeRulesBtn.addEventListener("click", function () {
+//         rulesDiv.style.display = "none";
+//     });
+// }
 
 
 let hintMenu = document.querySelector("#hintMenu");
+let hintIcon = document.querySelector("#hintIconUNfill");
+let spelplanIcon = document.querySelector("#spelplanUNfill");
+let minSidaIcon = document.querySelector("#minSidaUNfill");
 let spelplanMenu = document.querySelector("#spelplanMenu");
 let minSidaMenu = document.querySelector("#minSidaMenu");
 
-let hintUNfill = document.querySelector("#hintUNfill");
+let hintUNfill = document.querySelector(".hintUNfill");
 
-// hintMenu.addEventListener("click", function () {
-//     //hintUNfill.display = "none";
+hintMenu.addEventListener("click", function () {
+    hintIcon.src = "../assets/icons/hintFILL.png";
+    hintMenu.style.borderBottom = "1px solid black";
 
-//     //let hintFILL = document.createElement("img");
+    spelplanMenu.style.borderBottom = "none";
+    spelplanIcon.src = "../assets/icons/spelplanUNfill.png";
 
-//     //hintFILL.src = "../assets/icons/hintFILL.png";
-//     //hintFILL.id = "hintFILL";
-//     hintMenu.style.borderBottom = "1px solid black";
-//     spelplanMenu.style.borderBottom = "none";
-//     minSidaMenu.style.borderBottom = "none";
+    minSidaMenu.style.borderBottom = "none";
+    minSidaIcon.src = "../assets/icons/minSidaUNfill.png";
 
-//     //hintMenu.appendChild(hintFILL);
-// })
+    popUpHints();
+    popupDiv.style.display = "block";
+    overlay.style.display = "block";
+});
+
+closeHintButton.addEventListener("click", function () {
+    popupDiv.style.display = "none";
+    overlay.style.display = "none";
+    hintIcon.src = "../assets/icons/hintUNfill.png";
+    hintMenu.style.borderBottom = "none";
+});
 
 
 spelplanMenu.addEventListener("click", function () {
+    spelplanIcon.src = "../assets/icons/spelplanFILL.png"
     spelplanMenu.style.borderBottom = "1px solid black";
+
     minSidaMenu.style.borderBottom = "none";
+    minSidaIcon.src = "../assets/icons/minSidaUNfill.png";
+
     hintMenu.style.borderBottom = "none";
+    hintIcon.src = "../assets/icons/hintUNfill.png";
 })
 
 minSidaMenu.addEventListener("click", function () {
+    minSidaIcon.src = "../assets/icons/minSidaFILL.png"
     minSidaMenu.style.borderBottom = "1px solid black";
+
     spelplanMenu.style.borderBottom = "none";
+    spelplanIcon.src = "../assets/icons/spelplanUNfill.png";
+
     hintMenu.style.borderBottom = "none";
-})
+    hintIcon.src = "../assets/icons/hintUNfill.png";
+});

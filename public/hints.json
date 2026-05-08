@@ -13,7 +13,7 @@
     },
     "steg5": {
         "hint1": "Mazemap.",
-        "hint2": "Ta dig till sal XXX och leta upp loggan."
+        "hint2": "Ta dig till sal NI:A0414 och leta upp loggan."
     },
     "steg6": {
         "hint1": " Lås och nyckel öppnar nästa dörr.",
@@ -36,8 +36,8 @@
         "hint2": "Ta dig till Cirkushotellet."
     },
     "steg11": {
-        "hint11": "Bakom murar, kalla och grå, dit ingen ville frivilligt gå.",
-        "hint12": "Ta dig till Kirsebergsanstalten."
+        "hint1": "Bakom murar, kalla och grå, dit ingen ville frivilligt gå.",
+        "hint2": "Ta dig till Kirsebergsanstalten."
     },
     "steg12": {
         "hint1": "Giftormen gömmer sig i gräset.",

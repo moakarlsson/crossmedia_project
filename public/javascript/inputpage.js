@@ -15,7 +15,7 @@ input_button_1.addEventListener("click", function () {
     if (answer_1 === "") {
         alert_message.textContent = "Inputfältet måste vara ifyllt!"
         alert_message.style.color = "#650003";
-    } else if (answer_1 === "300") {
+    } else if (answer_1 === "792") {
         alert_message.textContent = "Rätt svar✔️";
         alert_message.style.color = "green";
 
@@ -44,7 +44,7 @@ input_button_2.addEventListener("click", function () {
     if (answer_2 === "") {
         alert_message2.textContent = "Inputfältet måste vara ifyllt!"
         alert_message2.style.color = "#650003";
-    } else if (answer_2 === "500") {
+    } else if (answer_2 === "1121") {
         alert_message2.textContent = "Rätt svar✔️";
         alert_message2.style.color = "green";
         input_button_2.style.opacity = "0";
