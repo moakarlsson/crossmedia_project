@@ -41,26 +41,33 @@ input_button_1.addEventListener("click", function () {
 input_button_2.addEventListener("click", function () {
     const input_2 = document.getElementById("answer_2");
     const answer_2 = input_2.value;
+
     if (answer_2 === "") {
+
         alert_message2.textContent = "Inputfältet måste vara ifyllt!"
         alert_message2.style.color = "#650003";
+
     } else if (answer_2 === "1121") {
+
         alert_message2.textContent = "Rätt svar✔️";
         alert_message2.style.color = "green";
         input_button_2.style.opacity = "0";
+
         setTimeout(function () {
+
             input_button_2.style.display = "none";
             input_div1.style.display = "none";
             input_div2.style.display = "none";
+
             setTimeout(function () {
                 popup_hint.style.opacity = "1";
                 setTimeout(function () {
                     popup_hint.style.opacity = "0";
-                    setTimeout (function () {
+                    setTimeout(function () {
                         nextButton.style.visibility = "visible";
                         nextButton.style.opacity = "1";
                     }, 2000)
-                }, 500);
+                }, 1500);
             }, 1000);
         }, 1000);
     } else {

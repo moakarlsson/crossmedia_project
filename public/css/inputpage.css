@@ -51,3 +51,8 @@ input {
     transition: opacity 1s ease;
     text-align: center
 }
+
+
+#nextButton {
+    visibility: hidden;
+}
