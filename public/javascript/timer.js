@@ -1,6 +1,6 @@
 let timerDisplay = document.getElementById("timerDisplay");
 let timerDIV = document.getElementById("timerDIV");
-
+let endTime;
 let finalTime = null;
 
 window.addEventListener("load", function () {
@@ -12,15 +12,10 @@ window.addEventListener("load", function () {
     }
 });
 
-//starta timer
-startTimer();
 
 function stopTimer() {
-
     clearInterval(window.timerInterval);
-
     let now = Date.now();
-
     let timeLeft = Math.floor((endTime - now) / 1000);
 
     if (timeLeft < 0) {
@@ -41,8 +36,6 @@ window.timerInterval = undefined;
 
 // STARTA TIMER (ENDAST OM DEN INTE REDAN FINNS)
 function startTimer() {
-    let endTime;
-    let timerInterval;
     let existing = localStorage.getItem("endTime");
 
     if (!existing) {
@@ -53,20 +46,21 @@ function startTimer() {
         endTime = Number(existing);
     }
 
-    clearInterval(timerInterval);
+    clearInterval(window.timerInterval);
     window.timerInterval = setInterval(updateTimer, 1000);
     ;
 }
 
+//starta timer
+startTimer();
 
 // UPPDATERA TIMER
 function updateTimer() {
     let now = Date.now();
     let timeLeft = Math.floor((endTime - now) / 1000);
-    timerDisplay.textContent = "2: 30: 00";
 
     if (timeLeft <= 0) {
-        clearInterval(timerInterval);
+        clearInterval(window.timerInterval);
         timerDisplay.textContent = "0 : 00 : 00";
         localStorage.removeItem("endTime");
         return;

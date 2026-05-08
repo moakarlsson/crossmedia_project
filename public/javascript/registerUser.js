@@ -7,6 +7,8 @@ let popup = document.getElementById("popup");
 let startaSpelet = document.getElementById("startaSpelet");
 
 startaSpelet.addEventListener("click", function () {
+    localStorage.removeItem("endTime");
+    localStorage.removeItem("finalTime");
     window.location.href = "../html/ljudfil.html";
 });
 
