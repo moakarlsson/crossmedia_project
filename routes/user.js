@@ -70,7 +70,7 @@ router.post("/saveResult", async (req, res) => {
 
     try {
         await db.query(
-            "INSERT INTO result (user_id, time_left, start_time, end_time) VALUES (?, ?, ?,?)",
+            "INSERT INTO result (user_id, time_left, start_time, end_time) VALUES (?, ?, ?, ?)",
             [userId, timeLeft, startTime, endTime]
         );
 
