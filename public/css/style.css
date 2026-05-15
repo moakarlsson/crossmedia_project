@@ -76,6 +76,12 @@ main {
     height: 30px;
 }
 
+#timerDisplay {
+    padding: 15px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
 #topBar {
     height: 38px;
     border-radius: 30px 30px 0px 0px;

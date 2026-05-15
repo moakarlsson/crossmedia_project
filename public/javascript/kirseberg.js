@@ -1,221 +1,311 @@
 
 let spelKirsebergDIV = document.getElementById("spelinnehåll");
 
-function clueOne() {
-    //På lekpats - ska till scenen
-    spelKirsebergDIV.innerHTML = "";
-    window.currentStep = "steg8";
+// function clueOne() {
+//     //På lekpats - ska till scenen
+//     spelKirsebergDIV.innerHTML = "";
+//     window.currentStep = "steg8";
 
-    let contentDiv = document.createElement("div");
+//     let contentDiv = document.createElement("div");
 
-    let divInputFält = document.createElement("div");
-    divInputFält.classList.add("divInputFält");
+//     let divInputFält = document.createElement("div");
+//     divInputFält.classList.add("divInputFält");
 
-    // let h2 = document.createElement("h2");
-    // h2.textContent = "Mordvapnet"
+//     let inputMessage = document.createElement("p");
+//     inputMessage.style.visibility = "hidden";
+//     inputMessage.style.height = "18px";
+//     inputMessage.style.padding = "10px 0px";
 
-    let inputMessage = document.createElement("p");
-    inputMessage.style.visibility = "hidden";
-    inputMessage.style.height = "18px";
+//     let label = document.createElement("label");
+//     label.textContent = "X =  ";
+//     label.htmlFor = "textinput";
 
-    let label = document.createElement("label");
-    label.textContent = "X = : ";
-    label.htmlFor = "textinput";
+//     let inputFält = document.createElement("input");
+//     inputFält.type = "text";
+//     inputFält.id = "textinput";
+//     inputFält.style.height = "20px";
+//     inputFält.style.width = "65px";
 
-    let inputFält = document.createElement("input");
-    inputFält.type = "text";
-    inputFält.id = "textinput";
-    inputFält.style.height = "20px";
-    inputFält.style.width = "65px";
+//     let labelAndInput = document.createElement("div");
 
-    let button = document.createElement("button");
-    button.textContent = "OK";
+//     let button = document.createElement("button");
+//     button.textContent = "OK";
+//     button.id = "buttonOK";
 
-    let nextButton = document.createElement("button");
-    nextButton.textContent = "Gå vidare";
-    nextButton.classList.add("buttonPlacementFive");
+//     let nextButton = document.createElement("button");
+//     nextButton.textContent = "Gå vidare";
+//     nextButton.classList.add("buttonPlacement");
 
-    divInputFält.append(label, inputFält);
-    contentDiv.append(divInputFält);
-    contentDiv.append(inputMessage);
-    contentDiv.append(button);
-    spelKirsebergDIV.append(contentDiv, nextButton);
+//     labelAndInput.append(label, inputFält)
+//     divInputFält.append(labelAndInput, button);
+//     contentDiv.append(divInputFält);
+//     contentDiv.append(inputMessage);
+//     spelKirsebergDIV.append(contentDiv, nextButton);
 
-    button.addEventListener("click", function () {
-        let answer = inputFält.value.toLowerCase();
-        if (answer === "1") {
-            inputMessage.style.visibility = "visible";
-            inputMessage.textContent = "Rätt input!";
-            nextButton.style.display = "block"
-        } else {
-            inputMessage.style.visibility = "visible";
-            inputMessage.textContent = "Fel input, försök igen!";
-        }
-    });
+//     button.addEventListener("click", function () {
+//         let answer = inputFält.value;
+//         if (answer === "1") {
+//             inputMessage.style.visibility = "visible";
+//             inputMessage.textContent = "Rätt input!";
+//             nextButton.style.display = "block"
+//         } else {
+//             inputMessage.style.visibility = "visible";
+//             inputMessage.textContent = "Fel input, försök igen!";
+//         }
+//     });
 
-    nextButton.addEventListener("click", function () {
-        clueTwo();
-    });
-};
-clueOne();
-
-
-function clueTwo() {
-    //På scenen - ska till lokstallarna    
-
-    spelKirsebergDIV.innerHTML = "";
-    window.currentStep = "steg9";
-    let contentDiv = document.createElement("div");
-
-    let h3 = document.createElement("h3");
-    h3.textContent = "Nästa ledtråd väntar!";
-
-    let img = document.createElement("img");
-    img.src = "../assets/images/nypon.png";
-    img.classList.add("pic");
-
-    let text = document.createElement("p");
-    text.textContent = "När ni löst den aktuella uppgfiten kan ni klicka på knappen 'Gå vidare' för att gå vidare till nästa steg."
-
-    let nextButton = document.createElement("button");
-    nextButton.textContent = "Gå vidare";
-    nextButton.classList.add("buttonPlacement");
-
-    nextButton.addEventListener("click", function () {
-        clueThree();
-    });
-
-    contentDiv.append(h3, img, text, nextButton);
-    spelKirsebergDIV.append(contentDiv);
-};
-
-function clueThree() {
-    //Vid lokstallarna - ska till Cirkushotellet
-
-    spelKirsebergDIV.innerHTML = "";
-    window.currentStep = "steg10";
-    let contentDiv = document.createElement("div");
-
-    let h3 = document.createElement("h3");
-    h3.textContent = "Ni är någon på spåren…";
-
-    let img = document.createElement("img");
-    img.src = "../assets/images/nypon.png";
-    img.classList.add("pic");
-
-    let text = document.createElement("p");
-    text.textContent = "När ni löst den aktuella uppgfiten kan ni klicka på knappen 'Gå vidare' för att gå vidare till nästa steg."
-
-    let nextButton = document.createElement("button");
-    nextButton.textContent = "Gå vidare";
-    nextButton.classList.add("buttonPlacement");
-
-    nextButton.addEventListener("click", function () {
-        clueFour();
-    });
-
-    contentDiv.append(h3, img, text, nextButton);
-    spelKirsebergDIV.append(contentDiv);
-}
+//     nextButton.addEventListener("click", function () {
+//         clueTwo();
+//     });
+// };
+// clueOne();
 
 
-function clueFour() {
-    //Vid cirkushotellet- ska till fängelset 
-    spelKirsebergDIV.innerHTML = "";
-    window.currentStep = "steg11";
-    let contentDiv = document.createElement("div");
+// function clueTwo() {
+//     //På scenen - ska till lokstallarna    
 
-    let h3 = document.createElement("h3");
-    h3.textContent = "Nu tätnar mysteriet...";
+//     spelKirsebergDIV.innerHTML = "";
+//     window.currentStep = "steg9";
+//     let contentDiv = document.createElement("div");
 
-    let img = document.createElement("img");
-    img.src = "../assets/images/nypon.png";
-    img.classList.add("pic");
+//     let divInputFält = document.createElement("div");
+//     divInputFält.classList.add("divInputFält");
 
-    let text = document.createElement("p");
-    text.textContent = "När ni löst den aktuella uppgfiten kan ni klicka på knappen 'Gå vidare' för att gå vidare till nästa steg."
+//     let inputMessage = document.createElement("p");
+//     inputMessage.style.visibility = "hidden";
+//     inputMessage.style.height = "18px";
+//     inputMessage.style.padding = "10px 0px";
 
-    let nextButton = document.createElement("button");
-    nextButton.textContent = "Gå vidare";
-    nextButton.classList.add("buttonPlacement");
+//     let label = document.createElement("label");
+//     label.textContent = "⚫ =  ";
+//     label.htmlFor = "textinput";
 
-    nextButton.addEventListener("click", function () {
-        clueFive();
-    });
+//     let inputFält = document.createElement("input");
+//     inputFält.type = "text";
+//     inputFält.id = "textinput";
+//     inputFält.style.height = "20px";
+//     inputFält.style.width = "65px";
 
-    contentDiv.append(h3, img, text, nextButton);
-    spelKirsebergDIV.append(contentDiv);
-}
+//     let labelAndInput = document.createElement("div");
+
+//     let button = document.createElement("button");
+//     button.textContent = "OK";
+//     button.id = "buttonOK";
+
+//     let nextButton = document.createElement("button");
+//     nextButton.textContent = "Gå vidare";
+//     nextButton.classList.add("buttonPlacement");
+
+//     labelAndInput.append(label, inputFält)
+//     divInputFält.append(labelAndInput, button);
+//     contentDiv.append(divInputFält);
+//     contentDiv.append(inputMessage);
+//     spelKirsebergDIV.append(contentDiv, nextButton);
+
+//     button.addEventListener("click", function () {
+//         let answer = inputFält.value;
+//         if (answer === "9") {
+//             inputMessage.style.visibility = "visible";
+//             inputMessage.textContent = "Rätt input!";
+//             nextButton.style.display = "block"
+//         } else {
+//             inputMessage.style.visibility = "visible";
+//             inputMessage.textContent = "Fel input, försök igen!";
+//         }
+//     });
+
+//     nextButton.addEventListener("click", function () {
+//         clueThree();
+//     });
+// };
+
+// function clueThree() {
+//     //Vid lokstallarna - ska till Cirkushotellet
+
+//     spelKirsebergDIV.innerHTML = "";
+//     window.currentStep = "steg10";
+//     let contentDiv = document.createElement("div");
+
+//     let divInputFält = document.createElement("div");
+//     divInputFält.classList.add("divInputFält");
+
+//     let inputMessage = document.createElement("p");
+//     inputMessage.style.visibility = "hidden";
+//     inputMessage.style.height = "18px";
+//     inputMessage.style.padding = "10px 0px";
+
+//     let label = document.createElement("label");
+//     label.textContent = "X =  ";
+//     label.htmlFor = "textinput";
+
+//     let inputFält = document.createElement("input");
+//     inputFält.type = "text";
+//     inputFält.id = "textinput";
+//     inputFält.style.height = "20px";
+//     inputFält.style.width = "65px";
+
+//     let labelAndInput = document.createElement("div");
+
+//     let button = document.createElement("button");
+//     button.textContent = "OK";
+//     button.id = "buttonOK";
+
+//     let nextButton = document.createElement("button");
+//     nextButton.textContent = "Gå vidare";
+//     nextButton.classList.add("buttonPlacement");
+
+//     labelAndInput.append(label, inputFält)
+//     divInputFält.append(labelAndInput, button);
+//     contentDiv.append(divInputFält);
+//     contentDiv.append(inputMessage);
+//     spelKirsebergDIV.append(contentDiv, nextButton);
+
+//     button.addEventListener("click", function () {
+//         let answer = inputFält.value;
+//         if (answer === "1") {
+//             inputMessage.style.visibility = "visible";
+//             inputMessage.textContent = "Rätt input!";
+//             nextButton.style.display = "block"
+//         } else {
+//             inputMessage.style.visibility = "visible";
+//             inputMessage.textContent = "Fel input, försök igen!";
+//         }
+//     });
+
+//     nextButton.addEventListener("click", function () {
+//         clueFour();
+//     });
+// }
 
 
-function clueFive() {
-    //Vid fängelset, sista stället - ska sedan avsluta
-    spelKirsebergDIV.innerHTML = "";
-    window.currentStep = "steg12";
+// function clueFour() {
+//     //Vid cirkushotellet- ska till fängelset 
+//     spelKirsebergDIV.innerHTML = "";
+//     window.currentStep = "steg11";
+//     let contentDiv = document.createElement("div");
 
-    let contentDiv = document.createElement("div");
+//     let divInputFält = document.createElement("div");
+//     divInputFält.classList.add("divInputFält");
 
-    let divInputFält = document.createElement("div");
-    divInputFält.classList.add("divInputFält");
+//     let inputMessage = document.createElement("p");
+//     inputMessage.style.visibility = "hidden";
+//     inputMessage.style.height = "18px";
+//     inputMessage.style.padding = "10px 0px";
 
-    let endingText = document.createElement("p");
-    endingText.classList.add("endingText");
-    endingText.textContent = "Nu närmar ni er slutet och snart har ni möjlight att stoppa mördaren! Ni vet att det är Daniel Petrov som begått morden. Nu ska ni få ange erna misstankar kring hur och var morden begicks."
+//     let label = document.createElement("label");
+//     label.textContent = "◼️ =  ";
+//     label.htmlFor = "textinput";
 
-    let h2 = document.createElement("h2");
-    h2.textContent = "Mordvapnet"
+//     let inputFält = document.createElement("input");
+//     inputFält.type = "text";
+//     inputFält.id = "textinput";
+//     inputFält.style.height = "20px";
+//     inputFält.style.width = "65px";
 
-    let inputMessage = document.createElement("p");
-    inputMessage.style.visibility = "hidden";
-    inputMessage.style.height = "18px";
+//     let labelAndInput = document.createElement("div");
 
-    let hiddenText = document.createElement("p");
-    hiddenText.style.visibility = "hidden";
-    hiddenText.textContent = " = vätecyanid";
+//     let button = document.createElement("button");
+//     button.textContent = "OK";
+//     button.id = "buttonOK";
 
-    let label = document.createElement("label");
-    label.textContent = "Ange mordvapen: ";
-    label.htmlFor = "textinput";
+//     let nextButton = document.createElement("button");
+//     nextButton.textContent = "Gå vidare";
+//     nextButton.classList.add("buttonPlacement");
 
-    let inputFält = document.createElement("input");
-    inputFält.type = "text";
-    inputFält.id = "textinput";
-    inputFält.style.height = "20px";
-    inputFält.style.width = "65px";
+//     labelAndInput.append(label, inputFält)
+//     divInputFält.append(labelAndInput, button);
+//     contentDiv.append(divInputFält);
+//     contentDiv.append(inputMessage);
+//     spelKirsebergDIV.append(contentDiv, nextButton);
 
-    let button = document.createElement("button");
-    button.textContent = "OK";
+//     button.addEventListener("click", function () {
+//         let answer = inputFält.value;
+//         if (answer === "3") {
+//             inputMessage.style.visibility = "visible";
+//             inputMessage.textContent = "Rätt input!";
+//             nextButton.style.display = "block"
+//         } else {
+//             inputMessage.style.visibility = "visible";
+//             inputMessage.textContent = "Fel input, försök igen!";
+//         }
+//     });
 
-    let nextButton = document.createElement("button");
-    nextButton.textContent = "Gå vidare";
-    nextButton.classList.add("buttonPlacementFive");
+//     nextButton.addEventListener("click", function () {
+//         clueFive();
+//     });
+// };
 
 
-    contentDiv.append(endingText);
-    contentDiv.append(h2);
-    divInputFält.append(label, inputFält, hiddenText);
-    contentDiv.append(divInputFält);
-    contentDiv.append(inputMessage);
-    contentDiv.append(button);
-    spelKirsebergDIV.append(contentDiv, nextButton);
+// function clueFive() {
+//     //Vid fängelset, sista stället - ska sedan avsluta
+//     spelKirsebergDIV.innerHTML = "";
+//     spelKirsebergDIV.style.marginTop = "0px";
+//     window.currentStep = "steg12";
 
-    button.addEventListener("click", function () {
-        let answer = inputFält.value.toLowerCase();
-        if (answer === "hcn") {
-            inputMessage.style.visibility = "visible";
-            inputMessage.textContent = "Rätt input!";
-            hiddenText.style.visibility = "visible";
-            nextButton.style.display = "block"
-        } else {
-            inputMessage.style.visibility = "visible";
-            inputMessage.textContent = "Fel input, försök igen!";
-        }
-    });
+//     let contentDiv = document.createElement("div");
 
-    nextButton.addEventListener("click", function () {
-        clueSix();
-    });
-}
+//     let divInputFält = document.createElement("div");
+//     divInputFält.classList.add("divInputFält");
+//     divInputFält.style.gap = "0px";
+
+//     let endingText = document.createElement("p");
+//     endingText.classList.add("endingText");
+//     endingText.textContent = "Nu närmar ni er slutet och snart har ni möjlight att stoppa mördaren! Ni vet att det är Daniel Petrov som begått morden. Nu ska ni få ange erna misstankar kring hur och var morden begicks."
+
+//     let h2 = document.createElement("h2");
+//     h2.textContent = "Mordvapnet"
+
+//     let inputMessage = document.createElement("p");
+//     inputMessage.style.visibility = "hidden";
+//     inputMessage.style.height = "18px";
+
+//     let hiddenText = document.createElement("p");
+//     hiddenText.style.visibility = "hidden";
+//     hiddenText.textContent = " = vätecyanid";
+
+//     let label = document.createElement("label");
+//     label.textContent = "Ange mordvapen: ";
+//     label.htmlFor = "textinput";
+
+//     let inputFält = document.createElement("input");
+//     inputFält.type = "text";
+//     inputFält.id = "textinput";
+//     inputFält.style.height = "20px";
+//     inputFält.style.width = "65px";
+
+//     let button = document.createElement("button");
+//     button.textContent = "OK";
+
+//     let nextButton = document.createElement("button");
+//     nextButton.textContent = "Gå vidare";
+//     nextButton.classList.add("buttonPlacement");
+
+
+//     contentDiv.append(endingText);
+//     contentDiv.append(h2);
+//     divInputFält.append(label, inputFält, hiddenText);
+//     contentDiv.append(divInputFält);
+//     contentDiv.append(inputMessage);
+//     contentDiv.append(button);
+//     spelKirsebergDIV.append(contentDiv, nextButton);
+
+//     button.addEventListener("click", function () {
+//         let answer = inputFält.value.toLowerCase();
+//         if (answer === "hcn") {
+//             inputMessage.style.visibility = "visible";
+//             inputMessage.textContent = "Rätt input!";
+//             hiddenText.style.visibility = "visible";
+//             nextButton.style.display = "block"
+//         } else {
+//             inputMessage.style.visibility = "visible";
+//             inputMessage.textContent = "Fel input, försök igen!";
+//         }
+//     });
+
+//     nextButton.addEventListener("click", function () {
+//         clueSix();
+//     });
+// }
 
 function clueSix() {
     spelKirsebergDIV.innerHTML = "";
@@ -223,7 +313,6 @@ function clueSix() {
 
     let h2 = document.createElement("h2");
     h2.textContent = "Brottsplatsen";
-    h2.style.marginTop = "0px";
 
     let beskrivning = document.createElement("p");
     beskrivning.textContent = "Varje symbol döljer en siffra. Tryck på symbolerna i rätt ordning för att se alla siffror."
@@ -233,7 +322,7 @@ function clueSix() {
 
     let nextButton = document.createElement("button");
     nextButton.textContent = "Gå vidare";
-    nextButton.classList.add("buttonPlacementFive");
+    nextButton.classList.add("buttonPlacement");
 
     let buttonDivs = document.createElement("div");
     let buttonSymbol1 = document.createElement("button");
@@ -242,14 +331,17 @@ function clueSix() {
     buttonSymbol2.textContent = "⚫";
     let buttonSymbol3 = document.createElement("button");
     buttonSymbol3.textContent = "◼️";
+    let buttonSymbol4 = document.createElement("button");
+    buttonSymbol4.textContent = "✖️";
 
     let codeText = document.createElement("p");
 
     buttonSymbol1.id = "symbolButton";
     buttonSymbol2.id = "symbolButton";
     buttonSymbol3.id = "symbolButton";
+    buttonSymbol4.id = "symbolButton";
 
-    buttonDivs.append(buttonSymbol2, buttonSymbol3, buttonSymbol1);
+    buttonDivs.append(buttonSymbol4, buttonSymbol2, buttonSymbol3, buttonSymbol1);
     symbolDiv.append(buttonDivs);
 
     let allSmalDivs = document.createElement("div");
@@ -264,7 +356,6 @@ function clueSix() {
     divSymbol2.classList.add("smallDiv");
     divSymbol3.classList.add("smallDiv");
     divSymbol4.classList.add("smallDiv");
-    divSymbol4.textContent = "3"
 
     let divBrottsplats = document.createElement("div");
     divBrottsplats.classList.add("divBrottsplats");
@@ -285,9 +376,7 @@ function clueSix() {
     spelKirsebergDIV.append(divBrottsplats);
     spelKirsebergDIV.append(nextButton);
 
-
-
-    let correctCode = ["✖️", "⚫", "◼️"];
+    let correctCode = ["✖️", "⚫", "✖️", "◼️"];
     let playerCode = [];
 
     buttonSymbol1.addEventListener("click", function () {
@@ -394,6 +483,8 @@ function clueSix() {
     });
 }
 
+
+clueSix()
 
 function clueSeven() {
     spelKirsebergDIV.innerHTML = "";

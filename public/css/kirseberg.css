@@ -12,6 +12,17 @@
 
 }
 
+
+#buttonOK {
+    width: 65px;
+    height: 35px;
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .fadeIn {
     opacity: 0;
     transform: translateY(20px);
@@ -54,15 +65,9 @@
 }
 
 .buttonPlacement {
-    position: absolute;
-    bottom: 110px;
-    right: 15px;
-}
-
-.buttonPlacementFive {
     display: none;
     position: absolute;
-    bottom: 110px;
+    bottom: 25px;
     right: 15px;
 }
 
@@ -70,6 +75,7 @@
     height: 30px;
     display: flex;
     align-items: center;
+    gap: 30px;
 }
 
 .divBrottsplats {
@@ -95,13 +101,11 @@
     align-items: center;
     padding: 15px;
     position: relative;
-    margin-top: 150px;
+    margin-top: 100px;
+    overflow: scroll;
 }
 
 .endingText {
-    position: absolute;
-    top: -140px;
-    left: 13px;
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     width: 360px;
