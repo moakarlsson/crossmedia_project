@@ -150,4 +150,6 @@ minSidaMenu.addEventListener("click", function () {
 
     hintMenu.style.borderBottom = "none";
     hintIcon.src = "../assets/icons/hintUNfill.png";
+
+    window.location.href = "../html/minSida.html"
 });

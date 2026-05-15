@@ -29,16 +29,16 @@ async function getUser() {
     return user;
 };
 
-// async function showInfo() {
-//     let user = await getUser();
+async function showInfo() {
+    let user = await getUser();
 
-//     let div = document.createElement("div");
-//     let p = document.createElement("p");
+    let div = document.createElement("div");
+    let p = document.createElement("p");
 
-//     p.textContent = `Spelare: ${user.userName}`
+    p.textContent = `Spelare: ${user.userName}`
 
-//     div.append(p);
-//     inloggad.append(div);
-// };
+    div.append(p);
+    inloggad.append(div);
+};
 
-// showInfo();
+showInfo();
