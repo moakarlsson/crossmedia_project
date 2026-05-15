@@ -25,41 +25,53 @@ function popUpHints() {
 
     popupDiv.innerHTML = "";
 
-    let hintOneDiv = document.createElement("div");
-    let pKlickOne = document.createElement("p");
-    pKlickOne.textContent = "Se hint 1";
-    pKlickOne.style.fontSize = "24px";
-    pKlickOne.style.fontWeight = "bold";
-    let pOne = document.createElement("p");
-    hintOneDiv.append(pKlickOne, pOne);
-    pOne.textContent = currentHints.hint1;
-    pOne.style.visibility = "hidden";
+    if (!currentHints) {
+        let noHints = document.createElement("p");
+        noHints.textContent = "Finns inga hints till denna del av spelet.";
+        textDiv.append(noHints);
 
+    } else {
+        // HINT 1
+        let hintOneDiv = document.createElement("div");
 
-    pKlickOne.addEventListener("click", function () {
-        pOne.style.visibility = "visible";
-    });
+        let pKlickOne = document.createElement("p");
+        pKlickOne.textContent = "Se hint 1";
+        pKlickOne.style.fontSize = "24px";
+        pKlickOne.style.fontWeight = "bold";
 
-    let hintTwoDiv = document.createElement("div");
-    let pKlickTwo = document.createElement("p");
-    pKlickTwo.textContent = "Se hint 2";
-    pKlickTwo.style.fontSize = "24px";
-    pKlickTwo.style.fontWeight = "bold";
-    let pTwo = document.createElement("p");
-    hintTwoDiv.append(pKlickTwo, pTwo);
-    pTwo.textContent = currentHints.hint2;
-    pTwo.style.visibility = "hidden";
+        let pOne = document.createElement("p");
+        pOne.textContent = currentHints.hint1;
+        pOne.style.visibility = "hidden";
 
-    pKlickTwo.addEventListener("click", function () {
-        pTwo.style.visibility = "visible";
-    })
+        hintOneDiv.append(pKlickOne, pOne);
 
-    textDiv.append(hintOneDiv, hintTwoDiv);
+        pKlickOne.addEventListener("click", function () {
+            pOne.style.visibility = "visible";
+        });
 
+        // HINT 2
+        let hintTwoDiv = document.createElement("div");
+
+        let pKlickTwo = document.createElement("p");
+        pKlickTwo.textContent = "Se hint 2";
+        pKlickTwo.style.fontSize = "24px";
+        pKlickTwo.style.fontWeight = "bold";
+
+        let pTwo = document.createElement("p");
+        pTwo.textContent = currentHints.hint2;
+        pTwo.style.visibility = "hidden";
+
+        hintTwoDiv.append(pKlickTwo, pTwo);
+
+        pKlickTwo.addEventListener("click", function () {
+            pTwo.style.visibility = "visible";
+        });
+        textDiv.append(hintOneDiv, hintTwoDiv);
+    }
     closeHintButton.textContent = "Stäng";
     popupDiv.append(textDiv, closeHintButton);
     main.append(overlay, popupDiv);
-};
+}
 
 
 //MENY (FOOTER)
