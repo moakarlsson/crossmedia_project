@@ -79,9 +79,9 @@ if (footer) {
                 src="../assets/icons/hintUNfill.png">
             </div>
 
-            <div id="spelplanMenu">
-                <img id="spelplanUNfill"
-                src="../assets/icons/spelplanUNfill.png">
+            <div id="dokumentbankMenu">
+                <img id="dokumentbankUNfill"
+                src="../assets/icons/dokumentbankUNfill.png">
             </div>
 
             <div id="minSidaMenu">
@@ -115,9 +115,9 @@ if (footer) {
 
 let hintMenu = document.querySelector("#hintMenu");
 let hintIcon = document.querySelector("#hintIconUNfill");
-let spelplanIcon = document.querySelector("#spelplanUNfill");
+let dokumentbankIcon = document.querySelector("#dokumentbankUNfill");
 let minSidaIcon = document.querySelector("#minSidaUNfill");
-let spelplanMenu = document.querySelector("#spelplanMenu");
+let dokumentbankMenu = document.querySelector("#dokumentbankMenu");
 let minSidaMenu = document.querySelector("#minSidaMenu");
 
 let hintUNfill = document.querySelector(".hintUNfill");
@@ -126,8 +126,8 @@ hintMenu.addEventListener("click", function () {
     hintIcon.src = "../assets/icons/hintFILL.png";
     hintMenu.style.borderBottom = "1px solid black";
 
-    spelplanMenu.style.borderBottom = "none";
-    spelplanIcon.src = "../assets/icons/spelplanUNfill.png";
+    dokumentbankMenu.style.borderBottom = "none";
+    dokumentbankIcon.src = "../assets/icons/dokumentbankUNfill.png";
 
     minSidaMenu.style.borderBottom = "none";
     minSidaIcon.src = "../assets/icons/minSidaUNfill.png";
@@ -145,9 +145,9 @@ closeHintButton.addEventListener("click", function () {
 });
 
 
-spelplanMenu.addEventListener("click", function () {
-    spelplanIcon.src = "../assets/icons/spelplanFILL.png"
-    spelplanMenu.style.borderBottom = "1px solid black";
+dokumentbankMenu.addEventListener("click", function () {
+    dokumentbankIcon.src = "../assets/icons/dokumentbankFILL.png"
+    dokumentbankMenu.style.borderBottom = "1px solid black";
 
     minSidaMenu.style.borderBottom = "none";
     minSidaIcon.src = "../assets/icons/minSidaUNfill.png";
@@ -160,8 +160,8 @@ minSidaMenu.addEventListener("click", function () {
     minSidaIcon.src = "../assets/icons/minSidaFILL.png"
     minSidaMenu.style.borderBottom = "1px solid black";
 
-    spelplanMenu.style.borderBottom = "none";
-    spelplanIcon.src = "../assets/icons/spelplanUNfill.png";
+    dokumentbankMenu.style.borderBottom = "none";
+    dokumentbankIcon.src = "../assets/icons/dokumentbankUNfill.png";
 
     hintMenu.style.borderBottom = "none";
     hintIcon.src = "../assets/icons/hintUNfill.png";
