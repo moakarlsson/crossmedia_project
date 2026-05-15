@@ -309,6 +309,7 @@ let spelKirsebergDIV = document.getElementById("spelinnehåll");
 
 function clueSix() {
     spelKirsebergDIV.innerHTML = "";
+    spelKirsebergDIV.style.marginTop = "0px";
     window.currentStep = "steg13";
 
     let h2 = document.createElement("h2");
@@ -325,14 +326,31 @@ function clueSix() {
     nextButton.classList.add("buttonPlacement");
 
     let buttonDivs = document.createElement("div");
+    buttonDivs.classList.add("buttonDivs");
+
     let buttonSymbol1 = document.createElement("button");
     buttonSymbol1.textContent = "✖️";
+
     let buttonSymbol2 = document.createElement("button");
     buttonSymbol2.textContent = "⚫";
+
     let buttonSymbol3 = document.createElement("button");
     buttonSymbol3.textContent = "◼️";
+
     let buttonSymbol4 = document.createElement("button");
-    buttonSymbol4.textContent = "✖️";
+    buttonSymbol4.textContent = "★";
+
+    let buttonSymbol5 = document.createElement("button");
+    buttonSymbol5.textContent = "🖤";
+
+    let buttonSymbol6 = document.createElement("button");
+    buttonSymbol6.textContent = "❖";
+
+    let buttonSymbol7 = document.createElement("button");
+    buttonSymbol7.textContent = "⬖";
+
+    let buttonSymbol8 = document.createElement("button");
+    buttonSymbol8.textContent = "⬢";
 
     let codeText = document.createElement("p");
 
@@ -340,8 +358,21 @@ function clueSix() {
     buttonSymbol2.id = "symbolButton";
     buttonSymbol3.id = "symbolButton";
     buttonSymbol4.id = "symbolButton";
+    buttonSymbol5.id = "symbolButton";
+    buttonSymbol6.id = "symbolButton";
+    buttonSymbol7.id = "symbolButton";
+    buttonSymbol8.id = "symbolButton";
 
-    buttonDivs.append(buttonSymbol4, buttonSymbol2, buttonSymbol3, buttonSymbol1);
+    buttonDivs.append(
+        buttonSymbol4,
+        buttonSymbol2,
+        buttonSymbol3,
+        buttonSymbol1,
+        buttonSymbol5,
+        buttonSymbol6,
+        buttonSymbol7,
+        buttonSymbol8
+    );
     symbolDiv.append(buttonDivs);
 
     let allSmalDivs = document.createElement("div");
@@ -379,105 +410,98 @@ function clueSix() {
     let correctCode = ["✖️", "⚫", "✖️", "◼️"];
     let playerCode = [];
 
-    buttonSymbol1.addEventListener("click", function () {
-        playerCode.push("✖️");
+    let symbolValues = {
+        "✖️": "1",
+        "⚫": "9",
+        "◼️": "3",
+        "★": "5",
+        "🖤": "7",
+        "❖": "2",
+        "⬖": "8",
+        "⬢": "4"
+    };
+    function updateBoxes() {
+        let divs = [divSymbol1, divSymbol2, divSymbol3, divSymbol4];
 
-        divSymbol1.textContent = playerCode[0] || "";
-        divSymbol2.textContent = playerCode[1] || "";
-        divSymbol3.textContent = playerCode[2] || "";
+        for (let i = 0; i < divs.length; i++) {
+            let symbol = playerCode[i];
+            if (symbol) {
+                divs[i].innerHTML = `
+                <div class="bigNumber">${symbolValues[symbol]}</div>
+                <div class="smallSymbol">${symbol}</div>
+            `;
+            } else {
+                divs[i].innerHTML = "";
+            }
+        }
+    }
 
-        if (playerCode.length === 3) {
+    function handleSymbolClick(symbol) {
+        if (playerCode.length >= 4) {
+            return;
+        }
+        playerCode.push(symbol);
+        updateBoxes();
+
+        if (playerCode.length === 4) {
             let playerAnswer = playerCode.join("");
             let correctAnswer = correctCode.join("");
 
             if (playerAnswer === correctAnswer) {
-                divSymbol1.textContent = "1";
-                divSymbol2.textContent = "9"
-                divSymbol3.textContent = "1"
-
-                divSymbol1.style.backgroundColor = "62fe62";
-                divSymbol2.style.backgroundColor = "62fe62";
-                divSymbol3.style.backgroundColor = "62fe62";
-                divSymbol4.style.backgroundColor = "62fe62";
+                divSymbol1.style.backgroundColor = "#62fe62";
+                divSymbol2.style.backgroundColor = "#62fe62";
+                divSymbol3.style.backgroundColor = "#62fe62";
+                divSymbol4.style.backgroundColor = "#62fe62";
 
                 nextButton.style.display = "block";
                 answer.style.visibility = "visible";
-            }
-            else {
-                codeText.textContent = "Fel ordning, försök igen";
-                playerCode = [];
+            } else {
+                codeText.textContent = "Fel ordning, försök igen!";
 
-                divSymbol1.textContent = "";
-                divSymbol2.textContent = "";
-                divSymbol3.textContent = "";
+                setTimeout(function () {
+                    playerCode = [];
+                    updateBoxes();
+                }, 1000);
             }
         }
+    }
+
+    buttonSymbol1.addEventListener("click", function () {
+        handleSymbolClick("✖️");
     });
 
     buttonSymbol2.addEventListener("click", function () {
-        playerCode.push("⚫");
-
-        divSymbol1.textContent = playerCode[0] || "";
-        divSymbol2.textContent = playerCode[1] || "";
-        divSymbol3.textContent = playerCode[2] || "";
-
-        if (playerCode.length === 3) {
-            let playerAnswer = playerCode.join("");
-            let correctAnswer = correctCode.join("");
-
-            if (playerAnswer === correctAnswer) {
-                divSymbol1.textContent = "1";
-                divSymbol2.textContent = "9"
-                divSymbol3.textContent = "1"
-
-                divSymbol1.style.backgroundColor = "62fe62";
-                divSymbol2.style.backgroundColor = "62fe62";
-                divSymbol3.style.backgroundColor = "62fe62";
-                divSymbol4.style.backgroundColor = "62fe62";
-
-                nextButton.style.display = "block";
-                answer.style.visibility = "visible";
-            }
-            else {
-                codeText.textContent = "Fel ordning, försök igen!";
-                playerCode = [];
-
-                divSymbol1.textContent = "";
-                divSymbol2.textContent = "";
-                divSymbol3.textContent = "";
-            }
-        }
+        handleSymbolClick("⚫");
     });
 
     buttonSymbol3.addEventListener("click", function () {
-        playerCode.push("◼️");
-
-        divSymbol1.textContent = playerCode[0] || "";
-        divSymbol2.textContent = playerCode[1] || "";
-        divSymbol3.textContent = playerCode[2] || "";
-
-        if (playerCode.length === 3) {
-            let playerAnswer = playerCode.join("");
-            let correctAnswer = correctCode.join("");
-
-            if (playerAnswer === correctAnswer) {
-                divSymbol1.textContent = "1";
-                divSymbol2.textContent = "9"
-                divSymbol3.textContent = "1"
-
-                nextButton.style.display = "block";
-                answer.style.visibility = "visible";
-            }
-            else {
-                codeText.textContent = "Fel ordning, försök igen!";
-                playerCode = [];
-
-                divSymbol1.textContent = "";
-                divSymbol2.textContent = "";
-                divSymbol3.textContent = "";
-            }
-        }
+        handleSymbolClick("◼️");
     });
+
+    buttonSymbol4.addEventListener("click", function () {
+        handleSymbolClick("★");
+    });
+
+    buttonSymbol5.addEventListener("click", function () {
+        handleSymbolClick("🖤");
+    });
+
+    buttonSymbol6.addEventListener("click", function () {
+        handleSymbolClick("❖");
+    });
+
+    buttonSymbol7.addEventListener("click", function () {
+        handleSymbolClick("⬖");
+    });
+
+    buttonSymbol8.addEventListener("click", function () {
+        handleSymbolClick("⬢");
+    });
+
+    buttonSymbol9.addEventListener("click", function () {
+        handleSymbolClick("☾");
+    });
+
     nextButton.addEventListener("click", function () {
         clueSeven();
     });
