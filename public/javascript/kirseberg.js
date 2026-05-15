@@ -8,6 +8,9 @@ function clueOne() {
 
     let contentDiv = document.createElement("div");
 
+    let divInputFält = document.createElement("div");
+    divInputFält.classList.add("divInputFält");
+
     // let h2 = document.createElement("h2");
     // h2.textContent = "Mordvapnet"
 
@@ -15,12 +18,8 @@ function clueOne() {
     inputMessage.style.visibility = "hidden";
     inputMessage.style.height = "18px";
 
-    let hiddenText = document.createElement("p");
-    hiddenText.style.visibility = "hidden";
-    hiddenText.textContent = " = vätecyanid";
-
     let label = document.createElement("label");
-    label.textContent = "Ange mordvapen: ";
+    label.textContent = "X = : ";
     label.htmlFor = "textinput";
 
     let inputFält = document.createElement("input");
@@ -36,10 +35,7 @@ function clueOne() {
     nextButton.textContent = "Gå vidare";
     nextButton.classList.add("buttonPlacementFive");
 
-
-    contentDiv.append(endingText);
-    contentDiv.append(h2);
-    divInputFält.append(label, inputFält, hiddenText);
+    divInputFält.append(label, inputFält);
     contentDiv.append(divInputFält);
     contentDiv.append(inputMessage);
     contentDiv.append(button);
@@ -47,10 +43,9 @@ function clueOne() {
 
     button.addEventListener("click", function () {
         let answer = inputFält.value.toLowerCase();
-        if (answer === "hcn") {
+        if (answer === "1") {
             inputMessage.style.visibility = "visible";
             inputMessage.textContent = "Rätt input!";
-            hiddenText.style.visibility = "visible";
             nextButton.style.display = "block"
         } else {
             inputMessage.style.visibility = "visible";
@@ -58,18 +53,9 @@ function clueOne() {
         }
     });
 
-    let nextButton = document.createElement("button");
-    nextButton.textContent = "Gå vidare";
-    nextButton.id = "nextButton";
-    nextButton.classList.add("buttonPlacement");
-
     nextButton.addEventListener("click", function () {
         clueTwo();
     });
-
-    contentDiv.append(h3, img, text, nextButton);
-    spelKirsebergDIV.append(contentDiv);
-
 };
 clueOne();
 
