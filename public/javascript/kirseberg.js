@@ -8,27 +8,54 @@ function clueOne() {
 
     let contentDiv = document.createElement("div");
 
-    let h3 = document.createElement("h3");
-    h3.textContent = "Pusselbitarna börjar falla på plats...";
+    let divInputFält = document.createElement("div");
+    divInputFält.classList.add("divInputFält");
 
-    let img = document.createElement("img");
-    img.src = "../assets/images/nypon.png";
-    img.classList.add("pic");
+    // let h2 = document.createElement("h2");
+    // h2.textContent = "Mordvapnet"
 
-    let text = document.createElement("p");
-    text.textContent = "När ni löst den aktuella uppgfiten kan ni klicka på knappen 'Gå vidare' för att gå vidare till nästa steg."
+    let inputMessage = document.createElement("p");
+    inputMessage.style.visibility = "hidden";
+    inputMessage.style.height = "18px";
+
+    let label = document.createElement("label");
+    label.textContent = "X = : ";
+    label.htmlFor = "textinput";
+
+    let inputFält = document.createElement("input");
+    inputFält.type = "text";
+    inputFält.id = "textinput";
+    inputFält.style.height = "20px";
+    inputFält.style.width = "65px";
+
+    let button = document.createElement("button");
+    button.textContent = "OK";
 
     let nextButton = document.createElement("button");
     nextButton.textContent = "Gå vidare";
-    nextButton.classList.add("buttonPlacement");
+    nextButton.classList.add("buttonPlacementFive");
+
+    divInputFält.append(label, inputFält);
+    contentDiv.append(divInputFält);
+    contentDiv.append(inputMessage);
+    contentDiv.append(button);
+    spelKirsebergDIV.append(contentDiv, nextButton);
+
+    button.addEventListener("click", function () {
+        let answer = inputFält.value.toLowerCase();
+        if (answer === "1") {
+            inputMessage.style.visibility = "visible";
+            inputMessage.textContent = "Rätt input!";
+            nextButton.style.display = "block"
+        } else {
+            inputMessage.style.visibility = "visible";
+            inputMessage.textContent = "Fel input, försök igen!";
+        }
+    });
 
     nextButton.addEventListener("click", function () {
         clueTwo();
     });
-
-    contentDiv.append(h3, img, text, nextButton);
-    spelKirsebergDIV.append(contentDiv);
-
 };
 clueOne();
 
