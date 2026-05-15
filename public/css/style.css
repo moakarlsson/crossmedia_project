@@ -63,7 +63,6 @@ main {
 }
 
 #timerDIV {
-    border-bottom: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,6 +74,12 @@ main {
 
 #timerDIV button {
     height: 30px;
+}
+
+#timerDisplay {
+    padding: 15px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 #topBar {
