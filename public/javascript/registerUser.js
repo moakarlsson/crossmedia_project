@@ -60,7 +60,11 @@ createButton.addEventListener("click", async function () {
         const data = await response.json();
 
         if (response.status === 201) {
+
             popupDONE.style.display = "flex";
+            setTimeout(function () {
+                window.location.href = "../html/login.html";
+            }, 2000);
         }
 
         console.log(data);
