@@ -139,6 +139,8 @@ dokumentbankMenu.addEventListener("click", function () {
 
     hintMenu.style.borderBottom = "none";
     hintIcon.src = "../assets/icons/hintUNfill.png";
+
+    window.location.href = "../html/dokumentbank.html";
 })
 
 minSidaMenu.addEventListener("click", function () {

@@ -24,9 +24,22 @@ back_button?.addEventListener("click", function () {
     window.location.href = "../html/newspage_start.html"
 });
 
-go_forth?.addEventListener("click", function () {
-    const svar = confirm("OBS! Har du läst alla artiklar?");
-    if (svar) {
-        window.location.href = "../html/inputpage.html"; //
-    }
-});
+if (localStorage.getItem("fromDokumentbank") === "true") {
+    go_forth.textContent = "Tillbaka till dokumentbanken";
+
+    go_forth?.addEventListener("click", function () {
+        localStorage.removeItem("fromDokumentbank");
+        window.location.href = "../html/dokumentbank.html";
+    });
+
+} else {
+
+    go_forth?.addEventListener("click", function () {
+        const svar = confirm("OBS! Har du läst alla artiklar?");
+
+        if (svar) {
+            localStorage.setItem("unlockedNews", "true");
+            window.location.href = "../html/inputpage.html";
+        }
+    });
+}

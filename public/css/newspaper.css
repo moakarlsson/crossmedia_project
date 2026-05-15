@@ -54,13 +54,16 @@ main {
     position: relative;
     margin: 0px;
     width: 390px;
-    height: 844px;
+    height: 589px;
+    text-align: center;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+
     display: flex;
     flex-direction: column;
-    position: sticky;
-    bottom: 0;
+
+    overflow-y: auto;
     z-index: 5;
-    overflow: scroll;
 }
 
 #timerDIV {
@@ -205,6 +208,7 @@ h2 {
     gap: 10px;
     margin-left: 10px;
     margin-top: 10px;
+    margin-bottom: 100px;
 }
 
 
@@ -216,7 +220,7 @@ footer {
     border-top: 1px solid black;
     position: fixed;
     bottom: 0px;
-    background-color: rgba(193, 172, 143, 0.7);
+    background-color: rgba(193, 172, 143);
     padding-bottom: 16px;
 }
 
