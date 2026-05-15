@@ -42,6 +42,10 @@
     gap: 15px;
 }
 
+#nextButton {
+    display: none;
+}
+
 #symbolButton {
     all: unset;
 
