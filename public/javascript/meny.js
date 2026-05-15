@@ -5,13 +5,6 @@ let popupDiv = document.createElement("div");
 let overlay = document.createElement("div");
 let footer = document.getElementById("footer");
 
-
-// if (minSida) {
-//     minSida.addEventListener("click", function () {
-//         window.location.href = "../html/minSida.html";
-//     });
-// };
-
 let hintsData = {};
 
 async function loadHints() {
@@ -91,26 +84,6 @@ if (footer) {
         </div>
     `;
 }
-
-// let rulesBtn = document.getElementById("showRulesBtn");
-// let rulesDiv = document.getElementById("spelregler");
-// let closeRulesBtn = document.getElementById("closeRulesBtn");
-
-// if (rulesBtn) {
-//     rulesBtn.addEventListener("click", function () {
-//         if (rulesDiv.style.display === "block") {
-//             rulesDiv.style.display = "none";
-//         } else {
-//             rulesDiv.style.display = "block";
-//         }
-//     });
-// }
-
-// if (closeRulesBtn) {
-//     closeRulesBtn.addEventListener("click", function () {
-//         rulesDiv.style.display = "none";
-//     });
-// }
 
 
 let hintMenu = document.querySelector("#hintMenu");
