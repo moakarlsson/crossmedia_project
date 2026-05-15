@@ -81,6 +81,13 @@
     right: 15px;
 }
 
+.buttonPlacementSymbol {
+    display: none;
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+}
+
 .divInputFält {
     height: 30px;
     display: flex;
@@ -96,11 +103,14 @@
     background-color: white;
 }
 
+.divBrottsplats p {
+    margin: 0px;
+}
+
 .symbolDiv {
     width: 320px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
     margin-bottom: 20px;
 }
 

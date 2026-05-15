@@ -323,7 +323,7 @@ function clueSix() {
 
     let nextButton = document.createElement("button");
     nextButton.textContent = "Gå vidare";
-    nextButton.classList.add("buttonPlacement");
+    nextButton.classList.add("buttonPlacementSymbol");
 
     let buttonDivs = document.createElement("div");
     buttonDivs.classList.add("buttonDivs");
@@ -373,7 +373,6 @@ function clueSix() {
         buttonSymbol7,
         buttonSymbol8
     );
-    symbolDiv.append(buttonDivs);
 
     let allSmalDivs = document.createElement("div");
     allSmalDivs.classList.add("allSmalDivs");
@@ -392,7 +391,7 @@ function clueSix() {
     divBrottsplats.classList.add("divBrottsplats");
 
     let p = document.createElement("p");
-    p.textContent = "Brotssplatsen: "
+    p.textContent = "Brottsplatsen: "
     let answer = document.createElement("p");
     answer.textContent = "Kirsebergsanstalten"
     answer.style.visibility = "hidden";
@@ -401,7 +400,7 @@ function clueSix() {
     spelKirsebergDIV.append(h2);
     spelKirsebergDIV.append(beskrivning);
     allSmalDivs.append(divSymbol1, divSymbol2, divSymbol3, divSymbol4);
-    symbolDiv.append(allSmalDivs, codeText);
+    symbolDiv.append(allSmalDivs, codeText, buttonDivs);
 
     spelKirsebergDIV.append(symbolDiv);
     spelKirsebergDIV.append(divBrottsplats);
@@ -457,6 +456,7 @@ function clueSix() {
                 answer.style.visibility = "visible";
             } else {
                 codeText.textContent = "Fel ordning, försök igen!";
+                codeText.style.margin = "0px";
 
                 setTimeout(function () {
                     playerCode = [];
@@ -496,10 +496,6 @@ function clueSix() {
 
     buttonSymbol8.addEventListener("click", function () {
         handleSymbolClick("⬢");
-    });
-
-    buttonSymbol9.addEventListener("click", function () {
-        handleSymbolClick("☾");
     });
 
     nextButton.addEventListener("click", function () {
