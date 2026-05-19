@@ -24,11 +24,11 @@ back_button?.addEventListener("click", function () {
     window.location.href = "../html/newspage_start.html"
 });
 
-if (localStorage.getItem("fromDokumentbank") === "true") {
+if (localStorage.getItem("fromDokumentbankArtikel") === "true") {
     go_forth.textContent = "Tillbaka till dokumentbanken";
 
     go_forth?.addEventListener("click", function () {
-        localStorage.removeItem("fromDokumentbank");
+        localStorage.removeItem("fromDokumentbankArtikel");
         window.location.href = "../html/dokumentbank.html";
     });
 

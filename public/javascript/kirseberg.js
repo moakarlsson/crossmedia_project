@@ -1,6 +1,37 @@
 
 let spelKirsebergDIV = document.getElementById("spelinnehåll");
 
+
+
+let returnStep = localStorage.getItem("returnToStep");
+
+if (returnStep === "steg8") {
+    clueOne();
+
+} else if (returnStep === "steg9") {
+    clueTwo();
+
+} else if (returnStep === "steg10") {
+    clueThree();
+
+} else if (returnStep === "steg11") {
+    clueFour();
+
+} else if (returnStep === "steg12") {
+    clueFive();
+
+} else if (returnStep === "steg13") {
+    clueSix();
+
+} else {
+    clueOne();
+}
+
+localStorage.removeItem("returnToStep");
+
+
+
+
 function clueOne() {
     //På lekpats - ska till scenen
     spelKirsebergDIV.innerHTML = "";
@@ -58,7 +89,6 @@ function clueOne() {
         clueTwo();
     });
 };
-clueOne();
 
 
 function clueTwo() {
@@ -303,6 +333,7 @@ function clueFive() {
     });
 
     nextButton.addEventListener("click", function () {
+        localStorage.setItem("unlockedSymboler", "true");
         clueSix();
     });
 }

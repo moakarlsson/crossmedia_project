@@ -1,4 +1,4 @@
-#content {
+#contentDivs {
     display: flex;
     flex-wrap: wrap;
     gap: 35px;
@@ -6,10 +6,18 @@
     margin-top: 60px;
 }
 
+
+.contentSymbol {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
 .docDiv {
     border: 1px solid black;
     width: 150px;
-    height: 100px;
+    height: 125px;
     background-color: lightgrey;
     border-radius: 10px;
 
@@ -17,18 +25,29 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 5px;
     padding: 5px;
     box-sizing: border-box;
 }
 
-.docDiv p {
+.docDivP {
     font-weight: bold;
     font-size: 18px;
     margin: 3px;
 }
 
+#messageA,
+#messageM,
+#messageS {
+    font-size: 12px;
+    margin: 2px;
+}
+
 img {
     height: 40px;
     width: 40px;
+}
+
+#message {
+    font-size: 12px;
 }

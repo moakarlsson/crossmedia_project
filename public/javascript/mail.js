@@ -22,6 +22,13 @@ const arrowIMG2 = document.querySelector("#arrowIMG2");
 mailContainerDOM.style.display = "none";
 felmeddelandeDOM.style.display = "none";
 
+
+if (localStorage.getItem("fromDokumentbankMail") === "true") {
+    logInMailCOntainerDOM.style.display = "none";
+    mailContainerDOM.style.display = "block";
+    timerDiv.style.visibility = "visible";
+};
+
 logInButtonDOM.addEventListener("click", () => {
 
     if (inputDOM.value === "figmakingen123") {
@@ -58,9 +65,23 @@ arrowIMG2.addEventListener("click", () => {
     mailContainerDOM.style.display = "block";
 });
 
-leaveButton.addEventListener("click", function () {
-    const svar = confirm("OBS! Har du läst båda mailen och vet vart ni ska bege er nu?");
-    if (svar) {
-        window.location.href = "../html/kirseberg.html"; //
-    }
-});
+
+
+if (localStorage.getItem("fromDokumentbankMail") === "true") {
+    leaveButton.textContent = "Tillbaka till dokumentbanken";
+
+    leaveButton.addEventListener("click", function () {
+        localStorage.removeItem("fromDokumentbankMail");
+        window.location.href = "../html/dokumentbank.html";
+    });
+
+} else {
+
+    leaveButton.addEventListener("click", function () {
+        const svar = confirm("OBS! Har du läst båda mailen och vet vart ni ska bege er nu?");
+        if (svar) {
+            localStorage.setItem("unlockedMail", "true");
+            window.location.href = "../html/kirseberg.html";
+        }
+    });
+}
