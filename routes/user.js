@@ -87,12 +87,12 @@ router.get("/leaderboard", async (req, res) => {
         const [rows] = await db.query(`
             SELECT 
                 u.userName,
-                 MAX(r.time_left) AS time_left,
-                ROUND((r.end_time - r.start_time) / 1000) AS time_taken_seconds
+                MAX(r.time_left) AS time_left,
+                ROUND((MAX(r.end_time) - MIN(r.start_time)) / 1000) AS time_taken_seconds
             FROM result r
             JOIN user u ON r.user_id = u.id
             GROUP BY u.id, u.userName
-            ORDER BY r.time_left DESC
+            ORDER BY time_left DESC
         `);
         res.json(rows);
     } catch (error) {
