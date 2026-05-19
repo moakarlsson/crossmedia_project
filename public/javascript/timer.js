@@ -170,3 +170,4 @@ function testTimer() {
     window.timerInterval = setInterval(updateTimer, 1000);
 
 }
+window.stopTimer = stopTimer;
