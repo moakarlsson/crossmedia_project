@@ -12,8 +12,10 @@ window.addEventListener("load", function () {
     }
 });
 
-
+let timerStopped = false;
 function stopTimer() {
+    if (timerStopped) return;
+    timerStopped = true;
     clearInterval(window.timerInterval);
     let now = Date.now();
     let timeLeft = Math.floor((endTime - now) / 1000);
