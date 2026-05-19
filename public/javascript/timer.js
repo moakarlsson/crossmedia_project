@@ -174,3 +174,4 @@ function testTimer() {
 
 }
 window.stopTimer = stopTimer;
+window.saveResult = saveResult;

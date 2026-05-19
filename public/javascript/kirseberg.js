@@ -581,15 +581,17 @@ function clueSeven() {
         }, 500);
     });
 
-    angeMrX.addEventListener("click", function () {
+    angeMrX.addEventListener("click", async function () {
         let result = stopTimer();
         console.log(result);
+        await saveResult(result);
         window.location.href = "../html/sistaSida1.html";
     });
 
-    låtMrXfri.addEventListener("click", function () {
+    låtMrXfri.addEventListener("click", async function () {
         let result = stopTimer();
         console.log(result);
+        await saveResult(result);
         window.location.href = "../html/sistaSida2.html";
     });
 };
