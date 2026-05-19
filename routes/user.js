@@ -82,4 +82,20 @@ router.post("/saveResult", async (req, res) => {
     }
 });
 
+router.get("/leaderboard", async (req, res) => {
+    try {
+        const [rows] = await db.query(`
+            SELECT 
+                u.userName,
+                r.time_left,
+                ROUND((r.end_time - r.start_time) / 1000) AS time_taken_seconds
+            FROM result r
+            JOIN user u ON r.user_id = u.id
+            ORDER BY r.time_left DESC
+        `);
+        res.json(rows);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 export default router;
