@@ -6,3 +6,5 @@ async function getLeaderboard() {
     console.log(data); 
     return data;
 }
+
+getLeaderboard();
