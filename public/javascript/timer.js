@@ -1,5 +1,3 @@
-import { response } from "express";
-
 let timerDisplay = document.getElementById("timerDisplay");
 let timerDIV = document.getElementById("timerDIV");
 let endTime;
