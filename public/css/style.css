@@ -39,7 +39,7 @@ main {
     width: 390px;
     height: 589px;
     text-align: center;
-    padding-bottom: 100px;
+    padding-bottom: 40px;
     box-sizing: border-box;
 
     display: flex;

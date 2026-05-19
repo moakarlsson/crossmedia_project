@@ -133,6 +133,8 @@ closeHintButton.addEventListener("click", function () {
 dokumentbankMenu.addEventListener("click", function () {
     dokumentbankIcon.src = "../assets/icons/dokumentbankFILL.png"
     dokumentbankMenu.style.borderBottom = "1px solid black";
+
+    localStorage.setItem("savedPage", window.location.href);
     localStorage.setItem("savedStep", window.currentStep);
 
     minSidaMenu.style.borderBottom = "none";

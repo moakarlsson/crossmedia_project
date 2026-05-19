@@ -9,6 +9,9 @@ loginButton.addEventListener("click", async function () {
     const password = document.getElementById("password").value;
 
     try {
+        localStorage.removeItem("endTime");
+        localStorage.removeItem("finalTime");
+        resetGameProgress();
         const response = await fetch("/users/userLogIn", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -32,3 +35,17 @@ loginButton.addEventListener("click", async function () {
 createButton.addEventListener("click", function () {
     window.location.href = "/html/registerUser.html"
 });
+
+
+function resetGameProgress() {
+    localStorage.removeItem("unlockedNews");
+    localStorage.removeItem("unlockedMail");
+    localStorage.removeItem("unlockedSymboler");
+
+    localStorage.removeItem("returnToStep");
+    localStorage.removeItem("savedStep");
+
+    localStorage.removeItem("fromDokumentbankArtikel");
+    localStorage.removeItem("fromDokumentbankMail");
+    localStorage.removeItem("fromDokumentbankSymbol");
+};

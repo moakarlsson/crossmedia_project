@@ -1,6 +1,6 @@
 .buttonPlacement {
     position: absolute;
-    bottom: 110px;
+    bottom: -50px;
     right: 15px;
 }
 
@@ -10,7 +10,7 @@
     align-items: center;
     padding: 15px;
     position: relative;
-    margin-top: 150px;
+    margin-top: 30px;
 }
 
 .pic {

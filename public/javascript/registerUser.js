@@ -4,13 +4,6 @@ let imageInput = document.getElementById("imageUpload");
 let thePic = document.getElementById("thePic");
 let passwordMessage = document.getElementById("passwordMessage");
 let popup = document.getElementById("popup");
-let startaSpelet = document.getElementById("startaSpelet");
-
-startaSpelet.addEventListener("click", function () {
-    localStorage.removeItem("endTime");
-    localStorage.removeItem("finalTime");
-    window.location.href = "../html/ljudfil.html";
-});
 
 
 thePic.addEventListener("click", function () {
@@ -60,7 +53,6 @@ createButton.addEventListener("click", async function () {
         const data = await response.json();
 
         if (response.status === 201) {
-
             popupDONE.style.display = "flex";
             setTimeout(function () {
                 window.location.href = "../html/login.html";

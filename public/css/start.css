@@ -1,5 +1,9 @@
 #beginGame {
     width: 200px;
-    margin: auto auto;
-    margin-top: 200px;
+    margin: 0px auto;
+}
+
+
+h1 {
+    margin-top: 130px;
 }

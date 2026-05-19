@@ -63,14 +63,15 @@ symboler.addEventListener("click", function () {
     }
 });
 
-
 backButton.addEventListener("click", function () {
-
+    let savedPage = localStorage.getItem("savedPage");
     let savedStep = localStorage.getItem("savedStep");
-    window.location.href = "../html/kirseberg.html";
     localStorage.setItem("returnToStep", savedStep);
-});
 
+    if (savedPage) {
+        window.location.href = savedPage;
+    };
+});
 
 
 function showSymbol() {
