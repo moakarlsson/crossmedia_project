@@ -1,3 +1,5 @@
+import { response } from "express";
+
 let timerDisplay = document.getElementById("timerDisplay");
 let timerDIV = document.getElementById("timerDIV");
 let endTime;
@@ -61,6 +63,8 @@ async function saveResult(timeLeft) {
     const startTime = localStorage.getItem("startTime");
     const endTime = Date.now();
 
+    console.log("Sparar resultat:", { timeLeft, startTime, endTime });
+
     try {
         await fetch("/users/saveResult", {
             method: "POST",
@@ -72,6 +76,8 @@ async function saveResult(timeLeft) {
                 endTime: endTime
             })
         });
+        const data = await response.json();
+        console.log("Svar från server:", data);
     }catch(error) {
         console.error("Kunde inte spara resultatet:", error)
     }

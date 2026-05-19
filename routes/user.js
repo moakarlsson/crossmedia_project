@@ -62,6 +62,8 @@ router.post("/logout", (req, res) => {
 });
 
 router.post("/saveResult", async (req, res) => {
+    console.log("saveResult anropades!"); // ← lägg till
+    console.log("Body:", req.body); 
     if (!req.session.user) {
         return res.status(401).json({ error: "Inte inloggad" });
     }
@@ -70,7 +72,7 @@ router.post("/saveResult", async (req, res) => {
 
     try {
         await db.query(
-            "INSERT INTO result (user_id, time_left, start_time, end_time) VALUES (?, ?, ?, ?)",
+            "INSERT INTO user (user_id, time_left, start_time, end_time) VALUES (?, ?, ?, ?)",
             [userId, timeLeft, startTime, endTime]
         );
 
