@@ -66,9 +66,9 @@ async function saveResult(timeLeft) {
     console.log("Sparar resultat:", { timeLeft, startTime, endTime });
 
     try {
-        await fetch("/users/saveResult", {
+        const res = await fetch("/users/saveResult", {
             method: "POST",
-            credentials:"include",
+            credentials: "include",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 timeLeft: timeLeft,
@@ -76,12 +76,13 @@ async function saveResult(timeLeft) {
                 endTime: endTime
             })
         });
-        const data = await response.json();
+        const data = await res.json();
         console.log("Svar från server:", data);
-    }catch(error) {
-        console.error("Kunde inte spara resultatet:", error)
+    } catch(error) {
+        console.error("Kunde inte spara resultatet:", error);
     }
 }
+
 
 // UPPDATERA TIMER
 function updateTimer() {
