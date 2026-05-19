@@ -1,5 +1,6 @@
 const ljudfil = document.getElementById("ljudfil");
 const next_page_button = document.getElementById("next_page");
+const timerDisplay = document.getElementById("timerDisplay");
 
 ljudfil.addEventListener("ended", function () {
     next_page_button.style.display = "block";
@@ -9,5 +10,6 @@ ljudfil.addEventListener("ended", function () {
 })
 
 next_page_button.addEventListener("click", function () {
+    timerDisplay.style.display = "block";
     window.location.href = "../html/newspage_start.html";
 })

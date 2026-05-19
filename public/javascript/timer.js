@@ -62,6 +62,7 @@ function updateTimer() {
     if (timeLeft <= 0) {
         clearInterval(window.timerInterval);
         timerDisplay.textContent = "0 : 00 : 00";
+        showGameOverPopup();
         localStorage.removeItem("endTime");
         return;
     }
@@ -85,3 +86,58 @@ async function getUser() {
     let user = await response.json();
     return user;
 };
+
+
+function showGameOverPopup() {
+
+    // Mörk bakgrund
+    let overlay = document.createElement("div");
+    overlay.id = "gameOverOverlay";
+
+    // Popup
+    let popup = document.createElement("div");
+    popup.id = "gameOverPopup";
+
+    let h2 = document.createElement("h2");
+    h2.textContent = "Tiden är ute!";
+
+    let p = document.createElement("p");
+    p.textContent =
+        "Ni hann inte stoppa mördaren innan tiden tog slut.";
+
+    // Knapp 1
+    let revealButton = document.createElement("button");
+    revealButton.textContent = "Få reda på slutet";
+
+    // Knapp 2
+    let logoutButton = document.createElement("button");
+    logoutButton.textContent = "Avsluta spel";
+
+    // Om spelarna vill se slutet
+    revealButton.addEventListener("click", function () {
+        window.location.href = "../html/sistaSida2.html";
+    });
+
+    // Om spelarna vill avsluta
+    logoutButton.addEventListener("click", function () {
+        localStorage.clear();
+        window.location.href = "../html/login.html";
+    });
+
+    popup.append(h2, p, revealButton, logoutButton);
+    document.body.append(overlay, popup);
+}
+
+
+
+function testTimer() {
+
+    endTime = Date.now() + (5 * 1000);
+
+    localStorage.setItem("endTime", endTime);
+
+    clearInterval(window.timerInterval);
+
+    window.timerInterval = setInterval(updateTimer, 1000);
+
+}
