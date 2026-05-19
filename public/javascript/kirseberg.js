@@ -582,14 +582,14 @@ function clueSeven() {
     });
 
     angeMrX.addEventListener("click", function () {
-        stopTimer();
-        console.log(finalTime);
+        let result = stopTimer();
+        console.log(result);
         window.location.href = "../html/sistaSida1.html";
     });
 
     låtMrXfri.addEventListener("click", function () {
-        stopTimer();
-        console.log(finalTime);
+        let result = stopTimer();
+        console.log(result);
         window.location.href = "../html/sistaSida2.html";
     });
 };
