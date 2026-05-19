@@ -26,6 +26,8 @@ function stopTimer() {
     finalTime = timeLeft;
     localStorage.setItem("finalTime", finalTime);
     console.log("Sluttid:", finalTime);
+    localStorage.removeItem("endTime");
+    saveResult(finalTime);
 
     return finalTime;
 }
@@ -42,6 +44,7 @@ function startTimer() {
         endTime = Date.now() + (3 * 60 * 60) * 1000; //3 timmar
         // endTime = Date.now() + (2 * 60 * 60 + 30 * 60) * 1000; // 2h 30min
         localStorage.setItem("endTime", endTime);
+        localStorage.setItem("startTime", Date.now()) //Sparar starttiden
     } else {
         endTime = Number(existing);
     }
@@ -54,6 +57,26 @@ function startTimer() {
 //starta timer
 startTimer();
 
+async function saveResult(timeLeft) {
+    const startTime = localStorage.getItem("startTime");
+    const endTime = Date.now();
+
+    try {
+        await fetch("/users/saveResult", {
+            method: "POST",
+            credentials:"include",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                timeLeft: timeLeft,
+                startTime: Number(startTime),
+                endTime: endTime
+            })
+        });
+    }catch(error) {
+        console.error("Kunde inte spara resultatet:", error)
+    }
+}
+
 // UPPDATERA TIMER
 function updateTimer() {
     let now = Date.now();
@@ -62,8 +85,9 @@ function updateTimer() {
     if (timeLeft <= 0) {
         clearInterval(window.timerInterval);
         timerDisplay.textContent = "0 : 00 : 00";
-        showGameOverPopup();
         localStorage.removeItem("endTime");
+        saveResult(0);
+        showGameOverPopup();
         return;
     }
 
