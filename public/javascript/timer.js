@@ -30,6 +30,7 @@ function stopTimer() {
     console.log("Sluttid:", finalTime);
     localStorage.removeItem("endTime");
     saveResult(finalTime);
+    console.log("stopTimer anropades!")
 
     return finalTime;
 }
