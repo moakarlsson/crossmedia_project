@@ -56,8 +56,8 @@ createButton.addEventListener("click", async function () {
             body: formData,
             credentials: "include"
         });
-    
-        const data = await response.json();
+        const text = await response.text();
+        console.log("Svar från server:", text);
       
         if (response.status === 201) {
             popupDONE.style.display = "flex";
@@ -69,6 +69,5 @@ createButton.addEventListener("click", async function () {
 
     } catch (error) {
         console.error("FEL:", error.message); // Lägg till detta
-        res.status(500).json({ error: error.message });
     }
 });

@@ -8,12 +8,21 @@ import helmet from "helmet";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+import fs from "fs";
+
+const uploadPath = process.env.VOLUME_PATH || "group_img";
+
+if (!fs.existsSync(uploadPath)) {
+    fs.mkdirSync(uploadPath, { recursive: true });
+}
+
+
 const app = express();
 app.set("trust proxy", 1);
 app.use(express.json());
 app.use(express.static("public"));
 app.use(helmet()); //Skyddar mot XSS attacker = "Cross-script attacks"
-app.use("/group_img", express.static("/app/group_img")); 
+app.use("/group_img", express.static(uploadPath));
 
 app.use(session({
     secret: process.env.SESSION_SECRET,

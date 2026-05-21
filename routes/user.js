@@ -5,11 +5,18 @@ import db from "../db/connection.js";
 import bcrypt from "bcrypt";
 import multer from "multer";
 const costFactor = 12;
+import fs from "fs";
+
+const uploadPath = process.env.VOLUME_PATH || "group_img";
+
+if (!fs.existsSync(uploadPath)) {
+    fs.mkdirSync(uploadPath, { recursive: true });
+}
 
 //Konfiguera lagring
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, "/app/group_img")
+        cb(null, uploadPath)
     },
     filename: function (req, file, cb) {
         const uniqueName = Date.now() + "-" + Math.round(Math.random()* 1e9);
@@ -18,8 +25,6 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-
-
 //GET
 router.get("/me", (req, res) => {
     if (!req.session.user) {
@@ -28,6 +33,21 @@ router.get("/me", (req, res) => {
 
     res.json(req.session.user);
 });
+
+router.get("/groupImage", async (req, res) => {
+    if (!req.session.user) {
+        return res.status(401).json({ error: "Inte inloggad" });
+    }
+    try {
+        const [rows] = await db.query(
+            "SELECT imageUrl FROM user WHERE id = ?",
+            [req.session.user.id]
+        );
+        res.json({ imageUrl: rows[0].imageUrl });
+    } catch (error) {
+        res.status(500).json( {error: error.message });
+    }
+})
 
 //POST
 router.post("/createUser",upload.single("groupImage"), async (req, res) => {
@@ -67,7 +87,6 @@ router.post("/userLogIn", async (req, res) => {
 
     } catch (error) {
         console.error("LOGIN ERROR:", error);
-        res.status(500).json({ error: "Internal server error" })
     }
 });
 
@@ -103,11 +122,12 @@ router.get("/leaderboard", async (req, res) => {
         const [rows] = await db.query(`
             SELECT 
                 u.userName,
+                u.imageUrl,
                 MAX(r.time_left) AS time_left,
                 ROUND((MAX(r.end_time) - MIN(r.start_time)) / 1000) AS time_taken_seconds
             FROM result r
             JOIN user u ON r.user_id = u.id
-            GROUP BY u.id, u.userName
+            GROUP BY u.id, u.userName, u.imageUrl
             ORDER BY time_left DESC
         `);
         res.json(rows);
