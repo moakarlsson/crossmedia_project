@@ -42,27 +42,33 @@ createButton.addEventListener("click", async function () {
     }
 
     try {
+        const formData = new FormData();
+        formData.append("userName", userName);
+        formData.append("password", password);
+
+        const file = imageInput.files[0];
+        if (file) {
+            formData.append("groupImage", file);
+        }
+
         const response = await fetch("/users/createUser", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ userName, password }),
+            body: formData,
             credentials: "include"
         });
-
-        console.log(response.status);
+    
         const data = await response.json();
-
+      
         if (response.status === 201) {
             popupDONE.style.display = "flex";
             setTimeout(function () {
                 window.location.href = "../html/login.html";
             }, 2000);
         }
-
-        console.log(data);
         passwordMessage.style.display = "none";
 
     } catch (error) {
-        console.log("Fel:", error);
+        console.error("FEL:", error.message); // Lägg till detta
+        res.status(500).json({ error: error.message });
     }
 });
