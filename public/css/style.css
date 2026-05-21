@@ -112,13 +112,13 @@ main {
 #logoBG {
     height: 160px;
     width: 280px;
-    margin: 100px 50px 10px 50px;
+    margin: 200px 50px 10px 50px;
     opacity: 0.6;
 }
 
 #fructosH1 {
     position: absolute;
-    top: 15%;
+    top: 38%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
@@ -218,7 +218,7 @@ footer {
     left: 0;
     bottom: 0;
     bottom: 0px;
-    background-color: rgba(234, 218, 190, 0.787);
+    background-color: rgba(234, 218, 190, 0.95);
     padding-bottom: 16px;
 
     display: flex;
