@@ -442,7 +442,7 @@ function clueSix() {
 
     spelKirsebergDIV.append(symbolDiv);
     spelKirsebergDIV.append(divBrottsplats);
-    spelKirsebergDIV.append()
+    spelKirsebergDIV.append(siluettImg);
     spelKirsebergDIV.append(nextButton);
 
     let correctCode = ["✖️", "⚫", "✖️", "◼️"];
