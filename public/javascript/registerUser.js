@@ -69,6 +69,5 @@ createButton.addEventListener("click", async function () {
 
     } catch (error) {
         console.error("FEL:", error.message); // Lägg till detta
-        res.status(500).json({ error: error.message });
     }
 });
