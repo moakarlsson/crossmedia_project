@@ -77,14 +77,14 @@
 .buttonPlacement {
     display: none;
     position: absolute;
-    bottom: 25px;
+    bottom: 400px;
     right: 15px;
 }
 
 .buttonPlacementSymbol {
     display: none;
     position: absolute;
-    right: 400px;
+    right: 15px;
     bottom: -45px;
 }
 
