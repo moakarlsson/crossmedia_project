@@ -40,7 +40,7 @@ router.get("/groupImage", async (req, res) => {
     }
     try {
         const [rows] = await db.query(
-            "SELECT imageuRL FROM user WHERE id = ?",
+            "SELECT imageUrl FROM user WHERE id = ?",
             [req.session.user.id]
         );
         res.json({ imageUrl: rows[0].imageUrl });
