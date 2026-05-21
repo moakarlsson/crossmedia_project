@@ -26,6 +26,7 @@ async function showLeaderboard() {
     for (let data of database) {
 
         let userDiv = document.createElement("div");
+        userDiv.classList.add("userDiv");
 
         //användarnamn
         let divName = document.createElement("div");
@@ -33,6 +34,7 @@ async function showLeaderboard() {
         let deltagare = document.createElement("p");
         deltagare.textContent = data.userName;
 
+        let imgDiv = document.createElement("div");
         let img = document.createElement("img");
         img.src = data.imageUrl || "";
         img.style.width = "50px";
@@ -50,10 +52,14 @@ async function showLeaderboard() {
 
         let finalTime = `${hours}: ${minutes}: ${seconds}`;
 
-        divName.append(img, deltagare);
+
+        imgDiv.append(img);
+        divName.append(deltagare);
         divTime.append(finalTime);
 
-        contentLeaderbord.append(divName, divTime);
+        userDiv.append(imgDiv, divName, divTime)
+
+        contentLeaderbord.append(userDiv);
     };
 };
 showLeaderboard()

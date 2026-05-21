@@ -4,3 +4,10 @@
     height: 400px;
     width: 600px;
 }
+
+
+.userDiv {
+    display: flex;
+    gap: 20px;
+    border: 1px solid black;
+}
