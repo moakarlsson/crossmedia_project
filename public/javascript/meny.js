@@ -78,7 +78,7 @@ function popUpHints() {
 
 if (footer) {
     footer.innerHTML = `
-        <div id="footerDIV">
+        
             <div id="hintMenu">
                 <img id="hintIconUNfill"
                 src="../assets/icons/hintUNfill.png">
@@ -93,7 +93,7 @@ if (footer) {
                 <img id="minSidaUNfill"
                 src="../assets/icons/minSidaUNfill.png">
             </div>
-        </div>
+        
     `;
 }
 
