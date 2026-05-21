@@ -5,8 +5,13 @@ import db from "../db/connection.js";
 import bcrypt from "bcrypt";
 import multer from "multer";
 const costFactor = 12;
+import fs from "fs";
 
 const uploadPath = process.env.VOLUME_PATH || "group_img";
+
+if (!fs.existsSync(uploadPath)) {
+    fs.mkdirSync(uploadPath, { recursive: true });
+}
 
 //Konfiguera lagring
 const storage = multer.diskStorage({
@@ -20,8 +25,6 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-
-
 //GET
 router.get("/me", (req, res) => {
     if (!req.session.user) {
