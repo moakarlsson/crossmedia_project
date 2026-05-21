@@ -30,6 +30,13 @@ async function showLeaderboard() {
         let deltagare = document.createElement("p");
         deltagare.textContent = data.userName;
 
+        let img = document.createElement("img");
+        img.src = data.imageUrl || "";
+        img.style.width = "50px";
+        img.style.height = "50px";
+        img.style.objectFit = "cover";
+        img.style.borderRadius = "50%";
+
         let divTime = document.createElement("div");
         let timeLeft = document.createElement("p");
         timeLeft.textContent = data.time_left;
@@ -40,10 +47,9 @@ async function showLeaderboard() {
 
         let finalTime = `${hours}: ${minutes}: ${seconds}`;
 
+        divName.append(img, deltagare);
         divTime.append(finalTime);
 
-
-        divName.append(deltagare);
         contentLeaderbord.append(divName, divTime);
     };
 };
