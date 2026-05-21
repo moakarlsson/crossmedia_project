@@ -17,12 +17,16 @@ async function showLeaderboard() {
     console.log(database);
 
 
+
     for (let data of database) {
+
+        //användarnamn
         let divName = document.createElement("div");
 
         let deltagare = document.createElement("p");
         deltagare.textContent = data.userName;
 
+        //tiden
         let divTime = document.createElement("div");
         let timeLeft = document.createElement("p");
         timeLeft.textContent = data.time_left;
@@ -33,29 +37,10 @@ async function showLeaderboard() {
 
         let finalTime = `${hours}: ${minutes}: ${seconds}`;
 
-        divTime.append(finalTime);
-
-
+        //append
         divName.append(deltagare);
+        divTime.append(finalTime);
         contentLeaderbord.append(divName, divTime);
     };
 };
 showLeaderboard()
-
-
-// 0: Object { userName: "hi", time_left: 10735, time_taken_seconds: "65" }
-// ​
-// time_left: 10735
-// ​
-// time_taken_seconds: "65"
-// ​
-// userName: "hi"
-// ​
-// ​
-// 1: Object { userName: "hej1", time_left: 10723, time_taken_seconds: "79" }
-// ​
-// time_left: 10723
-// ​
-// time_taken_seconds: "79"
-// ​
-// userName: "hej1"
