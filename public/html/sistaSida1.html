@@ -11,9 +11,9 @@
 
 <body>
     <main>
-        <p id="yourTime"></p>
-        <h2>Epilog</h2>
         <div id="story">
+            <p id="yourTime"></p>
+            <h2>Epilog</h2>
             <p>Ni valde att ange mördaren (Daniel Petrov) till polisen och rädda Tonys liv. Spelet har nått sitt
                 slut, men en historia behöver inte ta slut enbart för att spelet gör det.</p>
 
@@ -40,10 +40,16 @@
                 kvar.</p>
         </div>
 
+        <div id="buttonDIV">
+            <button id="logout">Avsluta spelet & logga ut</button>
+        </div>
+
+
         <footer id="footer"></footer>
     </main>
 
     <script src="../javascript/meny.js"></script>
+    <script src="../javascript/logout.js"></script>
     <script>
 
         let finalTime = Number(localStorage.getItem("finalTime"));
@@ -62,12 +68,10 @@
             seconds = "0" + seconds;
         }
 
-        let formattedTime =
-            hours + ":" + minutes + ":" + seconds;
+        let formattedTime = hours + ":" + minutes + ":" + seconds;
         let timeText = document.getElementById("yourTime");
 
-        timeText.textContent =
-            "Er sluttid: " + formattedTime;
+        timeText.textContent = "Er sluttid: " + formattedTime;
 
     </script>
 </body>

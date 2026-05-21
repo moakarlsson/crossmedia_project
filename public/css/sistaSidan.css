@@ -1,10 +1,26 @@
 #story {
-    height: 500px;
+    height: 540px;
     width: 360px;
     background-color: rgba(255, 255, 255, 0.9);
     overflow: scroll;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 40px auto;
     padding: 10px;
     box-sizing: border-box;
+    border-radius: 10px;
+}
+
+#yourTime {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #8D0004;
+}
+
+#logout {
+    width: 300px;
+}
+
+#buttonDIV {
+    display: flex;
+    justify-content: center;
 }

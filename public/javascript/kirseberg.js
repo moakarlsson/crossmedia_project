@@ -333,211 +333,213 @@ function clueFive() {
     });
 }
 
-function clueSix() {
-    spelKirsebergDIV.innerHTML = "";
-    spelKirsebergDIV.style.marginTop = "0px";
-    window.currentStep = "steg13";
+// function clueSix() {
+//     spelKirsebergDIV.innerHTML = "";
+//     spelKirsebergDIV.style.marginTop = "0px";
+//     window.currentStep = "steg13";
 
-    let h2 = document.createElement("h2");
-    h2.textContent = "Brottsplatsen";
+//     let h2 = document.createElement("h2");
+//     h2.textContent = "Brottsplatsen";
 
-    let beskrivning = document.createElement("p");
-    beskrivning.textContent = "Varje symbol döljer en siffra. Tryck på symbolerna i rätt ordning för att se alla siffror."
+//     let beskrivning = document.createElement("p");
+//     beskrivning.textContent = "Varje symbol döljer en siffra. Tryck på symbolerna i rätt ordning för att se alla siffror."
 
-    let symbolDiv = document.createElement("div");
-    symbolDiv.classList.add("symbolDiv");
+//     let divH2OchInfo = document.createElement("div");
+//     divH2OchInfo.append(h2, beskrivning);
+//     divH2OchInfo.classList.add("endingText");
 
-    let nextButton = document.createElement("button");
-    nextButton.textContent = "Gå vidare";
-    nextButton.classList.add("buttonPlacementSymbol");
+//     let symbolDiv = document.createElement("div");
+//     symbolDiv.classList.add("symbolDiv");
 
-    let buttonDivs = document.createElement("div");
-    buttonDivs.classList.add("buttonDivs");
+//     let nextButton = document.createElement("button");
+//     nextButton.textContent = "Gå vidare";
+//     nextButton.classList.add("buttonPlacementSymbol");
 
-    let buttonSymbol1 = document.createElement("button");
-    buttonSymbol1.textContent = "✖️";
+//     let buttonDivs = document.createElement("div");
+//     buttonDivs.classList.add("buttonDivs");
 
-    let buttonSymbol2 = document.createElement("button");
-    buttonSymbol2.textContent = "⚫";
+//     let buttonSymbol1 = document.createElement("button");
+//     buttonSymbol1.textContent = "✖️";
 
-    let buttonSymbol3 = document.createElement("button");
-    buttonSymbol3.textContent = "◼️";
+//     let buttonSymbol2 = document.createElement("button");
+//     buttonSymbol2.textContent = "⚫";
 
-    let buttonSymbol4 = document.createElement("button");
-    buttonSymbol4.textContent = "★";
+//     let buttonSymbol3 = document.createElement("button");
+//     buttonSymbol3.textContent = "◼️";
 
-    let buttonSymbol5 = document.createElement("button");
-    buttonSymbol5.textContent = "🖤";
+//     let buttonSymbol4 = document.createElement("button");
+//     buttonSymbol4.textContent = "★";
 
-    let buttonSymbol6 = document.createElement("button");
-    buttonSymbol6.textContent = "❖";
+//     let buttonSymbol5 = document.createElement("button");
+//     buttonSymbol5.textContent = "🖤";
 
-    let buttonSymbol7 = document.createElement("button");
-    buttonSymbol7.textContent = "⬖";
+//     let buttonSymbol6 = document.createElement("button");
+//     buttonSymbol6.textContent = "❖";
 
-    let buttonSymbol8 = document.createElement("button");
-    buttonSymbol8.textContent = "⬢";
+//     let buttonSymbol7 = document.createElement("button");
+//     buttonSymbol7.textContent = "⬖";
 
-    let codeText = document.createElement("p");
+//     let buttonSymbol8 = document.createElement("button");
+//     buttonSymbol8.textContent = "⬢";
 
-    buttonSymbol1.id = "symbolButton";
-    buttonSymbol2.id = "symbolButton";
-    buttonSymbol3.id = "symbolButton";
-    buttonSymbol4.id = "symbolButton";
-    buttonSymbol5.id = "symbolButton";
-    buttonSymbol6.id = "symbolButton";
-    buttonSymbol7.id = "symbolButton";
-    buttonSymbol8.id = "symbolButton";
+//     let codeText = document.createElement("p");
 
-    buttonDivs.append(
-        buttonSymbol4,
-        buttonSymbol2,
-        buttonSymbol3,
-        buttonSymbol1,
-        buttonSymbol5,
-        buttonSymbol6,
-        buttonSymbol7,
-        buttonSymbol8
-    );
+//     buttonSymbol1.id = "symbolButton";
+//     buttonSymbol2.id = "symbolButton";
+//     buttonSymbol3.id = "symbolButton";
+//     buttonSymbol4.id = "symbolButton";
+//     buttonSymbol5.id = "symbolButton";
+//     buttonSymbol6.id = "symbolButton";
+//     buttonSymbol7.id = "symbolButton";
+//     buttonSymbol8.id = "symbolButton";
 
-    let allSmalDivs = document.createElement("div");
-    allSmalDivs.classList.add("allSmalDivs");
+//     buttonDivs.append(
+//         buttonSymbol4,
+//         buttonSymbol2,
+//         buttonSymbol3,
+//         buttonSymbol1,
+//         buttonSymbol5,
+//         buttonSymbol6,
+//         buttonSymbol7,
+//         buttonSymbol8
+//     );
 
-    let divSymbol1 = document.createElement("div");
-    let divSymbol2 = document.createElement("div");
-    let divSymbol3 = document.createElement("div");
-    let divSymbol4 = document.createElement("div");
+//     let allSmalDivs = document.createElement("div");
+//     allSmalDivs.classList.add("allSmalDivs");
 
-    divSymbol1.classList.add("smallDiv");
-    divSymbol2.classList.add("smallDiv");
-    divSymbol3.classList.add("smallDiv");
-    divSymbol4.classList.add("smallDiv");
+//     let divSymbol1 = document.createElement("div");
+//     let divSymbol2 = document.createElement("div");
+//     let divSymbol3 = document.createElement("div");
+//     let divSymbol4 = document.createElement("div");
 
-    let divBrottsplats = document.createElement("div");
-    divBrottsplats.classList.add("divBrottsplats");
+//     divSymbol1.classList.add("smallDiv");
+//     divSymbol2.classList.add("smallDiv");
+//     divSymbol3.classList.add("smallDiv");
+//     divSymbol4.classList.add("smallDiv");
 
-    let p = document.createElement("p");
-    p.textContent = "Brottsplatsen: "
-    let answer = document.createElement("p");
-    answer.textContent = "Kirsebergsanstalten"
-    answer.style.visibility = "hidden";
-    divBrottsplats.append(p, answer);
+//     let divBrottsplats = document.createElement("div");
+//     divBrottsplats.classList.add("divBrottsplats");
 
-    spelKirsebergDIV.append(h2);
-    spelKirsebergDIV.append(beskrivning);
-    allSmalDivs.append(divSymbol1, divSymbol2, divSymbol3, divSymbol4);
-    symbolDiv.append(allSmalDivs, codeText, buttonDivs);
+//     let p = document.createElement("p");
+//     p.textContent = "Brottsplatsen: "
+//     let answer = document.createElement("p");
+//     answer.textContent = "Kirsebergsanstalten"
+//     answer.style.visibility = "hidden";
+//     divBrottsplats.append(p, answer);
 
-    let siluettImg = document.createElement("img");
-    siluettImg.src = "../assets/images/KirsebergSkiss.png";
+//     spelKirsebergDIV.append(divH2OchInfo);
+//     allSmalDivs.append(divSymbol1, divSymbol2, divSymbol3, divSymbol4);
+//     symbolDiv.append(allSmalDivs, codeText, buttonDivs);
 
-    spelKirsebergDIV.append(symbolDiv);
-    spelKirsebergDIV.append(divBrottsplats);
-    spelKirsebergDIV.append(siluettImg);
-    spelKirsebergDIV.append(nextButton);
+//     let siluettImg = document.createElement("img");
+//     siluettImg.src = "../assets/images/KirsebergSkiss.png";
+//     siluettImg.style.width = "200px";
 
-    let correctCode = ["✖️", "⚫", "✖️", "◼️"];
-    let playerCode = [];
+//     spelKirsebergDIV.append(symbolDiv);
+//     spelKirsebergDIV.append(divBrottsplats);
+//     spelKirsebergDIV.append(siluettImg);
+//     spelKirsebergDIV.append(nextButton);
 
-    let symbolValues = {
-        "✖️": "1",
-        "⚫": "9",
-        "◼️": "3",
-        "★": "5",
-        "🖤": "7",
-        "❖": "2",
-        "⬖": "8",
-        "⬢": "4"
-    };
-    function updateBoxes() {
-        let divs = [divSymbol1, divSymbol2, divSymbol3, divSymbol4];
+//     let correctCode = ["✖️", "⚫", "✖️", "◼️"];
+//     let playerCode = [];
 
-        for (let i = 0; i < divs.length; i++) {
-            let symbol = playerCode[i];
-            if (symbol) {
-                divs[i].innerHTML = `
-                <div class="bigNumber">${symbolValues[symbol]}</div>
-                <div class="smallSymbol">${symbol}</div>
-            `;
-            } else {
-                divs[i].innerHTML = "";
-            }
-        }
-    }
+//     let symbolValues = {
+//         "✖️": "1",
+//         "⚫": "9",
+//         "◼️": "3",
+//         "★": "5",
+//         "🖤": "7",
+//         "❖": "2",
+//         "⬖": "8",
+//         "⬢": "4"
+//     };
+//     function updateBoxes() {
+//         let divs = [divSymbol1, divSymbol2, divSymbol3, divSymbol4];
 
-    function handleSymbolClick(symbol) {
-        if (playerCode.length >= 4) {
-            return;
-        }
-        playerCode.push(symbol);
-        updateBoxes();
+//         for (let i = 0; i < divs.length; i++) {
+//             let symbol = playerCode[i];
+//             if (symbol) {
+//                 divs[i].innerHTML = `
+//                 <div class="bigNumber">${symbolValues[symbol]}</div>
+//                 <div class="smallSymbol">${symbol}</div>
+//             `;
+//             } else {
+//                 divs[i].innerHTML = "";
+//             }
+//         }
+//     }
 
-        if (playerCode.length === 4) {
-            let playerAnswer = playerCode.join("");
-            let correctAnswer = correctCode.join("");
+//     function handleSymbolClick(symbol) {
+//         if (playerCode.length >= 4) {
+//             return;
+//         }
+//         playerCode.push(symbol);
+//         updateBoxes();
 
-            if (playerAnswer === correctAnswer) {
-                divSymbol1.style.backgroundColor = "#62fe62";
-                divSymbol2.style.backgroundColor = "#62fe62";
-                divSymbol3.style.backgroundColor = "#62fe62";
-                divSymbol4.style.backgroundColor = "#62fe62";
+//         if (playerCode.length === 4) {
+//             let playerAnswer = playerCode.join("");
+//             let correctAnswer = correctCode.join("");
 
-                nextButton.style.display = "block";
-                answer.style.visibility = "visible";
-            } else {
-                codeText.textContent = "Fel ordning, försök igen!";
-                codeText.style.margin = "0px";
+//             if (playerAnswer === correctAnswer) {
+//                 divSymbol1.style.backgroundColor = "#62fe62";
+//                 divSymbol2.style.backgroundColor = "#62fe62";
+//                 divSymbol3.style.backgroundColor = "#62fe62";
+//                 divSymbol4.style.backgroundColor = "#62fe62";
 
-                setTimeout(function () {
-                    playerCode = [];
-                    updateBoxes();
-                }, 1000);
-            }
-        }
-    }
+//                 nextButton.style.display = "block";
+//                 answer.style.visibility = "visible";
+//             } else {
+//                 codeText.textContent = "Fel ordning, försök igen!";
+//                 codeText.style.margin = "0px";
 
-    buttonSymbol1.addEventListener("click", function () {
-        handleSymbolClick("✖️");
-    });
+//                 setTimeout(function () {
+//                     playerCode = [];
+//                     updateBoxes();
+//                 }, 1000);
+//             }
+//         }
+//     }
 
-    buttonSymbol2.addEventListener("click", function () {
-        handleSymbolClick("⚫");
-    });
+//     buttonSymbol1.addEventListener("click", function () {
+//         handleSymbolClick("✖️");
+//     });
 
-    buttonSymbol3.addEventListener("click", function () {
-        handleSymbolClick("◼️");
-    });
+//     buttonSymbol2.addEventListener("click", function () {
+//         handleSymbolClick("⚫");
+//     });
 
-    buttonSymbol4.addEventListener("click", function () {
-        handleSymbolClick("★");
-    });
+//     buttonSymbol3.addEventListener("click", function () {
+//         handleSymbolClick("◼️");
+//     });
 
-    buttonSymbol5.addEventListener("click", function () {
-        handleSymbolClick("🖤");
-    });
+//     buttonSymbol4.addEventListener("click", function () {
+//         handleSymbolClick("★");
+//     });
 
-    buttonSymbol6.addEventListener("click", function () {
-        handleSymbolClick("❖");
-    });
+//     buttonSymbol5.addEventListener("click", function () {
+//         handleSymbolClick("🖤");
+//     });
 
-    buttonSymbol7.addEventListener("click", function () {
-        handleSymbolClick("⬖");
-    });
+//     buttonSymbol6.addEventListener("click", function () {
+//         handleSymbolClick("❖");
+//     });
 
-    buttonSymbol8.addEventListener("click", function () {
-        handleSymbolClick("⬢");
-    });
+//     buttonSymbol7.addEventListener("click", function () {
+//         handleSymbolClick("⬖");
+//     });
 
-    nextButton.addEventListener("click", function () {
-        clueSeven();
-    });
-}
+//     buttonSymbol8.addEventListener("click", function () {
+//         handleSymbolClick("⬢");
+//     });
 
-
-clueSix()
+//     nextButton.addEventListener("click", function () {
+//         clueSeven();
+//     });
+// }
 
 function clueSeven() {
     spelKirsebergDIV.innerHTML = "";
+    spelKirsebergDIV.style.marginTop = "140px";
 
     let h2 = document.createElement("h2");
     h2.textContent = "Spela mig..."
@@ -597,3 +599,5 @@ function clueSeven() {
         window.location.href = "../html/sistaSida2.html";
     });
 };
+
+clueSeven()
