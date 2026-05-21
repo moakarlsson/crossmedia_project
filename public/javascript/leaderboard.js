@@ -4,24 +4,50 @@ async function getLeaderboard() {
     });
     const data = await response.json();
 
-    data.forEach(user => {
-        console.log(user.userName, user.imageUrl);
-    });
-    // console.log(data);
+    // data.forEach(user => {
+    //     console.log(user.userName, user.imageUrl);
+    // });
+    console.log(data);
     return data;
 }
 
-
-
-getLeaderboard();
-// getLeaderboard();
-
 let contentLeaderbord = document.getElementById("contentLeaderbord");
+
+
 
 async function showLeaderboard() {
 
+    let topDiv = document.createElement("div");
+    topDiv.classList.add("topDiv");
+
+    let divImg = document.createElement("div");
+    let divImgP = document.createElement("p");
+    divImgP.textContent = "Profilbild";
+
+    divImg.append(divImgP);
+
+    let lagDiv = document.createElement("div");
+    let lagDivP = document.createElement("p");
+    lagDivP.textContent = "Lagnamn";
+
+    lagDiv.append(lagDivP);
+
+    let timeDiv = document.createElement("div");
+    let timeDivP = document.createElement("p");
+    timeDivP.textContent = "Sluttid"
+
+    timeDiv.append(timeDivP);
+
+    topDiv.append(divImg, lagDiv, timeDiv);
+    contentLeaderbord.append(topDiv);
+
+
+    let placement = "1";
+
     let database = await getLeaderboard();
-    console.log(database);
+    database.sort(function (a, b) {
+        return b.time_left - a.time_left;
+    });
 
     for (let data of database) {
 
@@ -30,39 +56,53 @@ async function showLeaderboard() {
 
         let groupName = document.createElement("p");
         groupName.textContent = data.groupName || "";
+        let placementDiv = document.createElement("div");
+        let placementParagraf = document.createElement("p");
+        placementParagraf.classList.add("placement")
+        placementParagraf.textContent = placement;
+        placementDiv.append(placementParagraf);
+
+        placementDiv.style.textAlign = "center"
+        placementDiv.classList.add("setWidth");
+
 
         //användarnamn
         let divName = document.createElement("div");
+        divName.classList.add("setWidth");
 
         let deltagare = document.createElement("p");
         deltagare.textContent = data.userName;
+        deltagare.style.fontWeight = "bold";
+        deltagare.style.fontSize = "18px";
 
         let imgDiv = document.createElement("div");
+        imgDiv.classList.add("setWidth");
         let img = document.createElement("img");
         img.src = data.imageUrl || "";
-        img.style.width = "50px";
-        img.style.height = "50px";
+        img.style.width = "70px";
+        img.style.height = "70px";
         img.style.objectFit = "cover";
         img.style.borderRadius = "50%";
 
         let divTime = document.createElement("div");
-        let timeLeft = document.createElement("p");
-        timeLeft.textContent = data.time_left;
+        divTime.classList.add("setWidth");
+        let finalTime = document.createElement("p");
 
         let hours = Math.floor(data.time_left / 3600);
         let minutes = Math.floor((data.time_left % 3600) / 60);
         let seconds = data.time_left % 60;
 
-        let finalTime = `${hours}: ${minutes}: ${seconds}`;
+        finalTime = `${hours}: ${minutes}: ${seconds}`;
 
 
         imgDiv.append(img);
         divName.append(deltagare);
         divTime.append(finalTime);
 
-        userDiv.append(imgDiv, divName, divTime, groupName)
+        userDiv.append(placementDiv, imgDiv, divName, divTime, groupName);
 
         contentLeaderbord.append(userDiv);
+        placement++;
     };
 };
 showLeaderboard()
