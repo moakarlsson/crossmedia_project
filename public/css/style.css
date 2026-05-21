@@ -14,6 +14,8 @@ body {
 }
 
 
+
+
 button {
     background-color: #8D0004;
     color: white;
@@ -21,6 +23,15 @@ button {
     font-family: SpecialElite;
     padding: 15px;
     font-size: 18px;
+    transition: 0.3s;
+    
+}
+
+button:active {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 20px rgba(120,0,0,0.5);
 }
 
 h1,
@@ -52,6 +63,70 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
+}
+
+#main::after {
+    content: "";
+    
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle,
+            transparent 40%,
+            rgba(0,0,0,0.4) 100%
+        );
+
+    pointer-events: none;
+}
+
+#logoContainer {
+    position: relative;
+    width: fit-content;
+    filter: drop-shadow(0 0 25px rgba(137, 110, 57, 0.7));
+}
+
+#logoContainer::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    background: rgba(255, 200, 100, 0.35);
+
+    filter: blur(60px);
+
+    z-index: -1;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+
+#logoBG {
+    height: 160px;
+    width: 280px;
+    margin: 100px 50px 10px 50px;
+    opacity: 0.6;
+}
+
+#fructosH1 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+    font-weight: 100;
+    line-height: 0.9;
+    letter-spacing: 2px;
 }
 
 #timerDIV {
@@ -72,6 +147,9 @@ main {
     padding: 15px;
     margin-top: 20px;
     background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
 }
 
 #topBar {
@@ -138,17 +216,16 @@ footer {
     border-top: 1px solid black;
     position: fixed;
     bottom: 0px;
-    background-color: rgba(193, 172, 143);
+    background-color: transparent;
     padding-bottom: 16px;
-}
 
-#footerDIV {
     display: flex;
+    
     justify-content: space-evenly;
     align-items: flex-end;
-    height: 100%;
-
+    
 }
+
 
 .hintUNfill {
     height: 59px;
