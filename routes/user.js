@@ -6,10 +6,12 @@ import bcrypt from "bcrypt";
 import multer from "multer";
 const costFactor = 12;
 
+const uploadPath = process.env.VOLUME_PATH || "group_img";
+
 //Konfiguera lagring
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, "/app/group_img")
+        cb(null, uploadPath)
     },
     filename: function (req, file, cb) {
         const uniqueName = Date.now() + "-" + Math.round(Math.random()* 1e9);
