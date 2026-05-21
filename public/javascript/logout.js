@@ -47,17 +47,13 @@ let closeRulesBtn = document.getElementById("closeRulesBtn");
 let spelregler = document.getElementById("spelregler");
 
 showRulesBtn.addEventListener("click", function () {
-
     spelregler.style.display = "block";
     showRulesBtn.style.display = "none";
-
 });
 
 closeRulesBtn.addEventListener("click", function () {
-
     spelregler.style.display = "none";
     showRulesBtn.style.display = "block";
-
 });
 
 let backButton = document.getElementById("backButton");

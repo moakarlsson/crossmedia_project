@@ -22,9 +22,6 @@ audio {
 
 #next_page {
     display: none;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
     opacity: 0;
     transition: opacity 1s ease;
     text-align: center;
@@ -32,10 +29,11 @@ audio {
 
 #next_page.synlig {
     opacity: 1;
-
 }
 
-
-#timerDisplay {
-    display: none;
+#buttonDIV {
+    display: flex;
+    justify-content: end;
+    margin-top: 60px;
+    padding-right: 44px;
 }

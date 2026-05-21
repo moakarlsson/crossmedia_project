@@ -56,7 +56,7 @@
     </main>
 
     <script src="../javascript/meny.js"></script>
-    <script src="../javascript/logout.js"></script>
+
     <script>
 
         let finalTime = Number(localStorage.getItem("finalTime"));
@@ -75,13 +75,28 @@
             seconds = "0" + seconds;
         }
 
-        let formattedTime =
-            hours + ":" + minutes + ":" + seconds;
+        let formattedTime = hours + ":" + minutes + ":" + seconds;
         let timeText = document.getElementById("yourTime");
 
-        timeText.textContent =
-            "Er sluttid: " + formattedTime;
+        timeText.textContent = "Er sluttid: " + formattedTime;
 
+
+        let logoutButton = document.getElementById("logout");
+        logoutButton.addEventListener("click", function () {
+            logout();
+        });
+
+        async function logout() {
+            await fetch("/users/logout", {
+                method: "POST",
+                credentials: "include"
+            });
+
+            localStorage.removeItem("endTime");
+
+            location.reload();
+            window.location.href = "../html/startsida.html";
+        };
     </script>
 </body>
 
