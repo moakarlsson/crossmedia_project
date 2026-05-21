@@ -7,7 +7,14 @@ import userRouter from "./routes/user.js";
 import helmet from "helmet";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+import fs from "fs";
+
 const uploadPath = process.env.VOLUME_PATH || "group_img";
+
+if (!fs.existsSync(uploadPath)) {
+    fs.mkdirSync(uploadPath, { recursive: true });
+}
 
 
 const app = express();
