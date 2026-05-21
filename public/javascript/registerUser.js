@@ -5,9 +5,6 @@ let thePic = document.getElementById("thePic");
 let passwordMessage = document.getElementById("passwordMessage");
 let popup = document.getElementById("popup");
 
-
-
-
 thePic.addEventListener("click", function () {
     imageInput.click();
 });

@@ -3,17 +3,11 @@ async function getLeaderboard() {
         credentials: "include"
     });
     const data = await response.json();
-
-    // data.forEach(user => {
-    //     console.log(user.userName, user.imageUrl);
-    // });
     console.log(data);
     return data;
 }
 
 let contentLeaderbord = document.getElementById("contentLeaderbord");
-
-
 
 async function showLeaderboard() {
 
@@ -65,8 +59,7 @@ async function showLeaderboard() {
         placementDiv.style.textAlign = "center"
         placementDiv.classList.add("setWidth");
 
-
-        //användarnamn
+        //Användarnamn
         let divName = document.createElement("div");
         divName.classList.add("setWidth");
 
@@ -94,7 +87,6 @@ async function showLeaderboard() {
 
         finalTime = `${hours}: ${minutes}: ${seconds}`;
 
-
         imgDiv.append(img);
         divName.append(deltagare);
         divTime.append(finalTime);
@@ -107,20 +99,3 @@ async function showLeaderboard() {
 };
 showLeaderboard()
 
-
-// 0: Object { userName: "hi", time_left: 10735, time_taken_seconds: "65" }
-// ​
-// time_left: 10735
-// ​
-// time_taken_seconds: "65"
-// ​
-// userName: "hi"
-// ​
-// ​
-// 1: Object { userName: "hej1", time_left: 10723, time_taken_seconds: "79" }
-// ​
-// time_left: 10723
-// ​
-// time_taken_seconds: "79"
-// ​
-// userName: "hej1"

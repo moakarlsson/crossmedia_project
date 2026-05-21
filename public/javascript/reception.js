@@ -1,9 +1,6 @@
 // window.currentStep = "steg5";
-
 let spelinnehåll = document.getElementById("spelinnehåll");
-
 let contentDiv = document.createElement("div");
-
 let h3 = document.createElement("h3");
 h3.textContent = "Hur hänger allt ihop...?";
 

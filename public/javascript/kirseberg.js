@@ -1,8 +1,5 @@
 
 let spelKirsebergDIV = document.getElementById("spelinnehåll");
-
-
-
 let returnStep = localStorage.getItem("returnToStep");
 
 if (returnStep === "steg8") {
@@ -28,9 +25,6 @@ if (returnStep === "steg8") {
 }
 
 localStorage.removeItem("returnToStep");
-
-
-
 
 function clueOne() {
     //På lekpats - ska till scenen
@@ -93,7 +87,6 @@ function clueOne() {
 
 function clueTwo() {
     //På scenen - ska till lokstallarna    
-
     spelKirsebergDIV.innerHTML = "";
     window.currentStep = "steg9";
     let contentDiv = document.createElement("div");
@@ -151,7 +144,6 @@ function clueTwo() {
 
 function clueThree() {
     //Vid lokstallarna - ska till Cirkushotellet
-
     spelKirsebergDIV.innerHTML = "";
     window.currentStep = "steg10";
     let contentDiv = document.createElement("div");
@@ -206,7 +198,6 @@ function clueThree() {
         clueFour();
     });
 }
-
 
 function clueFour() {
     //Vid cirkushotellet- ska till fängelset 

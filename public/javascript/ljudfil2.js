@@ -1,8 +1,6 @@
 window.currentStep = "steg4";
-
 const ljudfil = document.getElementById("ljudfil");
 const next_page_button = document.getElementById("next_page");
-
 
 ljudfil.addEventListener("ended", function () {
     next_page_button.style.display = "block";

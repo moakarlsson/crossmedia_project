@@ -11,15 +11,15 @@ imgMail = document.getElementById("imgMail");
 let symboler = document.getElementById("symboler");
 imgSymboler = document.getElementById("imgSymboler");
 
-//artikel
+//Artikel
 let messageA = document.getElementById("messageA");
 messageA.style.visibility = "hidden";
 
-//mail
+//Mail
 let messageM = document.getElementById("messageM");
 messageM.style.visibility = "hidden";
 
-//symboler
+//Symboler
 let messageS = document.getElementById("messageS");
 messageS.style.visibility = "hidden";
 
@@ -34,7 +34,6 @@ if (localStorage.getItem("unlockedMail") === "true") {
 if (localStorage.getItem("unlockedSymboler") === "true") {
     imgSymboler.src = "../assets/images/padlock_unlocked.png";
 };
-
 
 artikel.addEventListener("click", function () {
     if (localStorage.getItem("unlockedNews") === "true") {

@@ -13,7 +13,6 @@ async function loadHints() {
 }
 loadHints();
 
-
 function popUpHints() {
     popupDiv.classList.add("popup");
     overlay.classList.add("overlay");
@@ -73,9 +72,7 @@ function popUpHints() {
     main.append(overlay, popupDiv);
 }
 
-
 //MENY (FOOTER)
-
 if (footer) {
     footer.innerHTML = `
         
@@ -128,7 +125,6 @@ closeHintButton.addEventListener("click", function () {
     hintIcon.src = "../assets/icons/hintUNfill.png";
     hintMenu.style.borderBottom = "none";
 });
-
 
 dokumentbankMenu.addEventListener("click", function () {
     dokumentbankIcon.src = "../assets/icons/dokumentbankFILL.png"

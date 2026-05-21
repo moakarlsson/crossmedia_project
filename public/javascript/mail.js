@@ -43,8 +43,6 @@ logInButtonDOM.addEventListener("click", () => {
     }
 })
 
-
-
 mail1.addEventListener("click", () => {
     mailContainerDOM.style.display = "none";
     mailView2.style.display = "block";
@@ -64,8 +62,6 @@ arrowIMG2.addEventListener("click", () => {
     mailView2.style.display = "none";
     mailContainerDOM.style.display = "block";
 });
-
-
 
 if (localStorage.getItem("fromDokumentbankMail") === "true") {
     leaveButton.textContent = "Tillbaka till dokumentbanken";

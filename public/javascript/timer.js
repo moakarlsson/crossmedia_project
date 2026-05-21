@@ -24,7 +24,7 @@ function stopTimer() {
         timeLeft = 0;
     }
 
-    // spara tiden
+    // Spara tiden
     finalTime = timeLeft;
     localStorage.setItem("finalTime", finalTime);
     console.log("Sluttid:", finalTime);
@@ -159,8 +159,6 @@ function showGameOverPopup() {
     popup.append(h2, p, revealButton, logoutButton);
     document.body.append(overlay, popup);
 }
-
-
 
 function testTimer() {
 

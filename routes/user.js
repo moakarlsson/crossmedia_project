@@ -6,7 +6,6 @@ import bcrypt from "bcrypt";
 import multer from "multer";
 const costFactor = 12;
 import fs from "fs";
-
 const uploadPath = process.env.VOLUME_PATH || "group_img";
 
 if (!fs.existsSync(uploadPath)) {
@@ -25,6 +24,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
+
 //GET
 router.get("/me", (req, res) => {
     if (!req.session.user) {
@@ -136,4 +136,5 @@ router.get("/leaderboard", async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
 export default router;

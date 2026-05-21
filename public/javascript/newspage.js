@@ -1,5 +1,3 @@
-
-
 window.currentStep = "steg2";
 
 const newsPage_1 = document.getElementById("newspage_1");

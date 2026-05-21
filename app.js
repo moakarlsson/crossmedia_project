@@ -5,17 +5,13 @@ import { fileURLToPath } from "url";
 import session from "express-session";
 import userRouter from "./routes/user.js";
 import helmet from "helmet";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 import fs from "fs";
-
+const __filename = fileURLToPath(import.meta.url);
 const uploadPath = process.env.VOLUME_PATH || "group_img";
 
 if (!fs.existsSync(uploadPath)) {
     fs.mkdirSync(uploadPath, { recursive: true });
 }
-
 
 const app = express();
 app.set("trust proxy", 1);
@@ -39,5 +35,4 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users", userRouter);
-
 export default app;

@@ -1,5 +1,4 @@
 window.currentStep = "steg2";
-
 const input_button_1 = document.getElementById("input_button_1");
 const input_button_2 = document.getElementById("input_button_2");
 const alert_message = document.getElementById("alert_message");

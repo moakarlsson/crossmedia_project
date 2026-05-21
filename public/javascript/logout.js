@@ -18,7 +18,6 @@ async function logout() {
     window.location.href = "../html/startsida.html";
 };
 
-
 async function getUser() {
     let response = await fetch("/users/me", {
         credentials: "include"
@@ -42,7 +41,6 @@ async function showInfo() {
 };
 
 showInfo();
-
 
 let showRulesBtn = document.getElementById("showRulesBtn");
 let closeRulesBtn = document.getElementById("closeRulesBtn");

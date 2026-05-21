@@ -1,3 +1,5 @@
+/*Dokumentation av databasens uppbyggnad*/
+
 DROP DATABASE IF EXISTS cross_media_project;
 CREATE DATABASE cross_media_project;
 USE cross_media_project;
