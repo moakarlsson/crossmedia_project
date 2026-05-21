@@ -437,8 +437,12 @@ function clueSix() {
     allSmalDivs.append(divSymbol1, divSymbol2, divSymbol3, divSymbol4);
     symbolDiv.append(allSmalDivs, codeText, buttonDivs);
 
+    const siluettImg = document.createElement("img");
+    siluettImg.url = "../assets/images/KirsebergSkiss.png";
+
     spelKirsebergDIV.append(symbolDiv);
     spelKirsebergDIV.append(divBrottsplats);
+    spelKirsebergDIV.append()
     spelKirsebergDIV.append(nextButton);
 
     let correctCode = ["✖️", "⚫", "✖️", "◼️"];
