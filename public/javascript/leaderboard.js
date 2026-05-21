@@ -7,4 +7,15 @@ async function getLeaderboard() {
     return data;
 }
 
+const response = await fetch("users/groupImage", {
+    credentials:"include"
+});
+
+const data = await response.json();
+
+if (data.imageUrl) {
+    const img = document.getElementById("groupImg");
+    img.src = data.imageUrl;
+}
+
 getLeaderboard();

@@ -34,6 +34,21 @@ router.get("/me", (req, res) => {
     res.json(req.session.user);
 });
 
+router.get("/groupImage", async (req, res) => {
+    if (!req.session.user) {
+        return res.status(401).json({ error: "Inte inloggad" });
+    }
+    try {
+        const [rows] = await db.query(
+            "SELECT imageuRL FROM user WHERE id = ?",
+            [req.session.user.id]
+        );
+        res.json({ imageUrl: rows[0].imageUrl });
+    } catch (error) {
+        res.status(500).json( {error: error.message });
+    }
+})
+
 //POST
 router.post("/createUser",upload.single("groupImage"), async (req, res) => {
     const { userName, password } = req.body;
