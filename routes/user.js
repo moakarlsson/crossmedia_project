@@ -9,7 +9,7 @@ const costFactor = 12;
 //Konfiguera lagring
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, "group_img")
+        cb(null, "/app/group_img")
     },
     filename: function (req, file, cb) {
         const uniqueName = Date.now() + "-" + Math.round(Math.random()* 1e9);

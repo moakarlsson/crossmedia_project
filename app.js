@@ -13,7 +13,8 @@ app.set("trust proxy", 1);
 app.use(express.json());
 app.use(express.static("public"));
 app.use(helmet()); //Skyddar mot XSS attacker = "Cross-script attacks"
-app.use("/group_img", express.static(path.join(__dirname, "group_img")));
+app.use("/group_img", express.static("/app/group_img")); 
+
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
