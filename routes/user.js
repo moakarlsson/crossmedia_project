@@ -123,11 +123,12 @@ router.get("/leaderboard", async (req, res) => {
             SELECT 
                 u.userName,
                 u.imageUrl,
+                u.groupName,
                 MAX(r.time_left) AS time_left,
                 ROUND((MAX(r.end_time) - MIN(r.start_time)) / 1000) AS time_taken_seconds
             FROM result r
             JOIN user u ON r.user_id = u.id
-            GROUP BY u.id, u.userName, u.imageUrl
+            GROUP BY u.id, u.userName, u.imageUrl, u.groupName
             ORDER BY time_left DESC
         `);
         res.json(rows);

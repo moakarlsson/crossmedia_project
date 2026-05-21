@@ -28,6 +28,9 @@ async function showLeaderboard() {
         let userDiv = document.createElement("div");
         userDiv.classList.add("userDiv");
 
+        let groupName = document.createElement("p");
+        groupName.textContent = data.groupName || "";
+
         //användarnamn
         let divName = document.createElement("div");
 
@@ -57,7 +60,7 @@ async function showLeaderboard() {
         divName.append(deltagare);
         divTime.append(finalTime);
 
-        userDiv.append(imgDiv, divName, divTime)
+        userDiv.append(imgDiv, divName, divTime, groupName)
 
         contentLeaderbord.append(userDiv);
     };
