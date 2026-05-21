@@ -271,7 +271,7 @@ function clueFive() {
 
     let endingText = document.createElement("p");
     endingText.classList.add("endingText");
-    endingText.textContent = "Nu närmar ni er slutet och snart har ni möjlight att stoppa mördaren! Ni vet att det är Daniel Petrov som begått morden. Nu ska ni få ange erna misstankar kring hur och var morden begicks."
+    endingText.textContent = "Nu närmar ni er slutet och snart har ni möjlight att stoppa mördaren! Ni vet att det är Daniel Petrov som begått morden. Nu ska ni få ange era misstankar kring hur och var morden begicks."
 
     let varning = document.createElement("p");
     varning.textContent = "OBS! Ring inte på fängelset"
