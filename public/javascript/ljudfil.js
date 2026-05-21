@@ -10,6 +10,6 @@ ljudfil.addEventListener("ended", function () {
 })
 
 next_page_button.addEventListener("click", function () {
-    timerDisplay.style.display = "block";
+    timerDisplay.style.display = "block"
     window.location.href = "../html/newspage_start.html";
 })

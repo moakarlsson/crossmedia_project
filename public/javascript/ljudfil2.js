@@ -13,5 +13,5 @@ ljudfil.addEventListener("ended", function () {
 })
 
 next_page_button.addEventListener("click", function () {
-    window.location.href = "../html/reception.html";
+    window.location.href = "../html/mail.html";
 })
