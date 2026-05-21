@@ -11,9 +11,8 @@
 
 <body>
     <main>
-        <p id="yourTime"></p>
-
         <div id="story">
+            <p id="yourTime"></p>
             <h2>Epilog</h2>
             <p>Ni valde att låta mördaren (Daniel Petrov) gå fri och inte ange honom till polisen. Spelet har nått sitt
                 slut, men en historia behöver inte ta slut enbart för att spelet gör det.</p>
@@ -49,10 +48,15 @@
                 ska rädda samhället från framtidens kriminalitet. Och han vet precis hur han ska göra det.</p>
         </div>
 
+        <div id="buttonDIV">
+            <button id="logout">Avsluta spelet & logga ut</button>
+        </div>
+
         <footer id="footer"></footer>
     </main>
 
     <script src="../javascript/meny.js"></script>
+    <script src="../javascript/logout.js"></script>
     <script>
 
         let finalTime = Number(localStorage.getItem("finalTime"));
