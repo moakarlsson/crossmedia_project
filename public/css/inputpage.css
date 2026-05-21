@@ -23,13 +23,17 @@ input {
 
 #bildStaty {
     width: 200px;
-    height: 200px;
+    height: 220px;
 }
 
 #firsth3 {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 10px;
     border-radius: 10px;
+}
+
+h3 {
+    padding: 20px;
 }
 
 #input_2 {
