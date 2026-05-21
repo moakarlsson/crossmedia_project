@@ -25,7 +25,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-//GET ROUTES
+//GET ROUTES -
 router.get("/me", (req, res) => {
     if (!req.session.user) {
         return res.status(401).json({ error: "Inte inloggad" });
@@ -49,7 +49,7 @@ router.get("/groupImage", async (req, res) => {
     }
 })
 
-//POST ROUTES
+//POST ROUTES -
 router.post("/createUser",upload.single("groupImage"), async (req, res) => {
     const { userName, password, groupName } = req.body;
     const imageUrl = req.file ? `/group_img/${ req.file.filename }` : null;
