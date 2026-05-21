@@ -23,9 +23,9 @@ async function showLeaderboard() {
     let database = await getLeaderboard();
     console.log(database);
 
-
-
     for (let data of database) {
+
+        let userDiv = document.createElement("div");
 
         //användarnamn
         let divName = document.createElement("div");
