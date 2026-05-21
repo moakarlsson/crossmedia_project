@@ -61,3 +61,10 @@ closeRulesBtn.addEventListener("click", function () {
     showRulesBtn.style.display = "block";
 
 });
+
+let backButton = document.getElementById("backButton");
+
+backButton.addEventListener("click", function () {
+
+    window.history.back();
+});
