@@ -4,26 +4,47 @@ async function getLeaderboard() {
     });
     const data = await response.json();
 
-    data.forEach(user => {
-        console.log(user.userName, user.imageUrl);
-    });
-    // console.log(data);
+    // data.forEach(user => {
+    //     console.log(user.userName, user.imageUrl);
+    // });
+    console.log(data);
     return data;
 }
 
-
-
-getLeaderboard();
-// getLeaderboard();
-
 let contentLeaderbord = document.getElementById("contentLeaderbord");
 
+
+
 async function showLeaderboard() {
+
+    let topDiv = document.createElement("div");
+    topDiv.classList.add("topDiv");
+
+    let divImg = document.createElement("div");
+    let divImgP = document.createElement("p");
+    divImgP.textContent = "Profilbild";
+
+    divImg.append(divImgP);
+
+    let lagDiv = document.createElement("div");
+    let lagDivP = document.createElement("p");
+    lagDivP.textContent = "Lagnamn";
+
+    lagDiv.append(lagDivP);
+
+    let timeDiv = document.createElement("div");
+    let timeDivP = document.createElement("p");
+    timeDivP.textContent = "Sluttid"
+
+    timeDiv.append(timeDivP);
+
+    topDiv.append(divImg, lagDiv, timeDiv);
+    contentLeaderbord.append(topDiv);
+
 
     let placement = "1";
 
     let database = await getLeaderboard();
-    // console.log(database);
     database.sort(function (a, b) {
         return b.time_left - a.time_left;
     });
@@ -49,6 +70,8 @@ async function showLeaderboard() {
 
         let deltagare = document.createElement("p");
         deltagare.textContent = data.userName;
+        deltagare.style.fontWeight = "bold";
+        deltagare.style.fontSize = "18px";
 
         let imgDiv = document.createElement("div");
         imgDiv.classList.add("setWidth");
@@ -63,12 +86,12 @@ async function showLeaderboard() {
         divTime.classList.add("setWidth");
         let finalTime = document.createElement("p");
 
-
         let hours = Math.floor(data.time_left / 3600);
         let minutes = Math.floor((data.time_left % 3600) / 60);
         let seconds = data.time_left % 60;
 
         finalTime = `${hours}: ${minutes}: ${seconds}`;
+
 
         imgDiv.append(img);
         divName.append(deltagare);

@@ -1,10 +1,15 @@
 #contentLeaderbord {
-    background-color: azure;
     height: auto;
-    width: 400px;
+    width: 450px;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    align-items: center;
+
+    background-image: url(../assets/images/bgNyponPaper.jpg);
+    background-position: center;
+    background-size: contain;
+    padding: 40px 10px;
 }
 
 
@@ -16,12 +21,29 @@
     width: 400px;
     border-radius: 10px;
     padding: 10px 0px;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .setWidth {
     width: 70px;
+    display: flex;
+    justify-content: center;
 }
 
 .placement {
     background-color: #8D0004;
+    border-radius: 50%;
+    color: white;
+    width: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.topDiv {
+    display: flex;
+    gap: 55px;
+    justify-content: end;
+    width: 400px;
+    margin-right: 42px;
+    background-color: white;
 }
