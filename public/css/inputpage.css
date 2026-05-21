@@ -60,3 +60,10 @@ h3 {
 #nextButton {
     visibility: hidden;
 }
+
+#buttonDIV {
+    display: flex;
+    justify-content: end;
+    padding-right: 44px;
+    width: 89%;
+}
