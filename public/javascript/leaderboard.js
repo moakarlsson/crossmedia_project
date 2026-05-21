@@ -3,20 +3,15 @@ async function getLeaderboard() {
         credentials: "include"
     });
     const data = await response.json();
+
+    data.forEach(user => {
+        console.log(user.userName, user.imageUrl);
+    });
     // console.log(data);
     return data;
 }
 
-const response = await fetch("users/groupImage", {
-    credentials: "include"
-});
 
-const data = await response.json();
-
-if (data.imageUrl) {
-    const img = document.getElementById("groupImg");
-    img.src = data.imageUrl;
-}
 
 getLeaderboard();
 // getLeaderboard();
