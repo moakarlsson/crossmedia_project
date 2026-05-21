@@ -24,7 +24,10 @@ async function showLeaderboard() {
     console.log(database);
 
 
+
     for (let data of database) {
+
+        //användarnamn
         let divName = document.createElement("div");
 
         let deltagare = document.createElement("p");
