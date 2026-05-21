@@ -1,4 +1,4 @@
-window.currentStep = "steg5";
+// window.currentStep = "steg5";
 
 let spelinnehåll = document.getElementById("spelinnehåll");
 
@@ -22,5 +22,5 @@ nextButton.addEventListener("click", function () {
     window.location.href = "../html/mailpage.html";
 });
 
-contentDiv.append(h3, img, text, nextButton);
-spelinnehåll.append(contentDiv);
+// contentDiv.append(h3, img, text, nextButton);
+// spelinnehåll.append(contentDiv);
