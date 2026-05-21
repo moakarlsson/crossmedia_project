@@ -282,6 +282,9 @@ function clueFive() {
     endingText.classList.add("endingText");
     endingText.textContent = "Nu närmar ni er slutet och snart har ni möjlight att stoppa mördaren! Ni vet att det är Daniel Petrov som begått morden. Nu ska ni få ange erna misstankar kring hur och var morden begicks."
 
+    let varning = document.createElement("p");
+    varning.textContent = "OBS! Ring inte på fängelset"
+
     let h2 = document.createElement("h2");
     h2.textContent = "Mordvapnet"
 
@@ -312,6 +315,7 @@ function clueFive() {
 
 
     contentDiv.append(endingText);
+    contentDiv.append(varning);
     contentDiv.append(h2);
     divInputFält.append(label, inputFält, hiddenText);
     contentDiv.append(divInputFält);

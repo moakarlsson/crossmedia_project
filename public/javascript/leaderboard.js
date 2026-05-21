@@ -18,18 +18,36 @@ getLeaderboard();
 
 let contentLeaderbord = document.getElementById("contentLeaderbord");
 
-let database = getLeaderboard();
-console.log(database)
+async function showLeaderboard() {
 
-for (let data in database) {
-    let divName = document.createElement("div");
+    let database = await getLeaderboard();
+    console.log(database);
 
-    let deltagare = document.createElement("p");
-    deltagare.textContent = data.username;
 
-    contentLeaderbord.append(divName);
-}
+    for (let data of database) {
+        let divName = document.createElement("div");
 
+        let deltagare = document.createElement("p");
+        deltagare.textContent = data.userName;
+
+        let divTime = document.createElement("div");
+        let timeLeft = document.createElement("p");
+        timeLeft.textContent = data.time_left;
+
+        let hours = Math.floor(data.time_left / 3600);
+        let minutes = Math.floor((data.time_left % 3600) / 60);
+        let seconds = data.time_left % 60;
+
+        let finalTime = `${hours}: ${minutes}: ${seconds}`;
+
+        divTime.append(finalTime);
+
+
+        divName.append(deltagare);
+        contentLeaderbord.append(divName, divTime);
+    };
+};
+showLeaderboard()
 
 
 // 0: Object { userName: "hi", time_left: 10735, time_taken_seconds: "65" }
