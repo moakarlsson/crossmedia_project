@@ -12,7 +12,7 @@ if (!fs.existsSync(uploadPath)) {
     fs.mkdirSync(uploadPath, { recursive: true });
 }
 
-//Konfiguera lagring
+//Konfiguera lagring via railway
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, uploadPath)
@@ -25,7 +25,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-//GET
+//GET ROUTES
 router.get("/me", (req, res) => {
     if (!req.session.user) {
         return res.status(401).json({ error: "Inte inloggad" });
@@ -45,14 +45,14 @@ router.get("/groupImage", async (req, res) => {
         );
         res.json({ imageUrl: rows[0].imageUrl });
     } catch (error) {
-        res.status(500).json( {error: error.message });
+        res.status(500).json( { error: error.message });
     }
 })
 
-//POST
+//POST ROUTES
 router.post("/createUser",upload.single("groupImage"), async (req, res) => {
     const { userName, password, groupName } = req.body;
-    const imageUrl = req.file ? `/group_img/${req.file.filename}` : null;
+    const imageUrl = req.file ? `/group_img/${ req.file.filename }` : null;
     try {
         const hashedPassword = await bcrypt.hash(password, costFactor);
         const [result] = await db.query("INSERT INTO user (userName, password, imageUrl, groupName) VALUES (?,?,?,?)", [userName, hashedPassword, imageUrl, groupName]);
@@ -97,7 +97,7 @@ router.post("/logout", (req, res) => {
 });
 
 router.post("/saveResult", async (req, res) => {
-    console.log("saveResult anropades!"); // ← lägg till
+    console.log("saveResult anropades!"); 
     console.log("Body:", req.body); 
     if (!req.session.user) {
         return res.status(401).json({ error: "Inte inloggad" });
@@ -136,5 +136,4 @@ router.get("/leaderboard", async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-
 export default router;
