@@ -6,6 +6,8 @@ let passwordMessage = document.getElementById("passwordMessage");
 let popup = document.getElementById("popup");
 
 
+
+
 thePic.addEventListener("click", function () {
     imageInput.click();
 });
@@ -31,6 +33,7 @@ createButton.addEventListener("click", async function () {
     const userName = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     const password_confirm = document.getElementById("password_confirm").value;
+    const groupName = document.getElementById("members").value; 
 
     if (password === password_confirm) {
         console.log("Matches");
@@ -45,6 +48,7 @@ createButton.addEventListener("click", async function () {
         const formData = new FormData();
         formData.append("userName", userName);
         formData.append("password", password);
+        formData.append("groupName", groupName); 
 
         const file = imageInput.files[0];
         if (file) {

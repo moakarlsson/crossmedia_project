@@ -51,11 +51,11 @@ router.get("/groupImage", async (req, res) => {
 
 //POST
 router.post("/createUser",upload.single("groupImage"), async (req, res) => {
-    const { userName, password } = req.body;
+    const { userName, password, groupName } = req.body;
     const imageUrl = req.file ? `/group_img/${req.file.filename}` : null;
     try {
         const hashedPassword = await bcrypt.hash(password, costFactor);
-        const [result] = await db.query("INSERT INTO user (userName, password, imageUrl) VALUES (?,?,?)", [userName, hashedPassword, imageUrl]);
+        const [result] = await db.query("INSERT INTO user (userName, password, imageUrl, groupName) VALUES (?,?,?, ?)", [userName, hashedPassword, imageUrl, groupName]);
         res.status(201).json({
             message: "Användare tillagd!",
             insertId: result.insertId
